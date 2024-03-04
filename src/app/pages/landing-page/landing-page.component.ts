@@ -12,4 +12,9 @@ export class LandingPageComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  logsomthing():void{
+    console.log('Something to the console');
+
+  }
+
 }
