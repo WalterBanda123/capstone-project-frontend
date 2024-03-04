@@ -7,6 +7,11 @@ import { LandingPageComponent } from './pages/landing-page/landing-page.componen
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { LoginComponent } from './pages/login/login.component';
 import { GetStartedComponent } from './pages/get-started/get-started.component';
+import { TransactionsComponent } from './components/transactions/transactions.component';
+import { AssetsComponent } from './components/assets/assets.component';
+import { MarketPlaceComponent } from './components/market-place/market-place.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { DashMainComponent } from './components/dash-main/dash-main.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +19,12 @@ import { GetStartedComponent } from './pages/get-started/get-started.component';
     LandingPageComponent,
     DashboardComponent,
     LoginComponent,
-    GetStartedComponent
+    GetStartedComponent,
+    TransactionsComponent,
+    AssetsComponent,
+    MarketPlaceComponent,
+    ProfileComponent,
+    DashMainComponent
   ],
   imports: [
     BrowserModule,

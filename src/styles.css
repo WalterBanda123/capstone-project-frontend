@@ -6,3 +6,11 @@
 .component-transition {
   @apply transition-transform transform hover:scale-105 cursor-pointer;
 }
+
+.menu-element {
+  @apply w-full inline-flex flex-row justify-start px-2.5 font-medium text-sm my-2 rounded-xl  py-2.5 cursor-pointer;
+}
+
+.active {
+  @apply bg-gray-200/70;
+}
