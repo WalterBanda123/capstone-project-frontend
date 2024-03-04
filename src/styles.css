@@ -8,9 +8,18 @@
 }
 
 .menu-element {
-  @apply w-full inline-flex flex-row justify-start px-2.5 font-medium text-sm my-2 rounded-xl  py-2.5 cursor-pointer;
+  @apply w-full inline-flex flex-row justify-start px-2.5 font-medium text-sm my-1.5 rounded-lg  py-2 cursor-pointer;
 }
 
 .active {
   @apply bg-gray-200/70;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  background: transparent; /* Chrome/Safari/Webkit */
+  width: 4px;/* Set the desired width (adjust as needed) */
+
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color:black; /* Set your preferred color */
 }
