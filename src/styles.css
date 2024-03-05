@@ -15,6 +15,7 @@
   @apply bg-gray-200/70;
 }
 
+
 .custom-scrollbar::-webkit-scrollbar {
   background: transparent; /* Chrome/Safari/Webkit */
   width: 4px;/* Set the desired width (adjust as needed) */

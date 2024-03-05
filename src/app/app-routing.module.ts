@@ -9,12 +9,14 @@ import { AssetsComponent } from './components/assets/assets.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { MarketPlaceComponent } from './components/market-place/market-place.component';
 import { DashMainComponent } from './components/dash-main/dash-main.component';
+import { RegisterPropertyComponent } from './pages/register-property/register-property.component';
 
 const routes: Routes = [
   { path: "", redirectTo: "landing-page", pathMatch: 'full' },
   { path: "landing-page", component: LandingPageComponent },
   { path: "login", component: LoginComponent },
   { path: "get-started", component: GetStartedComponent },
+  { path: "register-property", component: RegisterPropertyComponent },
   {
     path: "dashboard", component: DashboardComponent, children: [
       { path: '', redirectTo: 'dash-main', pathMatch: 'full' },

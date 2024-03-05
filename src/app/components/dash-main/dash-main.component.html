@@ -1,4 +1,4 @@
-<div class="flex flex-col h-screen relative ">
+<div class="flex flex-col h-screen relative">
   <div
     class="w-full flex flex-row justify-end px-2 py-3 items-center border-b-[1.5px] border-gray-200 sticky top-0 header backdrop-blur-md z-50"
   >
@@ -19,7 +19,7 @@
           </svg>
         </span>
         <input
-          class="w-full bg-gray-100 rounded-xl py-1.5 pl-10 pr-4 focus:outline-none shadow-sm"
+          class="w-full bg-gray-100 rounded-xl py-1.5 pl-10 pr-4 focus:outline-none"
           placeholder="Search"
           type="text"
         />
@@ -27,9 +27,10 @@
     </form>
 
     <button
-      class="mx-2 rounded-xl bg-blue-500/90 px-3.5 py-2 text-sm font-semibold text-white shadow-sm hover:bg-blue-400"
+     routerLink="/register-property"
+      class="mx-2 rounded-xl bg-green-500/90 px-3.5 py-2 text-sm font-semibold text-white shadow-sm hover:bg-green-400"
     >
-      New request
+      Register Property
     </button>
 
     <button
@@ -61,89 +62,91 @@
     </div>
   </div>
   <main class="flex flex-row w-full justify-center h">
-    <div class="w-3/4 grid grid-flow-row grid-cols-4">
-      <section class="col-span-2 flex flex-col p-5">
-        <h1 class="text-3xl font-bold">Search Land Records</h1>
-        <p class="text-slate-500 text-sm py-1 mb-6">
-          Use the filter below to find land records
-        </p>
+    <!-- <div class="w-full grid grid-flow-row grid-cols-5">
+      <section class="col-span-3 flex flex-col items-center">
+        <div class="w-3/4 p-5">
+          <h1 class="text-3xl font-bold">Search Land Records</h1>
+          <p class="text-slate-500 text-sm py-1 mb-6">
+            Use the filter below to find land records
+          </p>
 
-        <!-- OWNER NAME -->
-        <div class="col-span-full mt-4">
-          <label
-            for="street-address"
-            class="block text-sm font-medium leading-6 text-gray-900"
-            >Owner Name</label
-          >
-          <div class="mt-2">
-            <input
-              type="text"
-              name="ownerName"
-              id="ownerName"
-              autocomplete="ownerName"
-              class="px-3 block w-full rounded-md border-0 py-2.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-            />
-          </div>
-        </div>
 
-        <!-- PARCEL ID -->
-        <div class="col-span-full mt-4">
-          <label
-            for="street-address"
-            class="block text-sm font-medium leading-6 text-gray-900"
-            >Parcel ID</label
-          >
-          <div class="mt-2">
-            <input
-              type="text"
-              name="ownerName"
-              id="ownerName"
-              autocomplete="ownerName"
-              class="px-3 block w-full rounded-md border-0 py-2.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-            />
+          <div class="col-span-full mt-4">
+            <label
+              for="street-address"
+              class="block text-sm font-medium leading-6 text-gray-900"
+              >Owner Name</label
+            >
+            <div class="mt-2">
+              <input
+                type="text"
+                name="ownerName"
+                id="ownerName"
+                autocomplete="ownerName"
+                class="px-3 block w-full rounded-md border-0 py-2.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400  sm:text-sm sm:leading-6"
+              />
+            </div>
           </div>
-        </div>
-        <!-- TITLE NUMBER -->
-        <div class="col-span-full mt-4">
-          <label
-            for="street-address"
-            class="block text-sm font-medium leading-6 text-gray-900"
-            >Title number</label
-          >
-          <div class="mt-2">
-            <input
-              type="text"
-              name="ownerName"
-              id="ownerName"
-              autocomplete="ownerName"
-              class="px-3 block w-full rounded-md border-0 py-2.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-            />
-          </div>
-        </div>
 
-        <!-- LOCATION -->
-        <div class="col-span-full mt-4">
-          <label
-            for="street-address"
-            class="block text-sm font-medium leading-6 text-gray-900"
-            >Location</label
-          >
-          <div class="mt-2">
-            <input
-              type="text"
-              name="ownerName"
-              id="ownerName"
-              autocomplete="ownerName"
-              class="px-3 block w-full rounded-md border-0 py-2.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-            />
+
+          <div class="col-span-full mt-4">
+            <label
+              for="street-address"
+              class="block text-sm font-medium leading-6 text-gray-900"
+              >Parcel ID</label
+            >
+            <div class="mt-2">
+              <input
+                type="text"
+                name="ownerName"
+                id="ownerName"
+                autocomplete="ownerName"
+                class="px-3 block w-full rounded-md border-0 py-2.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400  sm:text-sm sm:leading-6"
+              />
+            </div>
           </div>
-        </div>
-        <div class="col-span-full mt-4">
-          <button
-            class="bg-blue-500/90 w-full rounded-lg py-2.5 font-semibold text-white"
-          >
-            Search
-          </button>
+
+          <div class="col-span-full mt-4">
+            <label
+              for="street-address"
+              class="block text-sm font-medium leading-6 text-gray-900"
+              >Title number</label
+            >
+            <div class="mt-2">
+              <input
+                type="text"
+                name="ownerName"
+                id="ownerName"
+                autocomplete="ownerName"
+                class="px-3 block w-full rounded-md border-0 py-2.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400  sm:text-sm sm:leading-6"
+              />
+            </div>
+          </div>
+
+
+          <div class="col-span-full mt-4">
+            <label
+              for="street-address"
+              class="block text-sm font-medium leading-6 text-gray-900"
+              >Location</label
+            >
+            <div class="mt-2">
+              <input
+                type="text"
+                name="ownerName"
+                id="ownerName"
+                autocomplete="ownerName"
+                class="px-3 block w-full rounded-md border-0 py-2.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400  sm:text-sm sm:leading-6"
+              />
+            </div>
+          </div>
+          <div class="col-span-full mt-4">
+            <button
+              class="bg-green-500/90 w-full rounded-lg py-2.5 font-semibold text-white"
+            >
+              Search
+            </button>
+          </div>
         </div>
       </section>
       <section class="col-span-2 px-10 py-5 flex flex-col overflow-y-auto">
@@ -258,6 +261,6 @@
           </span>
         </div>
       </section>
-    </div>
+    </div> -->
   </main>
 </div>
