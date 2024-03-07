@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegisterPropertyComponent implements OnInit {
 
-  constructor() { }
+  constructor(private location: Location) { }
 
   ngOnInit(): void {
   }
+
+  propertyTypes: string[] = [
+    "Residential Properties",
+    "Commercial Properties",
+    "Vacant Land",
+    "Agricultural Properties",
+    " Special Purpose Properties",
+    "Government properties",
+    "Mixed - Use Properties",
+    " Waterfront Properties",
+    "Heritage or Historic Properties",
+    "Rural and Remote Properties",
+    "Concession and Leasehold Properties",
+    "Community Land",
+    "Government - Owned Properties"
+  ]
+
+  goBack(): void {
+    this.location.back()
+  }
+
+
 
 }
