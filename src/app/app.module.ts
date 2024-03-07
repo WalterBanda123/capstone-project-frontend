@@ -12,7 +12,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { GetStartedComponent } from './pages/get-started/get-started.component';
 import { TransactionsComponent } from './components/transactions/transactions.component';
 import { AssetsComponent } from './components/assets/assets.component';
-import { MarketPlaceComponent } from './components/market-place/market-place.component';
+
 import { ProfileComponent } from './components/profile/profile.component';
 import { DashMainComponent } from './components/dash-main/dash-main.component';
 import { RegisterPropertyComponent } from './pages/register-property/register-property.component';
@@ -27,7 +27,6 @@ import { TransactionComponent } from './pages/transaction/transaction.component'
     GetStartedComponent,
     TransactionsComponent,
     AssetsComponent,
-    MarketPlaceComponent,
     ProfileComponent,
     DashMainComponent,
     RegisterPropertyComponent,

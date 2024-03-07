@@ -7,9 +7,10 @@ import { GetStartedComponent } from './pages/get-started/get-started.component';
 import { TransactionsComponent } from './components/transactions/transactions.component';
 import { AssetsComponent } from './components/assets/assets.component';
 import { ProfileComponent } from './components/profile/profile.component';
-import { MarketPlaceComponent } from './components/market-place/market-place.component';
+
 import { DashMainComponent } from './components/dash-main/dash-main.component';
 import { RegisterPropertyComponent } from './pages/register-property/register-property.component';
+import { SmartcontractsComponent } from './components/smartcontracts/smartcontracts.component';
 
 const routes: Routes = [
   { path: "", redirectTo: "landing-page", pathMatch: 'full' },
@@ -23,7 +24,7 @@ const routes: Routes = [
       { path: 'dash-main', component: DashMainComponent },
       { path: 'transactions', component: TransactionsComponent },
       { path: 'assets', component: AssetsComponent },
-      { path: 'marketplace', component: MarketPlaceComponent },
+      { path: 'smart-contracts', component: SmartcontractsComponent },
       { path: 'profile', component: ProfileComponent },
     ]
   },

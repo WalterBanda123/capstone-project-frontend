@@ -1,0 +1,181 @@
+<div class="w-full my-4 px-2">
+  <div class="w-full px-20 container">
+    <div class="flex flex-row px-10">
+      <div
+        class="w-full relative block border-[1px] border-gray-200 px-2 py-2 rounded-md shadow-sm mt-10"
+      >
+        <span class="absolute inset-y-0 left-0 flex items-center px-1">
+          <svg
+            class="h-5 w-5 fill-slate-500 font-semibold"
+            xmlns="http://www.w3.org/2000/svg"
+            width="30"
+            height="30"
+            viewBox="0 0 30 30"
+          >
+            <path
+              d="M13 3 C 7.4889971 3 3 7.4889971 3 13 C 3 18.511003 7.4889971 23 13 23 C 15.396508 23 17.597385 22.148986 19.322266 20.736328 L 25.292969 26.707031 A 1.0001 1.0001 0 1 0 26.707031 25.292969 L 20.736328 19.322266 C 22.148986 17.597385 23 15.396508 23 13 C 23 7.4889971 18.511003 3 13 3 z M 13 5 C 17.430123 5 21 8.5698774 21 13 C 21 17.430123 17.430123 21 13 21 C 8.5698774 21 5 17.430123 5 13 C 5 8.5698774 8.5698774 5 13 5 z"
+            ></path>
+          </svg>
+        </span>
+        <input
+          type="text"
+          class="ml-6 w-11/12 gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          id="search"
+          type="text"
+          placeholder="Search property ID, owner name, location, status"
+        />
+      </div>
+    </div>
+    <div class="w-full grid grid-cols-3 px-2 gap-4">
+      <section
+        class="border-[1px] border-gray-200 h-24 flex flex-col p-3 rounded-md component-transition"
+      >
+        <div class="text-3xl font-semibold">10</div>
+        <div class="text-gray-600 pt-2">Total Properties</div>
+      </section>
+      <section
+        class="border-[1px] border-gray-200 h-24 flex flex-col p-3 rounded-md component-transition"
+      >
+        <div class="text-3xl font-semibold">3</div>
+        <div class="text-gray-600 pt-2">Pending Transactions</div>
+      </section>
+      <section
+        class="border-[1px] border-gray-200 h-24 flex flex-col p-3 rounded-md component-transition"
+      >
+        <div class="text-3xl font-semibold">5</div>
+        <div class="text-gray-600 pt-2">Smart Contracts</div>
+      </section>
+    </div>
+
+    <div class="w-full container px-2 mt-5">
+      <div
+        class="w-full flex flex-row justify-between items-center border-[1px] border-gray-200 p-3 rounded-md"
+      >
+        <span>
+          <p class="font-semibold text-black">Quick Actions</p>
+          <p class="text-gray-600 pt-1">Common tasks at your fingertips</p>
+        </span>
+        <span>
+          <button
+            class="bg-blue-600 text-white font-medium text-sm w-52 py-1.5 rounded-xl"
+          >
+            Transfer Property
+          </button>
+        </span>
+      </div>
+    </div>
+    <div class="w-full container px-2 mt-5">
+      <div
+        class="w-full flex flex-row justify-between items-center border-[1px] border-gray-200 p-3 rounded-md"
+      >
+        <span>
+          <p class="font-semibold text-black">Update Information</p>
+          <p class="text-gray-600 pt-1">
+            Easily update your property information
+          </p>
+        </span>
+        <span>
+          <button
+            class="bg-blue-600 text-white font-medium text-sm w-52 py-1.5 rounded-xl"
+          >
+            Update Information
+          </button>
+        </span>
+      </div>
+    </div>
+    <div class="w-full container px-2 mt-5">
+      <div
+        class="w-full flex flex-row justify-between items-center border-[1px] border-gray-200 p-3 rounded-md"
+      >
+        <span>
+          <p class="font-semibold text-black">Register New Land</p>
+          <p class="text-gray-600 pt-1">Effortlessly register new land</p>
+        </span>
+        <span>
+          <button
+            routerLink="/dashboard/dash-main/register-property"
+            class="bg-blue-600 text-white font-medium text-sm w-52 py-1.5 rounded-xl"
+          >
+            Register New Land
+          </button>
+        </span>
+      </div>
+    </div>
+
+    <div class="container px-2 mt-10 w-full flex flex-col mb-10">
+      <p class="font-semibold text-black">Smart Contracts</p>
+      <div class="w-11/12 flex flex-row py-5 justify-between items-center">
+        <div class="flex flex-row items-center">
+          <span
+            class="material-symbols-outlined w-10 h-10 bg-neutral-200 px-1 flex flex-row justify-center items-center rounded-md"
+          >
+            real_estate_agent
+          </span>
+          <span class="text-sm ml-2"
+            ><p class="font-semibold">Deed: 801 New Prospect , Waterfalls</p>
+            <p class="text-neutral-800">Token: 0x0390AFD3647E3...</p></span
+          >
+        </div>
+        <div>
+          <span
+            class="inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20"
+            >Active</span
+          >
+        </div>
+      </div>
+      <div class="w-11/12 flex flex-row py-5 justify-between items-center">
+        <div class="flex flex-row items-center">
+          <span
+            class="material-symbols-outlined w-10 h-10 bg-neutral-200 px-1 flex flex-row justify-center items-center rounded-md"
+          >
+            real_estate_agent
+          </span>
+          <span class="text-sm ml-2"
+            ><p class="font-semibold">
+              Deed: 123 Main Street, Cityville, State 12345
+            </p>
+            <p class="text-neutral-800">
+              Token: 0x81D234A1bBcDeF5678901234567890ABCDEF1234
+            </p></span
+          >
+        </div>
+        <div>
+          <span
+            class="inline-flex items-center rounded-md bg-yellow-50 px-2 py-1 text-xs font-medium text-yellow-700 ring-1 ring-inset ring-yellow-600/20"
+            >Inactive</span
+          >
+        </div>
+      </div>
+      <div class="w-11/12 flex flex-row py-5 justify-between items-center">
+        <div class="flex flex-row items-center">
+          <span
+            class="material-symbols-outlined w-10 h-10 bg-neutral-200 px-1 flex flex-row justify-center items-center rounded-md"
+          >
+            real_estate_agent
+          </span>
+          <span class="text-sm ml-2"
+            ><p class="font-semibold">
+              Deed: 456 Elm Avenue, Townsville, State 67890
+            </p>
+            <p class="text-neutral-800">
+              Token: x81D234B2aCdEf5678901234567890abcdef5678
+            </p></span
+          >
+        </div>
+        <div>
+          <span
+            class="inline-flex items-center rounded-md bg-red-50 px-2 py-1 text-xs font-medium text-red-700 ring-1 ring-inset ring-red-600/20"
+            >Suspended</span
+          >
+        </div>
+      </div>
+
+      <button
+        routerLink="/dashboard/dash-main/smart-contracts"
+        class="bg-gray-200 text-black font-medium text-sm w-52 py-1.5 rounded-xl"
+      >
+        View all contracts
+      </button>
+    </div>
+  </div>
+</div>
