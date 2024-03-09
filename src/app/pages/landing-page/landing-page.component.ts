@@ -14,7 +14,6 @@ export class LandingPageComponent implements OnInit {
 
   logsomthing():void{
     console.log('Something to the console');
-
   }
 
 }
