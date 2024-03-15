@@ -15,6 +15,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { environment } from "src/environments/environment";
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { RegistrationComponent } from './pages/registration/registration.component';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
     LoginComponent,
     SignupComponent,
     DashboardComponent,
+    RegistrationComponent,
   ],
   imports: [
     BrowserModule,

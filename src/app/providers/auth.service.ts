@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Auth, User, onAuthStateChanged, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from '@angular/fire/auth';
+import { Auth, User, onAuthStateChanged, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, signInWithEmailLink, ActionCodeSettings, sendSignInLinkToEmail, signOut } from '@angular/fire/auth';
 import { Router } from '@angular/router';
 
 @Injectable({
@@ -27,22 +27,50 @@ export class AuthService {
     return user !== null ? true : false
   }
 
-  handleUserLogin(email: string, password: string) {
-    signInWithEmailAndPassword(this.auth, email, password).then((response) => {
-      console.log('Successful Authentication: ', response);
+  async handleUserLogin(email: string, password: string) {
+    return signInWithEmailAndPassword(this.auth, email, password).then((response) => {
       this.router.navigate(['dashboard'])
+      console.log(response);
+
     }).catch((error) => {
       console.log('Auth failed, Auth error: ', error);
     })
   }
 
-  handleGoogleSignIn() {
-    signInWithPopup(this.auth, new GoogleAuthProvider()).then((response) => {
-      console.log('Google Auth response: ', response);
+  async handleGoogleSignIn() {
+    return await signInWithPopup(this.auth, new GoogleAuthProvider()).then((response) => {
       this.router.navigate(['dashboard'])
     }).catch((error) => {
       console.log('Google Auth Error: ', error);
+    })
+  }
 
+  async signUpWithGoogle() {
+    return await signInWithPopup(this.auth, new GoogleAuthProvider()).then((response) => {
+      console.log(response);
+    }).catch((error) => {
+      console.log(error);
+    })
+  }
+
+  async initialRegistration(email: string): Promise<any> {
+    const actionCodeSettings: ActionCodeSettings = {
+      url: "http://localhost:4200/registration",
+      handleCodeInApp: true
+    }
+    return await sendSignInLinkToEmail(this.auth, email, actionCodeSettings).then((response) => {
+      console.log('Passwordless signin response: ', response);
+    }).catch((error) => {
+      console.log(error);
+    })
+  }
+
+  async signOutUser() {
+    return signOut(this.auth).then((response) => {
+      console.log('Logout response: ', response);
+      this.router.navigate(['login'])
+    }).catch((error) => {
+      console.log(error);
     })
   }
 }
