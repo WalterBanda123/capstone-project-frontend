@@ -6,6 +6,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { AuthGuard } from './guards/auth.guard';
 import { RegistrationComponent } from './pages/registration/registration.component';
+import { OverviewComponent } from './pages/overview/overview.component';
 
 
 const routes: Routes = [
@@ -13,7 +14,12 @@ const routes: Routes = [
   { path: "landing-page", component: LandingPageComponent },
   { path: "get-started", component: GetStartedComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
+  {
+    path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard], children: [
+      { path: 'dashboard', redirectTo: 'overview', pathMatch: 'full' },
+      { path: 'overview', component: OverviewComponent }
+    ]
+  },
   { path: 'registration', component: RegistrationComponent }
 ];
 

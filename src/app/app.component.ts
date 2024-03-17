@@ -16,7 +16,7 @@ export class AppComponent {
           this.spinner.show()
           setTimeout(() => {
             this.spinner.hide()
-          }, 2000);
+          }, 1000);
           break;
         }
         case event instanceof NavigationEnd:

@@ -60,7 +60,6 @@ export class AuthService {
 
   async signOutUser() {
     return signOut(this.auth).then((response) => {
-      console.log('Logout response: ', response);
       this.router.navigate(['login'])
     }).catch((error) => {
       console.log(error);

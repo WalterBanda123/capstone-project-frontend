@@ -12,9 +12,12 @@
 }
 
 .active {
-  @apply text-green-600;
+  @apply border-b-4 border-black;
 }
 
+.search-deed-tabs{
+  @apply border-b-4 border-black;
+}
 
 .custom-scrollbar::-webkit-scrollbar {
   background: transparent; /* Chrome/Safari/Webkit */

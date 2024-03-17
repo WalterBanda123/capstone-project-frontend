@@ -17,6 +17,7 @@ import { environment } from "src/environments/environment";
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { RegistrationComponent } from './pages/registration/registration.component';
 import { FeaturesComponent } from './components/features/features.component';
+import { OverviewComponent } from './pages/overview/overview.component';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { FeaturesComponent } from './components/features/features.component';
     DashboardComponent,
     RegistrationComponent,
     FeaturesComponent,
+    OverviewComponent,
   ],
   imports: [
     BrowserModule,

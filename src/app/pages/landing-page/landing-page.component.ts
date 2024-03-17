@@ -1,4 +1,7 @@
 import { Component, HostListener, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/providers/auth.service';
+import { Location } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-landing-page',
@@ -12,7 +15,12 @@ export class LandingPageComponent implements OnInit {
     this.showMenu = !this.showMenu
   }
 
-  constructor() { }
+  constructor(private router: Router, private location: Location, private authService: AuthService) {
+    if (this.authService.isUserLoggedIn && this.location.path().toString().includes('landing-page')) {
+      this.router.navigate(['dashboard'])
+    }
+  }
+  
   @HostListener('document:click', ['$event'])
   onClickElseWhere(event: MouseEvent) {
     const targetElement = event.target as HTMLElement

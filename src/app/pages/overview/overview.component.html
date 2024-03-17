@@ -1,0 +1,63 @@
+<div class="w-full">
+  <div class="w-full flex flex-row justify-center">
+    <div class="w-2/4 text-black text-center animate-fade-in">
+      <h1 class="text-4xl font-bold mb-10">Unlock Zimbabwe's Land Data</h1>
+      <p class="text-lg py-4 text-center">
+        Access verified title deeds and property details. Our decentralized
+        registry offers transparency and security. Search with precision using
+        advanced filtering options
+      </p>
+    </div>
+  </div>
+  <div class="inset-0 flex justify-center items-center w-full mt-10">
+    <div class="w-full flex flex-row justify-center">
+      <form class="grid grid-cols-12 justify-center w-2/4 shadow-sm">
+        <input
+          type="text"
+          class="py-2 px-4 border border-gray-300 col-span-11"
+          placeholder="Search Property address, city, zip..."
+        />
+        <button
+          type="submit"
+          class="col-span-1 flex flex-row justify-center items-center bg-gray-800 p-1 text-gray-400"
+        >
+          <span class="material-symbols-outlined"> search </span>
+        </button>
+      </form>
+    </div>
+  </div>
+  <div class="w-full flex flex-col items-center mt-20">
+    <div class="w-3/4 h-20">
+      <div class="w-full flex flex-row justify-end gap-x-5">
+        <span
+          class="p-0 cursor-pointer text-base text-center font-semibold"
+          (click)="setSelectedSearchedDeedTab('title')"
+          [class]="
+            selectedSearchedDeedTab === 'title' ? 'search-deed-tabs' : ''
+          "
+        >
+          Title Deed
+        </span>
+        <span
+          (click)="setSelectedSearchedDeedTab('owner')"
+          class="p-0 cursor-pointer text-base text-center font-semibold"
+          [class]="
+            selectedSearchedDeedTab === 'owner' ? 'search-deed-tabs' : ''
+          "
+        >
+          Owner</span
+        >
+        <span
+          (click)="setSelectedSearchedDeedTab('request')"
+          class="p-0 cursor-pointer text-base text-center font-semibold"
+          [class]="
+            selectedSearchedDeedTab === 'request' ? 'search-deed-tabs' : ''
+          "
+        >
+          Request Deed</span
+        >
+      </div>
+    </div>
+    <div class="w-3/4">somthing</div>
+  </div>
+</div>
