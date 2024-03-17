@@ -4,7 +4,7 @@
 @tailwind utilities;
 
 .component-transition {
-  @apply transition-transform transform hover:scale-105 cursor-pointer;
+  @apply transition-transform transform hover:scale-105 cursor-pointer text-sm;
 }
 
 .menu-element {
@@ -19,11 +19,11 @@
   @apply border-b-4 border-black;
 }
 
-.custom-scrollbar::-webkit-scrollbar {
-  background: transparent; /* Chrome/Safari/Webkit */
-  width: 4px;/* Set the desired width (adjust as needed) */
+/* .custom-scrollbar::-webkit-scrollbar {
+  background: transparent;
+  width: 4px;
 
 }
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background-color:black; /* Set your preferred color */
-}
+  background-color:black; 
+} */

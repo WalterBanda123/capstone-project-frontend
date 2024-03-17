@@ -9,7 +9,7 @@ import { AuthService } from 'src/app/providers/auth.service';
 export class DashboardComponent implements OnInit {
 
   constructor(private authService: AuthService) { }
-
+ 
   showMenu:boolean = false
   showMenuPopup():void{
     this.showMenu = !this.showMenu
@@ -35,6 +35,8 @@ export class DashboardComponent implements OnInit {
 
 
   ngOnInit(): void {
+
+
   }
 
 }

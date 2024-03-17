@@ -18,6 +18,7 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { RegistrationComponent } from './pages/registration/registration.component';
 import { FeaturesComponent } from './components/features/features.component';
 import { OverviewComponent } from './pages/overview/overview.component';
+import { TitleDeedComponent } from './components/title-deed/title-deed.component';
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import { OverviewComponent } from './pages/overview/overview.component';
     RegistrationComponent,
     FeaturesComponent,
     OverviewComponent,
+    TitleDeedComponent,
   ],
   imports: [
     BrowserModule,

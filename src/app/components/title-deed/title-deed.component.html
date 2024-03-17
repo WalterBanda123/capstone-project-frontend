@@ -1,0 +1,36 @@
+<div class="w-3/4 shadow-md p-2 shadow-gray-200 my-4 border-gray border-2 ">
+  <div class="font-semibold hover:underline hover:cursor-pointer">{{ title }}: {{ address }}</div>
+  <div class="">
+    <div class="text-sm py-1">Type of Property: <span class="font-medium">{{ propertyType }}</span></div>
+    <div class="flex flex-row">
+      <div class="inline-flex items-center text-sm py-1">
+        <p class="text-gray-600   text-sm flex flex-row items-center">
+          <!-- <span class="material-symbols-outlined text-green-600">
+            verified
+          </span> -->
+          <span class="inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20">Verified</span>
+
+          <svg
+            viewBox="0 0 2 2"
+            class="mx-2 inline h-0.5 w-0.5 fill-current"
+            aria-hidden="true"
+          >
+            <circle cx="1" cy="1" r="1" />
+          </svg>
+          Title ID/Reference Number: {{ titleId }}
+          <svg
+            viewBox="0 0 2 2"
+            class="mx-2 inline h-0.5 w-0.5 fill-current"
+            aria-hidden="true"
+          >
+            <circle cx="1" cy="1" r="1" />
+          </svg>
+          Contract ID: {{ contractId }}
+        </p>
+      </div>
+    </div>
+    <div class="inline-flex gap-x-1 font-medium py-1">
+      <span class="material-symbols-outlined"> account_circle </span><span class="hover:underline hover:cursor-pointer">{{ owner }}</span>
+    </div>
+  </div>
+</div>

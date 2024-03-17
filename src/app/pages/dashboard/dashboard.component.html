@@ -115,6 +115,7 @@
               src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
               alt=""
             />
+            <!-- <p>{{}}</p> -->
           </button>
         </div>
         <div
@@ -163,14 +164,65 @@
     </div>
   </nav>
 </header>
-<main class="min-h-96 flex flex-col justify-center items-center w-full mt-10">
+<main class="min-h-96 flex flex-col justify-center items-center w-full mt-10 p-0">
   <router-outlet></router-outlet>
 </main>
-<footer>
+
+<footer class="bg-gray-900 text-white">
+  <div class="container mx-auto px-10 w-3/4">
+    <div class="grid grid-cols-4 grid-flow-col gap-2 py-10">
+      <section class="flex flex-col col-span-1 p-4">
+        <p class="text-xl mb-4 font-semibold">Learn About Us</p>
+        <ul>
+          <li>What is decentralised Land registry?</li>
+          <li>What is BlockChain Technology</li>
+          <li>What is Smart Contracts</li>
+          <li>What is Title Deed, and Types of Title Deeds</li>
+          <li>What are Land parcel?</li>
+          <li>What's New</li>
+          <li>Blog</li>
+        </ul>
+      </section>
+      <section class="flex flex-col col-span-1 p-4">
+        <p class="text-xl mb-4 font-semibold">Navigation</p>
+        <ul class="">
+          <li>Home</li>
+          <li>About Us</li>
+          <li>FAQs</li>
+          <li>Contact Us</li>
+          <li>Terms of Service</li>
+          <li>Privacy</li>
+          <li>Policy</li>
+        </ul>
+      </section>
+      <section class="flex flex-col col-span-1 p-4">
+        <p class="text-xl mb-4 font-semibold">Documentation</p>
+        <ul class="">
+          <li>Overview of the Platform</li>
+          <li>User Manuals</li>
+          <li>Training</li>
+          <li>Legal Guidelines</li>
+          <li>Compliance Requirements</li>
+          <li>Laws and Regulations</li>
+        </ul>
+      </section>
+      <section class="flex flex-col col-span-1 p-4">
+        <p class="text-xl mb-4 font-semibold">Help & Support</p>
+        <ul class="">
+          <li>Understanding Property Boundaries</li>
+          <li>Land Parcel Identification</li>
+          <li>Ownership Verification Process</li>
+          <li>Land Use Restrictions</li>
+          <li>Land Valuation Guidelines</li>
+          <li>Environmental Regulations</li>
+          <li>Dispute Resolution Procedures</li>
+          <li>Data Security Measures</li>
+        </ul>
+      </section>
+    </div>
+  </div>
   <div class="bg-white w-full flex flex-row justify-center">
-    <p
-      class="my-2 text-base font-normal w-3/4 text-black/80 px-10 border-t-2 border-slate-100 py-2"
-    >
+    <p class="my-4 text-base font-normal w-3/4 text-black/80 px-12">
       <a href="#" class="mx-1">Privacy</a> |
       <a href="#" class="mx-1">Site Terms</a> | © 2024 Zimbabwe Decentralised
       Land Registry, Inc. All rights reserved.
