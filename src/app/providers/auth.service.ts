@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Auth, User, onAuthStateChanged, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, signInWithEmailLink, ActionCodeSettings, sendSignInLinkToEmail, signOut } from '@angular/fire/auth';
+import { Auth, User, onAuthStateChanged, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, signInWithEmailLink, ActionCodeSettings, signOut, createUserWithEmailAndPassword } from '@angular/fire/auth';
 import { Router } from '@angular/router';
 
 @Injectable({
@@ -53,17 +53,10 @@ export class AuthService {
     })
   }
 
-  async initialRegistration(email: string): Promise<any> {
-    const actionCodeSettings: ActionCodeSettings = {
-      url: "http://localhost:4200/registration",
-      handleCodeInApp: true
-    }
-    return await sendSignInLinkToEmail(this.auth, email, actionCodeSettings).then((response) => {
-      console.log('Passwordless signin response: ', response);
-    }).catch((error) => {
-      console.log(error);
-    })
+  registerUser(email: string, password: string): Promise<any> {
+    return createUserWithEmailAndPassword(this.auth, email, password)
   }
+
 
   async signOutUser() {
     return signOut(this.auth).then((response) => {

@@ -1,5 +1,12 @@
-<ngx-spinner bdColor = "white" size = "medium" color = "green" type = "ball-clip-rotate-multiple" [fullScreen] = "true" class="text-green-600"></ngx-spinner>
-<div class="w-full min-h-screen bg-white mb-10">
+<ngx-spinner
+  bdColor="white"
+  size="medium"
+  color="green"
+  type="ball-clip-rotate-multiple"
+  [fullScreen]="true"
+  class="text-green-600"
+></ngx-spinner>
+<div class="isolate w-full min-h-screen bg-white mb-10">
   <div
     class="relative isolate flex items-center gap-x-6 overflow-hidden bg-gray-50 px-6 py-2.5 sm:px-3.5 sm:before:flex-1"
   >
@@ -59,8 +66,21 @@
         "
       ></div>
     </div>
-    <div class="flex flex-wrap items-center gap-x-4 gap-y-2">
+    <div class="flex flex-wrap items-center gap-x-4 gap-y-2 z">
+      <!-- <img
+        routerLink="/landing-page"
+        class="h-8 w-auto rounded-full cursor-pointer "
+        src="./../../../assets/goat-of-arms.jpeg"
+        alt="Your Company"
+      /> -->
       <p class="text-sm leading-6 text-gray-900">
+        <!-- <svg
+          viewBox="0 0 2 2"
+          class="mx-2 inline h-0.5 w-0.5 fill-current"
+          aria-hidden="true"
+        >
+          <circle cx="1" cy="1" r="1" />
+        </svg> -->
         <strong class="font-semibold">Property registration</strong
         ><svg
           viewBox="0 0 2 2"
@@ -96,77 +116,210 @@
       </button>
     </div>
   </div>
-  <div class="w-full flex flex-col justify-center items-center">
-    <div class="w-2/6 flex flex-row mt-14 justify-center">
-      <img
-        src="./../../../assets/blockchain_blue.svg"
-        alt="picture"
-        class="w-[300px] h-[300px]"
-      />
+  <div class="relative isolate w-full">
+    <div
+      class="absolute inset-x-0 -top-20 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
+      aria-hidden="true"
+    >
+      <div
+        class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-slate-500 to-slate-800 opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
+        style="
+          clip-path: polygon(
+            74.1% 44.1%,
+            100% 61.6%,
+            97.5% 26.9%,
+            85.5% 0.1%,
+            80.7% 2%,
+            72.5% 32.5%,
+            60.2% 62.4%,
+            52.4% 68.1%,
+            47.5% 58.3%,
+            45.2% 34.5%,
+            27.5% 76.7%,
+            0.1% 64.9%,
+            17.9% 100%,
+            27.6% 76.8%,
+            76.1% 97.7%,
+            74.1% 44.1%
+          );
+        "
+      ></div>
     </div>
-    <div class="w-2/6 flex flex-col text-center">
-      <h1 class="font-semibold mb-4 text-2xl">
-        Welcome to Zimbabwe Land Registry
-      </h1>
-      <p class="text-gray-600 mb-4">
-        A decentralised land registry for Zimbabwe
-      </p>
-    </div>
-    <div class="mt-4 w-2/6">
-      <form
-        class="space-y-6 px-10"
-        #getstartedForm="ngForm"
-        (submit)="gettingStartedHandler(getstartedForm)"
-      >
-        <div>
-          <label for="email" class="block font-semibold leading-6 text-gray-600"
-            >Full name</label
-          >
-          <div class="mt-2">
-            <input
-              ngModel
-              #fullName="ngModel"
-              id="fullName"
-              name="fullName"
-              type="text"
-              placeholder="Enter Your Full Name"
-              required
-              class="px-2.5 block w-full border-0 py-2.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400"
-            />
-          </div>
-        </div>
-        <div>
-          <label for="email" class="block font-semibold leading-6 text-gray-600"
-            >Email
-          </label>
-          <div class="mt-2">
-            <input
-              ngModel
-              #email="ngModel"
-              id="email"
-              name="email"
-              type="email"
-              autocomplete="email"
-              placeholder="Enter Your Email"
-              required
-              class="px-2.5 block w-full border-0 py-2.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400"
-            />
-          </div>
-        </div>
-        <div class="text-sm">
-          <p>We'll send you confirmation email</p>
-        </div>
-        <button
-          class="bg-gray-200 hover:bg-gray-300 text-black font-semibold py-2 px-4 rounded-xl w-full"
+
+    <div class="w-full flex flex-col justify-center items-center">
+      <div class="w-2/6 flex flex-row mt-14 justify-center text-green-600">
+        <img
+          src="./../../../assets/blockchain_blue.svg"
+          alt="picture"
+          class="w-[200px] h-[200px]"
+        />
+      </div>
+      <div class="w-2/6 flex flex-col text-center">
+        <h1 class="font-semibold mb-4 text-2xl">
+          Welcome to Zimbabwe Land Registry
+        </h1>
+        <p class="text-gray-600 mb-4">
+          A decentralised land registry for Zimbabwe
+        </p>
+      </div>
+      <div class="mt-4 w-2/6">
+        <form
+          class="space-y-6 px-10"
+          #getstartedForm="ngForm"
+          (submit)="handleUserRegistration(getstartedForm)"
         >
-          Continue
-        </button>
-        <div class="text-sm">
-          By clicking Continue, you agree to our
-          <span class="font-semibold">Terms of Service and Privacy Policy</span
-          >.
-        </div>
-      </form>
+          <div>
+            <label
+              for="email"
+              class="block font-semibold leading-6 text-gray-600"
+              >Email</label
+            >
+            <div class="mt-2">
+              <input
+                required="true"
+                ngModel
+                #email="ngModel"
+                id="email"
+                name="email"
+                type="text"
+                placeholder="Enter Your Email"
+                required
+                class="px-2.5 block w-full border-0 py-2.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400"
+              />
+            </div>
+            <span
+              *ngIf="errorMessage"
+              class="inline-flex items-center rounded-md px-2 text-xs font-medium text-red-700"
+              >{{ errorMessage }}</span
+            >
+            <span
+              *ngIf="email.untouched && getstartedForm.submitted"
+              class="inline-flex items-center rounded-md px-2 text-xs font-medium text-red-700"
+              >Email is required</span
+            >
+          </div>
+          <div>
+            <label
+              for="email"
+              class="block font-semibold leading-6 text-gray-600"
+              >Password
+            </label>
+            <div class="mt-2">
+              <input
+                required
+                ngModel
+                #password="ngModel"
+                id="password"
+                name="password"
+                type="password"
+                placeholder="Enter Your Password"
+                required
+                class="px-2.5 block w-full border-0 py-2.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400"
+              />
+            </div>
+            <span
+              *ngIf="password.untouched && getstartedForm.submitted"
+              class="inline-flex items-center rounded-md px-2 text-xs font-medium text-red-700"
+              >Password is required</span
+            >
+          </div>
+          <div>
+            <label
+              for="email"
+              class="block font-semibold leading-6 text-gray-600"
+              >Confirm Password
+            </label>
+            <div class="mt-2">
+              <input
+                required
+                ngModel
+                #email="ngModel"
+                id="confirmPassword"
+                name="confirmPassword"
+                type="password"
+                placeholder="Confirm Password"
+                required
+                class="px-2.5 block w-full border-0 py-2.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400"
+              />
+            </div>
+            <span
+              *ngIf="!isPasswordMatching"
+              class="inline-flex items-center rounded-md px-2 text-xs font-medium text-red-700"
+              >Passwords do not match</span
+            >
+          </div>
+
+          <button
+            [disabled]="email.untouched && password.untouched"
+            class="bg-green-600 hover:bg-green-500 text-white font-semibold py-2 px-4 rounded-md w-full transition-transform transform hover:scale-105"
+          >
+            Continue
+          </button>
+
+          <p class="mt-10 text-center text-sm text-gray-500">
+            Already have an account?
+            <a
+              href="/login"
+              class="font-semibold leading-6 text-blue-600 hover:text-blue-500"
+              >Log in <span aria-hidden="true">&rarr;</span></a
+            >
+          </p>
+          <div class="mt-5 w-full inline-flex justify-center font-semibold">
+            Or
+          </div>
+          <div class="mt-5 w-full inline-flex justify-center">
+            <div
+              (click)="handleGoogleRegistration()"
+              class="w-full border-2 border-gray-200 justify-center py-2 rounded-md font-bold inline-flex items-center hover:bg-gray-300 cursor-pointer transition-transform transform hover:scale-105"
+            >
+              <img
+                class="h-5 w-5 mr-2"
+                src="./../../../assets/google logo.png"
+                alt="Your Company"
+              />
+              Continue with Google
+            </div>
+          </div>
+
+          <div class="text-sm">
+            By clicking Continue, you agree to our
+            <span class="font-semibold"
+              >Terms of Service and Privacy Policy</span
+            >.
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Start Here -->
+    <div
+      class="absolute inset-x-0 -top-20 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
+      aria-hidden="true"
+    >
+      <div
+        class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-slate-500 to-slate-800 opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
+        style="
+          clip-path: polygon(
+            74.1% 44.1%,
+            100% 61.6%,
+            97.5% 26.9%,
+            85.5% 0.1%,
+            80.7% 2%,
+            72.5% 32.5%,
+            60.2% 62.4%,
+            52.4% 68.1%,
+            47.5% 58.3%,
+            45.2% 34.5%,
+            27.5% 76.7%,
+            0.1% 64.9%,
+            17.9% 100%,
+            27.6% 76.8%,
+            76.1% 97.7%,
+            74.1% 44.1%
+          );
+        "
+      ></div>
     </div>
   </div>
+  <!-- End here -->
 </div>
