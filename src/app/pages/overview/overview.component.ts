@@ -14,7 +14,7 @@ export class OverviewComponent implements OnInit {
   constructor(private spinner:NgxSpinnerService) { }
 
 
-  selectedSearchedDeedTab: SelectedDeedTab = 'title'
+  selectedSearchedDeedTab?: SelectedDeedTab  = 'title'
   setSelectedSearchedDeedTab(tab: SelectedDeedTab): void {
     this.spinner.show()
     this.selectedSearchedDeedTab = tab

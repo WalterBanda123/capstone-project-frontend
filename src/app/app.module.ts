@@ -19,6 +19,8 @@ import { RegistrationComponent } from './pages/registration/registration.compone
 import { FeaturesComponent } from './components/features/features.component';
 import { OverviewComponent } from './pages/overview/overview.component';
 import { TitleDeedComponent } from './components/title-deed/title-deed.component';
+import { OwnerProfileComponent } from './components/owner-profile/owner-profile.component';
+import { RequestDeedComponent } from './components/request-deed/request-deed.component';
 
 
 @NgModule({
@@ -33,6 +35,8 @@ import { TitleDeedComponent } from './components/title-deed/title-deed.component
     FeaturesComponent,
     OverviewComponent,
     TitleDeedComponent,
+    OwnerProfileComponent,
+    RequestDeedComponent,
   ],
   imports: [
     BrowserModule,

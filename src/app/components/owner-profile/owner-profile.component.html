@@ -1,0 +1,106 @@
+<div class="w-full">
+  <div class="bg-gray-100 my-10 border-2">
+    <div class="container w-full flex flex-row justify-between px-20">
+      <span class="w-auto h-auto p-3 flex flex-row gap-x-2">
+        <img
+          class="inline-block h-20 w-20 rounded-full ring-2 ring-white"
+          src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+          alt=""
+        />
+        <div class="flex flex-col justify-center">
+          <p
+            class="text-2xl font-medium inline-flex gap-x-2 items-center hover:underline hover:cursor-pointer"
+          >
+            Owner's Name<span
+              class="material-symbols-outlined text-emerald-400"
+            >
+              verified
+            </span>
+          </p>
+          <p class="text-sm text-gray-500 font-medium">
+            Owner's Current Province<svg
+              viewBox="0 0 2 2"
+              class="mx-2 inline h-0.5 w-0.5 fill-current"
+              aria-hidden="true"
+            >
+              <circle cx="1" cy="1" r="1" />
+            </svg>
+            Owner's Current City
+          </p>
+        </div>
+      </span>
+      <span class="flex flex-col justify-center items-center">
+        <button class="border-[1px] border-blue-400 py-2 text-blue-400 px-4">
+          Contact
+        </button>
+      </span>
+    </div>
+    <div class="grid grid-flow-col grid-cols-8">
+      <div class="col-span-5 flex flex-col">
+        <div
+          class="flex flex-row w-full justify-start px-20 gap-x-4 border-gray-200 text-sm font-medium"
+        >
+          <span
+            class="hover:cursor-pointer py-1"
+            [class.active]="selectedTab === 'about'"
+            (click)="setSelectedTab('about')"
+            >About</span
+          >
+          <span
+            class="hover:cursor-pointer py-1"
+            [class.active]="selectedTab === 'network'"
+            (click)="setSelectedTab('network')"
+            >Network</span
+          >
+        </div>
+        <div class="bg-gray-100 px-20 py-3 max-h">
+          <ng-container *ngIf="selectedTab === 'about'">
+            <div class="flex flex-col">
+              <p class="font-semibold">About Section</p>
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat
+                in ex illo! Et optio accusamus voluptas tempora, maiores cum
+                corrupti consectetur dolore inventore cupiditate officia neque
+                fugit consequuntur nostrum architecto! Mollitia, reprehenderit
+                autem. Dolore, quam error! Velit omnis magnam cumque quis iusto,
+                repudiandae harum esse hic non, impedit iste neque dolorem nobis
+                itaque vero similique. Atque ipsum at mollitia quisquam. Sed
+                beatae dignissimos error soluta earum odit quos, laboriosam
+                voluptatem. Reiciendis cumque blanditiis dolores repudiandae
+              </p>
+            </div>
+          </ng-container>
+          <ng-container *ngIf="selectedTab === 'network'">
+            <div class="flex flex-col">
+              <p class="font-semibold">Network Section</p>
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat
+                in ex illo! Et optio accusamus voluptas tempora, maiores cum
+                corrupti consectetur dolore inventore cupiditate officia neque
+                fugit consequuntur nostrum architecto! Mollitia, reprehenderit
+                autem. Dolore, quam error! Velit omnis magnam cumque quis iusto,
+                repudiandae harum esse hic non, impedit iste neque dolorem nobis
+                itaque vero similique. Atque ipsum at mollitia quisquam. Sed
+                beatae dignissimos error soluta earum odit quos, laboriosam
+              </p>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+      <div class="col-span-3 py-8 px-10">
+        <div class="bg-white border-[1px] border-gray-300 flex flex-col my-3">
+          <div class="border-b-[1px] border-gray-100 font-semibold py-2 px-2">
+            Current Location
+          </div>
+          <div class="py-2 px-2">Owner Current Physical Location</div>
+        </div>
+        <div class="bg-white border-[1px] border-gray-300 flex flex-col">
+          <div class="border-b-[1px] border-gray-100 font-semibold py-2 px-2">
+            Type of Ownership
+          </div>
+          <div class="py-2 px-2">Owner Current Physical Location</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

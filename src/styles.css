@@ -12,12 +12,14 @@
 }
 
 .active {
-  @apply border-b-4 border-black;
+  @apply border-b-4 border-black cursor-pointer;
 }
 
 .search-deed-tabs{
   @apply border-b-4 border-black;
 }
+
+
 
 /* .custom-scrollbar::-webkit-scrollbar {
   background: transparent;
@@ -25,5 +27,5 @@
 
 }
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background-color:black; 
+  background-color:black;
 } */
