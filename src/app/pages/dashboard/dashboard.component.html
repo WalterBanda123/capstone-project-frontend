@@ -1,33 +1,5 @@
 <div class="isolate relative">
   <div class="relative isolate ">
-    <div
-      class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl"
-      aria-hidden="true"
-    >
-      <div
-        class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-slate-500 to-slate-800 opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
-        style="
-          clip-path: polygon(
-            74.1% 44.1%,
-            100% 61.6%,
-            97.5% 26.9%,
-            85.5% 0.1%,
-            80.7% 2%,
-            72.5% 32.5%,
-            60.2% 62.4%,
-            52.4% 68.1%,
-            47.5% 58.3%,
-            45.2% 34.5%,
-            27.5% 76.7%,
-            0.1% 64.9%,
-            17.9% 100%,
-            27.6% 76.8%,
-            76.1% 97.7%,
-            74.1% 44.1%
-          );
-        "
-      ></div>
-    </div>
     <header class="bg-white shadow-sm ">
       <nav
         class="mx-auto flex max-w-7xl items-center justify-between p-3 backdrop-blur-md z-50"
@@ -72,7 +44,8 @@
             class="text-black hover:text-black/50 px-3 py-2 text-base font-medium cursor-pointer"
             >Dashboard</a
           >
-          <a
+          <button
+          (click)="openDialog()"
             class="menu-container text-black font-medium px-3 cursor-pointer inline-flex items-center gap-x-1 leading-6 relative hover:active"
           >
             <span>Features</span>
@@ -88,7 +61,7 @@
                 clip-rule="evenodd"
               />
             </svg>
-          </a>
+          </button>
           <a
             href="#"
             class="text-black hover:text-black/50 px-3 py-2 text-base font-medium cursor-pointer"
@@ -199,7 +172,7 @@
       <router-outlet></router-outlet>
     </main>
 
-    <footer class="bg-gray-900 text-white">
+    <footer class="bg-gray-900 text-white mb-5">
       <div class="container mx-auto px-10 w-3/4">
         <div class="grid grid-cols-4 grid-flow-col gap-2 py-10 text-sm">
           <section class="flex flex-col col-span-1 p-4">
@@ -252,8 +225,8 @@
           </section>
         </div>
       </div>
-      <div class="bg-white w-full flex flex-row justify-center text-sm">
-        <p class="my-4 text-base font-normal w-3/4 text-black/80 px-12">
+      <div class="bg-white w-full flex flex-row justify-center text-sm mt-4">
+        <p class=" font-normal w-3/4 text-black/80 px-12">
           <a href="#" class="mx-1">Privacy</a> |
           <a href="#" class="mx-1">Site Terms</a> | © 2024 Zimbabwe
           Decentralised Land Registry, Inc. All rights reserved.

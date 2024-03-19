@@ -1,4 +1,4 @@
-<div class="w-3/4 shadow-md p-2 shadow-gray-200 my-4 border-gray border-2 bg-gray-100">
+<div class="w-3/4 shadow-md p-2 shadow-gray-200 my-4 border-gray border-2 bg-gray-100 ">
   <div class="font-semibold hover:underline hover:cursor-pointer">{{ title }}: {{ address }}</div>
   <div class="">
     <div class="text-sm py-1">Type of Property: <span class="font-medium">{{ propertyType }}</span></div>
@@ -33,4 +33,17 @@
       <span class="material-symbols-outlined"> account_circle </span><span class="hover:underline hover:cursor-pointer">{{ owner }}</span>
     </div>
   </div>
+  <mat-accordion class="bg-gray-100">
+  <mat-expansion-panel hideToggle>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        This is the expansion title
+      </mat-panel-title>
+      <mat-panel-description>
+        This is a summary of the content
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <p>This is the primary content of the panel.</p>
+  </mat-expansion-panel>
+  </mat-accordion>
 </div>

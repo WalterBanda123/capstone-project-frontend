@@ -20,6 +20,13 @@
 }
 
 
+.mat-dialog-container {
+    box-shadow: none;
+    background: #fff;
+    color: rgba(0, 0, 0, .87);
+    border-radius: 0px;
+}
+
 
 /* .custom-scrollbar::-webkit-scrollbar {
   background: transparent;

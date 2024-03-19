@@ -1,0 +1,70 @@
+<div
+  class="container flex flex-col w-full h-full border-[1px] border-gray-200 bg-gray-100"
+>
+  <div class="px-5 my-5">
+    <div class="flex flex-1 justify-end">
+      <button
+        mat-button
+        mat-dialog-close
+        type="button"
+        class="-m-3 p-3 focus-visible:outline-offset-[-4px]"
+      >
+        <span class="sr-only">Dismiss</span>
+        <svg
+          class="h-5 w-5 text-gray-900"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+          aria-hidden="true"
+        >
+          <path
+            d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>
+  <mat-dialog-content class="px-5">
+    <div class="p-2 flex flex-row justify-center items-center">
+      <div class="container px-10 w-3/4 h-3/4 grid grid-col grid-cols-3 gap-10">
+        <section class="col-span-1 flex flex-col">
+          <a class="font-bold text-lg cursor-pointer hover:text-green-500">Register Property</a>
+          <p class="text-sm text-justify">
+            Officially recording ownership rights
+          </p>
+          <a class="font-bold text-lg cursor-pointer hover:text-green-500 ">Smart Contracts</a>
+          <a class="font-bold text-lg cursor-pointer hover:text-green-500 mt-5">Conflict Relosution</a>
+        </section>
+        <section class="col-span-1">
+          <a class="font-bold text-lg cursor-pointer hover:text-green-500 ">Search Deeds</a>
+          <p class="text-sm text-justify">Advanced Title Deed search</p>
+          <a class="font-bold text-lg cursor-pointer">Transactions</a>
+          <ul>
+            <li class="py-1">
+              <a class=" cursor-pointer hover:text-green-500">Selling <span aria-hidden="true">&rarr;</span></a>
+            </li>
+            <li class="py-1">
+              <a class=" cursor-pointer hover:text-green-500 ">Renting <span aria-hidden="true">&rarr;</span></a>
+            </li>
+            <li class="py-1">
+              <a class=" cursor-pointer hover:text-green-500">Leasing <span aria-hidden="true">&rarr;</span></a>
+            </li>
+            <li class="py-1">
+              <a class=" cursor-pointer hover:text-green-500"> Exchanging <span aria-hidden="true">&rarr;</span></a>
+            </li>
+          </ul>
+        </section>
+        <section class="col-span-1">
+          <a class="font-bold text-lg cursor-pointer hover:text-green-500">Transfer Property</a>
+          <p class="text-sm text-justify">
+            Conveying ownership or interest in a property from one party to another
+          </p>
+          <a class="font-bold text-lg cursor-pointer hover:text-green-500"
+            >Validation & Verification</a
+          >
+          <p class="text-sm ">Validating and verifying the authenticity, legality, and accuracy of property-related documents, information, or transactions.</p>
+
+        </section>
+      </div>
+    </div>
+  </mat-dialog-content>
+</div>

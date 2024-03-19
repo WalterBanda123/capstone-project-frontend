@@ -13,7 +13,7 @@ export class OverviewComponent implements OnInit {
 
   constructor(private spinner:NgxSpinnerService) { }
 
-
+  isSearched:boolean = false
   selectedSearchedDeedTab?: SelectedDeedTab  = 'title'
   setSelectedSearchedDeedTab(tab: SelectedDeedTab): void {
     this.spinner.show()

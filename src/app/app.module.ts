@@ -4,6 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { provideAuth, getAuth } from "@angular/fire/auth"
 import { initializeApp, provideFirebaseApp } from "@angular/fire/app"
+import { MatDialogModule } from '@angular/material/dialog'
+import { MatExpansionModule } from '@angular/material/expansion'
 
 import { NgxSpinnerModule } from "ngx-spinner";
 import { AppRoutingModule } from './app-routing.module';
@@ -21,6 +23,9 @@ import { OverviewComponent } from './pages/overview/overview.component';
 import { TitleDeedComponent } from './components/title-deed/title-deed.component';
 import { OwnerProfileComponent } from './components/owner-profile/owner-profile.component';
 import { RequestDeedComponent } from './components/request-deed/request-deed.component';
+import { MenuPanelComponent } from './components/menu-panel/menu-panel.component';
+import { ContractsComponent } from './pages/contracts/contracts.component';
+import { PropertiesComponent } from './pages/properties/properties.component';
 
 
 @NgModule({
@@ -37,6 +42,9 @@ import { RequestDeedComponent } from './components/request-deed/request-deed.com
     TitleDeedComponent,
     OwnerProfileComponent,
     RequestDeedComponent,
+    MenuPanelComponent,
+    ContractsComponent,
+    PropertiesComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,8 +53,9 @@ import { RequestDeedComponent } from './components/request-deed/request-deed.com
     BrowserAnimationsModule,
     FormsModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
-    provideAuth(() => getAuth())
-
+    provideAuth(() => getAuth()),
+    MatDialogModule,
+    MatExpansionModule
   ],
   providers: [],
   bootstrap: [AppComponent],

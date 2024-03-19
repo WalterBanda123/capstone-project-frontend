@@ -1,8 +1,8 @@
 <div class="w-full">
   <div class="w-full flex flex-row justify-center">
     <div class="w-2/4 text-black text-center animate-fade-in">
-      <h1 class="text-4xl font-bold mb-10">Unlock Zimbabwe's Land Data</h1>
-      <p class="text-lg py-4 text-center">
+      <p class="text-4xl font-bold mb-10">Unlock Zimbabwe's Land Data</p>
+      <p class="text-base py-4 text-center">
         Access verified title deeds and property details. Our decentralized
         registry offers transparency and security. Search with precision using
         advanced filtering options
@@ -26,6 +26,7 @@
       </form>
     </div>
   </div>
+  <ng-container *ngIf="isSearched">
   <div class="w-full flex flex-col items-center mt-20">
     <div class="w-3/4 h-20">
       <div
@@ -172,4 +173,5 @@
       <app-request-deed></app-request-deed>
     </div>
   </div>
+  </ng-container>
 </div>
