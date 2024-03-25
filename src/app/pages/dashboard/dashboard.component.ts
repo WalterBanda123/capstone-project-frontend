@@ -1,5 +1,5 @@
 import { Component, HostListener, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { MenuPanelComponent } from 'src/app/components/menu-panel/menu-panel.component';
 import { AuthService } from 'src/app/providers/auth.service';
 
@@ -12,6 +12,7 @@ export class DashboardComponent implements OnInit {
 
   constructor(private authService: AuthService, private dialog: MatDialog) { }
 
+  dialogRef: MatDialogRef<any> | undefined = undefined
   showMenu: boolean = false
   showMenuPopup(): void {
     this.showMenu = !this.showMenu
@@ -37,10 +38,19 @@ export class DashboardComponent implements OnInit {
 
 
   openDialog(): void {
-    const dialogRef = this.dialog.open(MenuPanelComponent, { hasBackdrop: false, position: { top: "50px", left: '', right: '', bottom: '' } })
-    dialogRef.afterOpened().subscribe(() => { }).closed
-  }
+    if (this.dialogRef?.getState() === undefined) {
+      this.dialogRef = this.dialog.open(MenuPanelComponent,
+        {
+          hasBackdrop: false,
+          position: { top: "50px", left: '', right: '', bottom: '' },
+        })
 
+      this.dialogRef.componentInstance.handleClose.subscribe((event: Event) => {
+        this.dialogRef?.close()
+        this.dialogRef = undefined
+      })
+    }
+  }
   ngOnInit(): void {
 
 

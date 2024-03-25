@@ -14,13 +14,13 @@
       <div class="flex space-x-4">
         <a
           href="#"
-          class="text-black rounded-md px-3 py-2 font-medium text-base cursor-pointer"
+          class="text-black rounded-md px-3 py-2 font-medium text-base cursor-pointer transition-transform transform hover:scale-105"
           aria-current="page"
           >Overview
         </a>
         <a
           (mouseenter)="showFeaturesMenu()"
-          class="menu-container text-black font-medium px-3 cursor-pointer inline-flex items-center gap-x-1 leading-6 relative"
+          class="menu-container text-black font-medium px-3 cursor-pointer inline-flex items-center gap-x-1 leading-6 relative transition-transform transform hover:scale-105"
           ><span>Features</span>
           <svg
             class="h-5 w-5 mt-1"
@@ -38,7 +38,7 @@
         </a>
         <a
           href="#"
-          class="text-black hover:text-black/50 rounded-md px-3 py-2 text-base font-medium cursor-pointer"
+          class="text-black hover:text-black/50 rounded-md px-3 py-2 text-base font-medium cursor-pointer transition-transform transform hover:scale-105"
           >FAQs</a
         >
         <a
@@ -102,9 +102,9 @@
         </div>
       </div>
       <div class="text-center animate-fade-in">
-        <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+        <p class="text-4xl font-bold tracking-tight text-gray-900">
           Decentralised Land Registry for Zimbabwe
-        </h1>
+        </p>
         <p class="mt-6 leading-8 text-gray-600">
           Zimbabwe Land Registry is a Decentralised system that securely stores
           land ownership records on the blockchain. It allows landowners,

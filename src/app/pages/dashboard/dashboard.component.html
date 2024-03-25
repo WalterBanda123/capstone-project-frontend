@@ -1,6 +1,6 @@
 <div class="isolate relative">
-  <div class="relative isolate ">
-    <header class="bg-white shadow-sm ">
+  <div class="relative isolate">
+    <header class="bg-white shadow-sm">
       <nav
         class="mx-auto flex max-w-7xl items-center justify-between p-3 backdrop-blur-md z-50"
         aria-label="Global"
@@ -45,7 +45,9 @@
             >Dashboard</a
           >
           <button
-          (click)="openDialog()"
+
+
+            (click)="openDialog()"
             class="menu-container text-black font-medium px-3 cursor-pointer inline-flex items-center gap-x-1 leading-6 relative hover:active"
           >
             <span>Features</span>
@@ -63,12 +65,14 @@
             </svg>
           </button>
           <a
-            href="#"
+            routerLink="/dashboard/contracts"
+            [routerLinkActive]="'active'"
             class="text-black hover:text-black/50 px-3 py-2 text-base font-medium cursor-pointer"
-            >Contracts</a
+            >Blockchain Insights</a
           >
           <a
-            href="#"
+            routerLink="/dashboard/properties"
+            [routerLinkActive]="'active'"
             class="text-black hover:text-black/50 px-3 py-2 text-base font-medium cursor-pointer"
             >Properties</a
           >
@@ -78,6 +82,7 @@
           class="inset-y-0 right-0 flex flex-1 justify-end pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0"
         >
           <button
+          matBadge="7"
             type="button"
             class="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
           >
@@ -138,7 +143,6 @@
                 Sign out
               </button>
               <a
-                href="#"
                 class="block px-4 py-2 text-sm text-gray-700"
                 role="menuitem"
                 tabindex="-1"
@@ -146,7 +150,6 @@
                 >Your Profile</a
               >
               <a
-                href="#"
                 class="block px-4 py-2 text-sm text-gray-700"
                 role="menuitem"
                 tabindex="-1"
@@ -166,67 +169,13 @@
         </div>
       </nav>
     </header>
-    <main
-      class="min-h-96 flex flex-col justify-center items-center w-full mt-10 p-0"
-    >
+    <main class="min-h-96 flex flex-col w-full mt-10 p-0">
       <router-outlet></router-outlet>
     </main>
 
     <footer class="bg-gray-900 text-white mb-5">
-      <div class="container mx-auto px-10 w-3/4">
-        <div class="grid grid-cols-4 grid-flow-col gap-2 py-10 text-sm">
-          <section class="flex flex-col col-span-1 p-4">
-            <p class="text-xl mb-4 font-semibold">Learn About Us</p>
-            <ul>
-              <li>What is decentralised Land registry?</li>
-              <li>What is BlockChain Technology</li>
-              <li>What is Smart Contracts</li>
-              <li>What is Title Deed, and Types of Title Deeds</li>
-              <li>What are Land parcel?</li>
-              <li>What's New</li>
-              <li>Blog</li>
-            </ul>
-          </section>
-          <section class="flex flex-col col-span-1 p-4">
-            <p class="text-xl mb-4 font-semibold">Navigation</p>
-            <ul class="">
-              <li>Home</li>
-              <li>About Us</li>
-              <li>FAQs</li>
-              <li>Contact Us</li>
-              <li>Terms of Service</li>
-              <li>Privacy</li>
-              <li>Policy</li>
-            </ul>
-          </section>
-          <section class="flex flex-col col-span-1 p-4">
-            <p class="text-xl mb-4 font-semibold">Documentation</p>
-            <ul class="">
-              <li>Overview of the Platform</li>
-              <li>User Manuals</li>
-              <li>Training</li>
-              <li>Legal Guidelines</li>
-              <li>Compliance Requirements</li>
-              <li>Laws and Regulations</li>
-            </ul>
-          </section>
-          <section class="flex flex-col col-span-1 p-4">
-            <p class="text-xl mb-4 font-semibold">Help & Support</p>
-            <ul class="">
-              <li>Understanding Property Boundaries</li>
-              <li>Land Parcel Identification</li>
-              <li>Ownership Verification Process</li>
-              <li>Land Use Restrictions</li>
-              <li>Land Valuation Guidelines</li>
-              <li>Environmental Regulations</li>
-              <li>Dispute Resolution Procedures</li>
-              <li>Data Security Measures</li>
-            </ul>
-          </section>
-        </div>
-      </div>
       <div class="bg-white w-full flex flex-row justify-center text-sm mt-4">
-        <p class=" font-normal w-3/4 text-black/80 px-12">
+        <p class="font-normal w-3/4 text-black/80 px-12">
           <a href="#" class="mx-1">Privacy</a> |
           <a href="#" class="mx-1">Site Terms</a> | © 2024 Zimbabwe
           Decentralised Land Registry, Inc. All rights reserved.

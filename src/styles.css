@@ -12,7 +12,11 @@
 }
 
 .active {
-  @apply border-b-4 border-black cursor-pointer;
+  @apply border-b-4 border-green-600 cursor-pointer;
+}
+
+.menu-panel-active{
+  @apply text-green-600
 }
 
 .search-deed-tabs{
@@ -27,7 +31,9 @@
     border-radius: 0px;
 }
 
-
+body{
+  color: rgba(0, 0, 0, .87);
+}
 /* .custom-scrollbar::-webkit-scrollbar {
   background: transparent;
   width: 4px;

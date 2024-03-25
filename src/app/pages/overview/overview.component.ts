@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { NgxSpinnerService } from 'ngx-spinner';
 
 
@@ -11,14 +12,26 @@ type SelectedDeedTab = 'title' | 'owner' | 'request'
 })
 export class OverviewComponent implements OnInit {
 
-  constructor(private spinner:NgxSpinnerService) { }
+  constructor(private spinner: NgxSpinnerService) { }
 
-  isSearched:boolean = false
-  selectedSearchedDeedTab?: SelectedDeedTab  = 'title'
+  isSearched: boolean = false
+  handleTitleDeedSearch(form: NgForm): void {
+    this.spinner.show()
+
+    setTimeout(() => {
+      const { titleDeed } = form.value
+      if (titleDeed) {
+        this.isSearched = true
+        this.spinner.hide()
+      }
+    }, 1500);
+  }
+
+  selectedSearchedDeedTab?: SelectedDeedTab = 'title'
   setSelectedSearchedDeedTab(tab: SelectedDeedTab): void {
     this.spinner.show()
     this.selectedSearchedDeedTab = tab
-    setTimeout(()=>{
+    setTimeout(() => {
       this.spinner.hide()
     }, 1500)
   }

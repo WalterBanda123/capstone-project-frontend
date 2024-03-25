@@ -6,6 +6,10 @@ import { provideAuth, getAuth } from "@angular/fire/auth"
 import { initializeApp, provideFirebaseApp } from "@angular/fire/app"
 import { MatDialogModule } from '@angular/material/dialog'
 import { MatExpansionModule } from '@angular/material/expansion'
+import { MatTableModule } from '@angular/material/table'
+import { MatRippleModule } from "@angular/material/core";
+import { MatBadgeModule } from "@angular/material/badge";
+
 
 import { NgxSpinnerModule } from "ngx-spinner";
 import { AppRoutingModule } from './app-routing.module';
@@ -26,6 +30,12 @@ import { RequestDeedComponent } from './components/request-deed/request-deed.com
 import { MenuPanelComponent } from './components/menu-panel/menu-panel.component';
 import { ContractsComponent } from './pages/contracts/contracts.component';
 import { PropertiesComponent } from './pages/properties/properties.component';
+import { FeaturesTemplateComponent } from './pages/features-template/features-template.component';
+import { RegisterPropertyComponent } from './pages/register-property/register-property.component';
+import { SmartContractsComponent } from './pages/smart-contracts/smart-contracts.component';
+import { ConflictResolutionComponent } from './pages/conflict-resolution/conflict-resolution.component';
+import { TransferPropertyComponent } from './pages/transfer-property/transfer-property.component';
+import { VerificationValidationComponent } from './pages/verification-validation/verification-validation.component';
 
 
 @NgModule({
@@ -45,6 +55,12 @@ import { PropertiesComponent } from './pages/properties/properties.component';
     MenuPanelComponent,
     ContractsComponent,
     PropertiesComponent,
+    FeaturesTemplateComponent,
+    RegisterPropertyComponent,
+    SmartContractsComponent,
+    ConflictResolutionComponent,
+    TransferPropertyComponent,
+    VerificationValidationComponent,
   ],
   imports: [
     BrowserModule,
@@ -55,7 +71,10 @@ import { PropertiesComponent } from './pages/properties/properties.component';
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     MatDialogModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatTableModule,
+    MatRippleModule,
+    MatBadgeModule
   ],
   providers: [],
   bootstrap: [AppComponent],
