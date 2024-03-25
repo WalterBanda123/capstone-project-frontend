@@ -1,0 +1,116 @@
+<div class="w-full flex flex-col py-2">
+  <div class="w-3/4 flex flex-col">
+    <div class="w-full flex flex-row my-2 text-sm">
+      <div class="w-1/12">
+        <span class="material-symbols-outlined"> text_snippet </span>
+      </div>
+      <div class="w-11/12 flex flex-col p-0">
+        <p class="p-0 font-semibold hover:underline cursor-pointer">
+          Smart contract created for title, description,
+        </p>
+        <p class="p-0 text-xs text-gray-400">
+          <time datetime="2006-08-05T00:00:00">{{ currentDate }}</time>
+        </p>
+        <small class="text-xs font-medium">Contract: 0x32dbh12bcc42...</small>
+      </div>
+    </div>
+    <section class="py-4 text-base font-semibold">
+      <p>Property Registration</p>
+    </section>
+    <div
+      class="w-full flex flex-row justify-between mb-5 border-2 border-gray-200 px-2 py-4 shadow-lg shadow-gray-100"
+    >
+      <div class="flex flex-col">
+        <p class="text-sm font-semibold">Property 3</p>
+        <span
+          class="w-40 justify-center inline-flex items-center rounded-md bg-yellow-50 px-2 py-1 text-xs font-medium text-yellow-800 ring-1 ring-inset ring-yellow-600/20"
+          >Pending Registration</span
+        >
+      </div>
+      <div class="flex flex-col">
+        <button
+          class="font-semibold text-sm bg-blue-500 py-1 px-2 text-white transition-transform transform hover:scale-105"
+        >
+          Complete registration
+        </button>
+      </div>
+    </div>
+    <div
+      class="w-full flex flex-row justify-between mb-5 border-2 border-gray-200 px-2 py-4 shadow-lg shadow-gray-100"
+    >
+      <div class="flex flex-col">
+        <p class="text-sm font-semibold">Property 2</p>
+        <span
+          class="w-40 justify-center inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-medium text-green-800 ring-1 ring-inset ring-green-600/20"
+          >Registered</span
+        >
+      </div>
+      <div class="flex flex-col">
+        <button
+          class="font-semibold text-sm bg-gray-500 py-1 px-2 text-white transition-transform transform hover:scale-105"
+        >
+          View Details
+        </button>
+      </div>
+    </div>
+    <section class="py-4 text-base font-semibold">
+      <p>Requests</p>
+    </section>
+    <div
+      class="w-full flex flex-col border-[1px] border-gray-200 mb-10 px-2 py-4 text-sm"
+    >
+      <div class="w-full flex flex-row gap-5">
+        <div class="w-1/2 flex flex-col">
+          <p class="font-xs">
+            <span class="font-semibold text-sm">Title:</span>
+            {{ recentRequest.title }}
+          </p>
+          <p>
+            <span class="font-semibold">Property requested: </span>
+            {{ recentRequest.property }}
+          </p>
+
+          <p>
+            <span class="font-semibold">Author: </span>
+            {{ recentRequest.author }}
+          </p>
+          <p>
+            <span class="font-semibold">Cell phone: </span>
+            {{ recentRequest.cellPhone }}
+          </p>
+          <p>
+            <span class="font-semibold">Requested by: </span
+            >{{ recentRequest.requestedBy }}
+          </p>
+          <p>
+            <span class="font-semibold">Submited on: </span>
+            <time>{{ recentRequest.submittedOn }}</time>
+          </p>
+          <p>
+            <span class="font-semibold">Needed by date: </span>
+            <time datetime="2006-08-05T00:00:00">{{
+              recentRequest.neededByDate
+            }}</time>
+          </p>
+        </div>
+        <div class="w-1/2 flex flex-col">
+          <p>
+            <span class="font-semibold">Request status: </span
+            >{{ recentRequest.requestStatus }}
+          </p>
+          <p>
+            <span class="font-semibold">Request validity: </span
+            >{{ recentRequest.requestValidity }}
+          </p>
+        </div>
+      </div>
+      <div class="w-full flex flex-row justify-end">
+        <button
+          class="font-semibold text-sm bg-blue-500 py-1 px-2 text-white transition-transform transform hover:scale-105"
+        >
+          Additional information
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

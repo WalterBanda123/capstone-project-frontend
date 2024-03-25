@@ -33,6 +33,9 @@
       </form>
     </div>
   </div>
+  <ng-container *ngIf="!isSearched">
+    <app-quick-overview [selectedOverview]="selectedOverview" (handleSelectedOverview)="handleSelectedOverview($event)"></app-quick-overview>
+  </ng-container>
   <ng-container *ngIf="isSearched">
     <div class="w-full flex flex-col items-center mt-20">
       <div class="w-3/4 h-20">

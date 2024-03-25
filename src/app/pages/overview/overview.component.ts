@@ -14,7 +14,17 @@ export class OverviewComponent implements OnInit {
 
   constructor(private spinner: NgxSpinnerService) { }
 
+  selectedOverview: 'recent' | 'property' | 'smart-contract' | 'quick-action' = 'recent'
+
   isSearched: boolean = false
+  handleSelectedOverview(tab: any): void {
+    this.spinner.show()
+
+    setTimeout(() => {
+      this.selectedOverview = tab
+      this.spinner.hide()
+    }, 1000);
+  }
   handleTitleDeedSearch(form: NgForm): void {
     this.spinner.show()
 
@@ -22,8 +32,8 @@ export class OverviewComponent implements OnInit {
       const { titleDeed } = form.value
       if (titleDeed) {
         this.isSearched = true
-        this.spinner.hide()
       }
+      this.spinner.hide()
     }, 1500);
   }
 

@@ -36,6 +36,8 @@ import { SmartContractsComponent } from './pages/smart-contracts/smart-contracts
 import { ConflictResolutionComponent } from './pages/conflict-resolution/conflict-resolution.component';
 import { TransferPropertyComponent } from './pages/transfer-property/transfer-property.component';
 import { VerificationValidationComponent } from './pages/verification-validation/verification-validation.component';
+import { QuickOverviewComponent } from './components/quick-overview/quick-overview.component';
+import { RecentActivitiesComponent } from './components/recent-activities/recent-activities.component';
 
 
 @NgModule({
@@ -61,6 +63,8 @@ import { VerificationValidationComponent } from './pages/verification-validation
     ConflictResolutionComponent,
     TransferPropertyComponent,
     VerificationValidationComponent,
+    QuickOverviewComponent,
+    RecentActivitiesComponent,
   ],
   imports: [
     BrowserModule,

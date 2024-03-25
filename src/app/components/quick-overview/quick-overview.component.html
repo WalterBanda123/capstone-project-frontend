@@ -1,0 +1,41 @@
+<div class="w-full flex flex-col items-center mt-20">
+  <div class="w-3/4 h-20">
+    <div
+      class="w-full flex flex-row justify-start gap-x-5 border-[1px] border-gray-300 py-3.5 px-2"
+    >
+      <span
+        class="p-0 cursor-pointer text-base text-center font-semibold"
+        (click)="onClick('recent')"
+        [class]="selectedOverview === 'recent' ? 'active' : ''"
+      >
+        Recent Activities
+      </span>
+      <span
+        class="p-0 cursor-pointer text-base text-center font-semibold"
+        (click)="onClick('property')"
+        [class]="selectedOverview === 'property' ? 'active' : ''"
+      >
+        Property Overview</span
+      >
+      <span
+        class="p-0 cursor-pointer text-base text-center font-semibold"
+        (click)="onClick('smart-contract')"
+        [class]="selectedOverview === 'smart-contract' ? 'active' : ''"
+      >
+        Smart Contract Overview</span
+      >
+      <span
+        class="p-0 cursor-pointer text-base text-center font-semibold"
+        (click)="onClick('quick-action')"
+        [class]="selectedOverview === 'quick-action' ? 'active' : ''"
+      >
+        Quick Action</span
+      >
+    </div>
+    <div class="w-3/4">
+      <ng-container *ngIf="selectedOverview === 'recent'">
+        <app-recent-activities></app-recent-activities>
+      </ng-container>
+    </div>
+  </div>
+</div>
