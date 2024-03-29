@@ -38,6 +38,12 @@ import { TransferPropertyComponent } from './pages/transfer-property/transfer-pr
 import { VerificationValidationComponent } from './pages/verification-validation/verification-validation.component';
 import { QuickOverviewComponent } from './components/quick-overview/quick-overview.component';
 import { RecentActivitiesComponent } from './components/recent-activities/recent-activities.component';
+import { SectionOneComponent } from './components/registration-sections/section-one/section-one.component';
+import { OwnershipDetailsComponent } from './components/registration-sections/ownership-details/ownership-details.component';
+import { PropertyFeaturesComponent } from './components/registration-sections/property-features/property-features.component';
+import { LegalRegulatoryComponent } from './components/registration-sections/legal-regulatory/legal-regulatory.component';
+import { AdditionalDocumentationComponent } from './components/registration-sections/additional-documentation/additional-documentation.component';
+import { PurchasePriceComponent } from './components/registration-sections/purchase-price/purchase-price.component';
 
 
 @NgModule({
@@ -65,6 +71,12 @@ import { RecentActivitiesComponent } from './components/recent-activities/recent
     VerificationValidationComponent,
     QuickOverviewComponent,
     RecentActivitiesComponent,
+    SectionOneComponent,
+    OwnershipDetailsComponent,
+    PropertyFeaturesComponent,
+    LegalRegulatoryComponent,
+    AdditionalDocumentationComponent,
+    PurchasePriceComponent,
   ],
   imports: [
     BrowserModule,

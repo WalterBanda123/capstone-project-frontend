@@ -15,6 +15,12 @@ import { SmartContractsComponent } from './pages/smart-contracts/smart-contracts
 import { ConflictResolutionComponent } from './pages/conflict-resolution/conflict-resolution.component';
 import { TransferPropertyComponent } from './pages/transfer-property/transfer-property.component';
 import { VerificationValidationComponent } from './pages/verification-validation/verification-validation.component';
+import { SectionOneComponent } from './components/registration-sections/section-one/section-one.component';
+import { AdditionalDocumentationComponent } from './components/registration-sections/additional-documentation/additional-documentation.component';
+import { LegalRegulatoryComponent } from './components/registration-sections/legal-regulatory/legal-regulatory.component';
+import { OwnershipDetailsComponent } from './components/registration-sections/ownership-details/ownership-details.component';
+import { PropertyFeaturesComponent } from './components/registration-sections/property-features/property-features.component';
+import { PurchasePriceComponent } from './components/registration-sections/purchase-price/purchase-price.component';
 
 
 const routes: Routes = [
@@ -30,7 +36,16 @@ const routes: Routes = [
       { path: 'overview', component: OverviewComponent },
       {
         path: 'features', component: FeaturesTemplateComponent, children: [
-          { path: 'register-property', component: RegisterPropertyComponent },
+          {
+            path: 'register-property', component: RegisterPropertyComponent, children: [
+              { path: 'section-one', component: SectionOneComponent },
+              { path: 'additional-documentation', component: AdditionalDocumentationComponent },
+              { path: 'legal-regulatory', component: LegalRegulatoryComponent },
+              { path: 'ownership-details', component: OwnershipDetailsComponent },
+              { path: 'property-features', component: PropertyFeaturesComponent },
+              { path: 'purchase-price', component: PurchasePriceComponent },
+            ]
+          },
           { path: 'smart-contracts', component: SmartContractsComponent },
           { path: 'conflict-resolution', component: ConflictResolutionComponent },
           { path: 'transfer-property', component: TransferPropertyComponent },

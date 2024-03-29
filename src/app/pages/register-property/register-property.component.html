@@ -1,3 +1,84 @@
-<div class="w-full flex flex-row h-screen justify-center items-center">
-  Register Property page
+<div class="w-full flex flex-row h-screen justify-center">
+  <div class="w-3/4 grid grid-flow-col grid-cols-12 gap-5">
+    <section class="col-span-3 h-screen">
+      <div class="inline-flex justify-center">
+        <span class="font-semibold text-green-600">Features</span>
+        <span class="material-symbols-outlined"> navigate_next </span>
+        <span class="text-blue-500 font-semibold">Register Property</span>
+      </div>
+      <ul>
+        <li
+          class="cursor-pointer my-4"
+          routerLink="/dashboard/features/register-property/section-one"
+          [ngClass]="{
+            activesection: isRouteActive(
+              '/dashboard/features/register-property/section-one'
+            )
+          }"
+        >
+          Basic Property Information:
+        </li>
+        <li
+         class="cursor-pointer my-4"
+          routerLink="/dashboard/features/register-property/ownership-details"
+          [ngClass]="{
+            activesection: isRouteActive(
+              '/dashboard/features/register-property/ownership-details'
+            )
+          }"
+        >
+          Ownership Details:
+        </li>
+        <li
+         class="cursor-pointer my-4"
+          routerLink="/dashboard/features/register-property/property-features"
+          [ngClass]="{
+            activesection: isRouteActive(
+              '/dashboard/features/register-property/property-features'
+            )
+          }"
+        >
+          Property Features:
+        </li>
+        <li
+         class="cursor-pointer my-4"
+          routerLink="/dashboard/features/register-property/legal-regulatory"
+          [ngClass]="{
+            activesection: isRouteActive(
+              '/dashboard/features/register-property/legal-regulatory'
+            )
+          }"
+        >
+          Legal and Regulatory Information:
+        </li>
+        <li
+         class="cursor-pointer my-4"
+          routerLink="/dashboard/features/register-property/additional-documentation"
+          [ngClass]="{
+            activesection: isRouteActive(
+              '/dashboard/features/register-property/additional-documentation'
+            )
+          }"
+        >
+          Additional Documentation:
+        </li>
+        <li
+         class="cursor-pointer my-4"
+          routerLink="/dashboard/features/register-property/purchase-price"
+          [ngClass]="{
+            activesection: isRouteActive(
+              '/dashboard/features/register-property/purchase-price'
+            )
+          }"
+        >
+          Purchase price
+        </li>
+      </ul>
+    </section>
+    <section class="col-span-9 overflow-y-auto">
+      <div class="w-full">
+        <router-outlet></router-outlet>
+      </div>
+    </section>
+  </div>
 </div>
