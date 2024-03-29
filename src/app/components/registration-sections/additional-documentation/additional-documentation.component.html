@@ -1,8 +1,39 @@
-<b>Additional Documentation:</b>
+<div class="w-full">
+  <div class="border-b border-gray-900/10 pb-12">
+    <p class="text-base font-semibold leading-7 text-gray-900">
+      Additional Documentation
+    </p>
+    <p class="mt-1 text-sm leading-6 text-gray-900 italic">
+      *Photos of the property (interior and exterior) Property surveys or site
+      plans
+      <br />
+       Any other relevant documents or certificates Transaction Details (if
+      applicable):
+    </p>
 
-Photos of the property (interior and exterior)
-Property surveys or site plans
-Any other relevant documents or certificates
-Transaction Details (if applicable):
-
-
+    <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6 mb-20">
+      <div class="sm:col-span-3">
+        <label
+          for="country"
+          class="block text-sm font-medium leading-6 text-gray-900"
+          >Building type
+          <span class="text-xs font-normal italic"
+            >*(if applicable: house, apartment, office building, etc.)</span
+          ></label
+        >
+        <div class="mt-2">
+          <select
+            id="country"
+            name="country"
+            autocomplete="country-name"
+            class="block w-full rounded-sm border-0 py-2 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
+          >
+            <option>House</option>
+            <option>Apartment</option>
+            <option>Office building</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

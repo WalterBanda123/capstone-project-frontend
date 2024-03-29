@@ -16,7 +16,7 @@
 }
 
 .activesection{
-  @apply text-green-600 cursor-pointer 
+  @apply text-green-600 cursor-pointer italic
 }
 
 .menu-panel-active{
@@ -47,6 +47,12 @@ body{
 .custom-scrollbar::-webkit-scrollbar-thumb {
   background-color:black;
 } */
+
+
+/* Hide scrollbar for specific elements */
+.section-element::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
 
 
 

@@ -1,4 +1,4 @@
-<div class="w-full flex flex-row h-screen justify-center">
+<div class="w-full flex flex-row fixed h-screen justify-center">
   <div class="w-3/4 grid grid-flow-col grid-cols-12 gap-5">
     <section class="col-span-3 h-screen">
       <div class="inline-flex justify-center">
@@ -6,7 +6,7 @@
         <span class="material-symbols-outlined"> navigate_next </span>
         <span class="text-blue-500 font-semibold">Register Property</span>
       </div>
-      <ul>
+      <ul class="mt-14">
         <li
           class="cursor-pointer my-4"
           routerLink="/dashboard/features/register-property/section-one"
@@ -75,8 +75,8 @@
         </li>
       </ul>
     </section>
-    <section class="col-span-9 overflow-y-auto">
-      <div class="w-full">
+    <section class="col-span-9 overflow-y-auto section-element">
+      <div class="w-full mb-20">
         <router-outlet></router-outlet>
       </div>
     </section>
