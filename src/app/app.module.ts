@@ -44,6 +44,12 @@ import { PropertyFeaturesComponent } from './components/registration-sections/pr
 import { LegalRegulatoryComponent } from './components/registration-sections/legal-regulatory/legal-regulatory.component';
 import { AdditionalDocumentationComponent } from './components/registration-sections/additional-documentation/additional-documentation.component';
 import { PurchasePriceComponent } from './components/registration-sections/purchase-price/purchase-price.component';
+import { ReviewSubmitComponent } from './components/registration-sections/review-submit/review-submit.component';
+import { PropertyInformationComponent } from './components/transfer-sections/property-information/property-information.component';
+import { TransferDetailsComponent } from './components/transfer-sections/transfer-details/transfer-details.component';
+import { DocumentationComponent } from './components/transfer-sections/documentation/documentation.component';
+import { AdditionalNotesComponent } from './components/transfer-sections/additional-notes/additional-notes.component';
+import { ReviewSubmitTransferComponent } from './components/transfer-sections/review-submit-transfer/review-submit-transfer.component';
 
 
 @NgModule({
@@ -77,6 +83,12 @@ import { PurchasePriceComponent } from './components/registration-sections/purch
     LegalRegulatoryComponent,
     AdditionalDocumentationComponent,
     PurchasePriceComponent,
+    ReviewSubmitComponent,
+    PropertyInformationComponent,
+    TransferDetailsComponent,
+    DocumentationComponent,
+    AdditionalNotesComponent,
+    ReviewSubmitTransferComponent,
   ],
   imports: [
     BrowserModule,

@@ -21,6 +21,12 @@ import { LegalRegulatoryComponent } from './components/registration-sections/leg
 import { OwnershipDetailsComponent } from './components/registration-sections/ownership-details/ownership-details.component';
 import { PropertyFeaturesComponent } from './components/registration-sections/property-features/property-features.component';
 import { PurchasePriceComponent } from './components/registration-sections/purchase-price/purchase-price.component';
+import { ReviewSubmitComponent } from './components/registration-sections/review-submit/review-submit.component';
+import { PropertyInformationComponent } from './components/transfer-sections/property-information/property-information.component';
+import { TransferDetailsComponent } from './components/transfer-sections/transfer-details/transfer-details.component';
+import { DocumentationComponent } from './components/transfer-sections/documentation/documentation.component';
+import { AdditionalNotesComponent } from './components/transfer-sections/additional-notes/additional-notes.component';
+import { ReviewSubmitTransferComponent } from './components/transfer-sections/review-submit-transfer/review-submit-transfer.component';
 
 
 const routes: Routes = [
@@ -32,23 +38,34 @@ const routes: Routes = [
     path: 'dashboard', component: DashboardComponent,
     canActivate: [AuthGuard],
     children: [
-      { path: 'dashboard', redirectTo: 'dashboard/overview', pathMatch: 'full' },
+      { path: '', redirectTo: 'overview', pathMatch: 'full' },
       { path: 'overview', component: OverviewComponent },
       {
         path: 'features', component: FeaturesTemplateComponent, children: [
           {
             path: 'register-property', component: RegisterPropertyComponent, children: [
+              { path: "", redirectTo: 'section-one', pathMatch: 'full' },
               { path: 'section-one', component: SectionOneComponent },
               { path: 'additional-documentation', component: AdditionalDocumentationComponent },
               { path: 'legal-regulatory', component: LegalRegulatoryComponent },
               { path: 'ownership-details', component: OwnershipDetailsComponent },
               { path: 'property-features', component: PropertyFeaturesComponent },
               { path: 'purchase-price', component: PurchasePriceComponent },
+              { path: 'review-submit', component: ReviewSubmitTransferComponent },
             ]
           },
           { path: 'smart-contracts', component: SmartContractsComponent },
           { path: 'conflict-resolution', component: ConflictResolutionComponent },
-          { path: 'transfer-property', component: TransferPropertyComponent },
+          {
+            path: 'transfer-property', component: TransferPropertyComponent, children: [
+              { path: '', redirectTo: 'property-information', pathMatch: 'full' },
+              { path: 'property-information', component: PropertyInformationComponent },
+              { path: 'transfer-details', component: TransferDetailsComponent },
+              { path: 'documentation', component: DocumentationComponent },
+              { path: 'additional-notes', component: AdditionalNotesComponent },
+              { path: 'review-submit', component: ReviewSubmitTransferComponent },
+            ]
+          },
           { path: 'verification-validation', component: VerificationValidationComponent },
         ]
       },

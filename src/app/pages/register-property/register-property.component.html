@@ -73,6 +73,17 @@
         >
           Purchase price
         </li>
+        <li
+         class="cursor-pointer my-4"
+          routerLink="/dashboard/features/register-property/review-submit"
+          [ngClass]="{
+            activesection: isRouteActive(
+              '/dashboard/features/register-property/review-submit'
+            )
+          }"
+        >
+          Review & Submit
+        </li>
       </ul>
     </section>
     <section class="col-span-9 overflow-y-auto section-element">

@@ -1,4 +1,73 @@
-<div class="w-full flex flex-row h-screen justify-center items-center">
-  Transfer Property page
+<div class="w-full flex flex-row fixed h-screen justify-center">
+  <div class="w-3/4 grid grid-flow-col grid-cols-12 gap-5">
+    <section class="col-span-3 h-screen">
+      <div class="inline-flex justify-center">
+        <span class="font-semibold text-green-600">Features</span>
+        <span class="material-symbols-outlined"> navigate_next </span>
+        <span class="text-blue-500 font-semibold">Transfer Property</span>
+      </div>
+      <ul class="mt-14">
+        <li
+          class="cursor-pointer my-4"
+          routerLink="/dashboard/features/transfer-property/property-information"
+          [ngClass]="{
+            activesection: isRouteActive(
+              '/dashboard/features/transfer-property/property-information'
+            )
+          }"
+        >
+          Property Information
+        </li>
+        <li
+          class="cursor-pointer my-4"
+          routerLink="/dashboard/features/transfer-property/transfer-details"
+          [ngClass]="{
+            activesection: isRouteActive(
+              '/dashboard/features/transfer-property/transfer-details'
+            )
+          }"
+        >
+          Transfer Details
+        </li>
+        <li
+          class="cursor-pointer my-4"
+          routerLink="/dashboard/features/transfer-property/documentation"
+          [ngClass]="{
+            activesection: isRouteActive(
+              '/dashboard/features/transfer-property/documentation'
+            )
+          }"
+        >
+          Documentation
+        </li>
+        <li
+          class="cursor-pointer my-4"
+          routerLink="/dashboard/features/transfer-property/additional-notes"
+          [ngClass]="{
+            activesection: isRouteActive(
+              '/dashboard/features/transfer-property/additional-notes'
+            )
+          }"
+        >
+          Additional Notes or Comments
+        </li>
+        <li
+          class="cursor-pointer my-4"
+          routerLink="/dashboard/features/transfer-property/review-submit"
+          [ngClass]="{
+            activesection: isRouteActive(
+              '/dashboard/features/transfer-property/review-submit'
+            )
+          }"
+        >
+          Review & Submit Request
+        </li>
+      </ul>
+    </section>
+    <section class="col-span-9 overflow-y-auto section-element">
+      <div class="w-full mb-20">
+        <router-outlet></router-outlet>
+      </div>
+    </section>
+  </div>
 </div>
-

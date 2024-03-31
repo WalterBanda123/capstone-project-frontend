@@ -1,4 +1,94 @@
-<b>Purchase price</b>
+<div class="w-full">
+  <div class="border-b border-gray-900/10 pb-12">
+    <p class="text-base font-semibold leading-7 text-gray-900">
+      Purchase price
+    </p>
+    <p class="mt-1 text-sm leading-6 text-gray-900 italic">
+      Date of purchase Previous owner details (if applicable)
+    </p>
+    <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6 mb-20">
+      <div class="sm:col-span-4">
+        <label
+          for="last-name"
+          class="block text-sm font-medium leading-6 text-gray-900"
+          >Date Of Purchase</label
+        >
+        <div class="mt-2">
+          <input
+            type="date"
+            pattern="(Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday), \d{1,2} (January|February|March|April|May|June|July|August|September|October|November|December) \d{4}"
+            name="last-name"
+            id="last-name"
+            autocomplete="family-name"
+            class="block w-full rounded-sm px-3 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+          />
+        </div>
+      </div>
+      <div class="sm:col-span-4">
+        <label
+          for="last-name"
+          class="block text-sm font-medium leading-6 text-gray-900"
+          >Property current Market value
+          <span  class="text-xs font-normal italic">*(Estimate the current market value of your property)</span></label
+        >
+        <div class="mt-2">
+          <input
+            type="number"
+            name="last-name"
+            id="last-name"
+            min="0"
+            autocomplete="family-name"
+            class="block w-full rounded-sm px-3 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+          />
+        </div>
+      </div>
+      <div class="col-span-4">
+        <p class="text-base font-semibold leading-7 text-gray-900">
+          Affidavit of Payment
+        </p>
+        <div
+          class="mt-2 flex flex-row justify-between text-sm leading-6 text-gray-600"
+        >
+          <span class="text-sm font-medium leading-6 text-gray-900">
+            Upload your affidavit <br />
+            <span class="text-xs font-normal italic"
+              >*(Confirming payment for the property transaction )</span
+            >
+          </span>
+          <label
+            for="file-upload"
+            class="relative cursor-pointer rounded-md bg-white font-semibold text-blue-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-blue-600 focus-within:ring-offset-2 hover:text-blue-500"
+          >
+            <span>Upload a file</span>
+            <input
+              id="file-upload"
+              name="file-upload"
+              type="file"
+              class="sr-only"
+            />
+          </label>
+        </div>
+        <p class="text-xs leading-5 text-gray-600">PNG, JPG, GIF up to 10MB</p>
+      </div>
+      <div class="col-span-5">
+        <div class="mt-6 flex items-center justify-end gap-x-6">
+          <button
+            routerLink="/dashboard/features/register-property/additional-documentation"
+            type="button"
+            class="text-sm font-semibold leading-6 text-yellow-600"
+          >
+            Previous
+          </button>
+          <button
+            routerLink="/dashboard/features/register-property/review-submit"
+            class="rounded-sm w-40 bg-gray-900 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
+          >
+            Next
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
 
-Date of purchase
-Previous owner details (if applicable)
+  <b></b>
+</div>

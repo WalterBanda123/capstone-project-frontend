@@ -1,8 +1,164 @@
-<b>Ownership Details:</b>
+<div class="w-full">
+  <div class="border-b border-gray-900/10 pb-12">
+    <p class="text-base font-semibold leading-7 text-gray-900">
+      Ownership Details
+    </p>
+    <p class="mt-1 text-sm leading-6 text-gray-900 italic">
+      * Name of the property owner(s) Contact information of the owner(s) <br />
+      (phone number, email address) Identification documents <br />(passport,
+      driver's license, national ID) Proof of ownership (deed, title, purchase
+      agreement) <br />
+      Any co-owners or joint owners and their details
+    </p>
 
-Name of the property owner(s)
-Contact information of the owner(s) (phone number, email address)
-Identification documents (passport, driver's license, national ID)
-Proof of ownership (deed, title, purchase agreement)
-Any co-owners or joint owners and their details
-
+    <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+      <fieldset class="col-span-4">
+        <legend class="text-sm font-semibold leading-6 text-gray-900">
+          Choose Property Owner(s) or Add Additional Users
+        </legend>
+        <p class="mt-1 text-sm leading-6 text-gray-600 font-normal italic">
+          Select the current property owner, typically the logged-in user, or
+          add additional users associated with the property.
+        </p>
+        <div class="mt-6 space-y-6">
+          <div class="flex items-center gap-x-3">
+            <input
+              id="push-everything"
+              name="push-notifications"
+              type="radio"
+              class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600"
+            />
+            <label
+              for="push-everything"
+              class="block text-sm font-medium leading-6 text-gray-900"
+              >Current account owner</label
+            >
+          </div>
+          <div class="flex items-center gap-x-3">
+            <input
+              id="push-email"
+              name="push-notifications"
+              type="radio"
+              class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600"
+            />
+            <label
+              for="push-email"
+              class="block text-sm font-medium leading-6 text-gray-900"
+              >Co-ownership</label
+            >
+          </div>
+          <div class="flex items-center gap-x-3">
+            <input
+              id="push-nothing"
+              name="push-notifications"
+              type="radio"
+              class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600"
+            />
+            <label
+              for="push-nothing"
+              class="block text-sm font-medium leading-6 text-gray-900"
+              >Co-ownership</label
+            >
+          </div>
+          <div class="flex items-center gap-x-3">
+            <input
+              id="push-nothing"
+              name="push-notifications"
+              type="radio"
+              class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600"
+            />
+            <label
+              for="push-nothing"
+              class="block text-sm font-medium leading-6 text-gray-900"
+              >Partnership</label
+            >
+          </div>
+          <div class="flex items-center gap-x-3">
+            <input
+              id="push-nothing"
+              name="push-notifications"
+              type="radio"
+              class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600"
+            />
+            <label
+              for="push-nothing"
+              class="block text-sm font-medium leading-6 text-gray-900"
+              >Limited Liability Company (LLC)</label
+            >
+          </div>
+          <div class="flex items-center gap-x-3">
+            <input
+              id="push-nothing"
+              name="push-notifications"
+              type="radio"
+              class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600"
+            />
+            <label
+              for="push-nothing"
+              class="block text-sm font-medium leading-6 text-gray-900"
+              >Corporate Ownership</label
+            >
+          </div>
+          <div class="flex items-center gap-x-3">
+            <input
+              id="push-nothing"
+              name="push-notifications"
+              type="radio"
+              class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600"
+            />
+            <label
+              for="push-nothing"
+              class="block text-sm font-medium leading-6 text-gray-900"
+              >Trust</label
+            >
+          </div>
+        </div>
+      </fieldset>
+      <div class="col-span-4">
+        <p class="text-base font-semibold leading-7 text-gray-900">
+          Identification documents
+        </p>
+        <div
+          class="mt-2 flex flex-row justify-between text-sm leading-6 text-gray-600"
+        >
+          <span class="text-sm font-medium leading-6 text-gray-900">
+            Upload identification documents for the listed owner(s)<br />
+            <span class="text-xs font-normal italic"
+              >*(passport, driver's license, national ID, trust Deed etc.)</span
+            >
+          </span>
+          <label
+            for="file-upload"
+            class="relative cursor-pointer rounded-md bg-white font-semibold text-blue-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-blue-600 focus-within:ring-offset-2 hover:text-blue-500"
+          >
+            <span>Upload a file</span>
+            <input
+              id="file-upload"
+              name="file-upload"
+              type="file"
+              class="sr-only"
+            />
+          </label>
+        </div>
+        <p class="text-xs leading-5 text-gray-600">PNG, JPG, GIF up to 10MB</p>
+      </div>
+      <div class="col-span-5">
+        <div class="mt-6 flex items-center justify-end gap-x-6">
+          <button
+            routerLink="/dashboard/features/register-property/section-one"
+            type="button"
+            class="text-sm font-semibold leading-6 text-yellow-600"
+          >
+            Previous
+          </button>
+          <button
+            routerLink="/dashboard/features/register-property/property-features"
+            class="rounded-sm w-40 bg-gray-900 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
+          >
+            Next
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
