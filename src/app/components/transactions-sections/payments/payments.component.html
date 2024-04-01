@@ -1,0 +1,62 @@
+<div class="w-full">
+  <div class="border-b border-gray-900/10 pb-12">
+    <p class="text-base font-semibold leading-7 text-gray-900">
+      Payment Information
+    </p>
+    <p class="mt-1 text-sm leading-6 text-gray-900 italic">
+      * Property Information: Property Address: Street address, city, state, zip
+      code.
+      <br />
+      Legal Description: Lot number, block number, subdivision name.
+      <br />Property Identification Number (if applicable). Current Owner
+      Information: Name, contact details.
+    </p>
+
+    <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6 mb-20">
+      <div class="sm:col-span-3">
+        <label
+          for="country"
+          class="block text-sm font-medium leading-6 text-gray-900"
+          >Select Property
+          <span class="text-xs font-normal italic"
+            >*(Select the property from a list of your properties)</span
+          ></label
+        >
+        <div class="mt-2">
+          <select
+            id="country"
+            name="country"
+            autocomplete="country-name"
+            class="block w-full rounded-sm border-0 py-2 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
+          >
+            <option>Property 1</option>
+            <option>Property 2</option>
+            <option>Property 3</option>
+          </select>
+        </div>
+      </div>
+      <div class="sm:col-span-3">
+        <label
+          for="country"
+          class="block text-sm font-medium leading-6 text-gray-900"
+          >Select Transaction
+          <span class="text-xs font-normal italic"
+            >*(Select the transaction associated with this transfer)</span
+          ></label
+        >
+        <div class="mt-2">
+          <select
+            id="country"
+            name="country"
+            autocomplete="country-name"
+            class="block w-full rounded-sm border-0 py-2 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
+          >
+            <option>Transaction 1</option>
+            <option>Transaction 2</option>
+            <option>Transaction 3</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

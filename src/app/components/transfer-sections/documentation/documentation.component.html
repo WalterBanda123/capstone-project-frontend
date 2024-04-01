@@ -1,1 +1,116 @@
-<p>documentation works!</p>
+<div class="w-full">
+  <div class="border-b border-gray-900/10 pb-12">
+    <p class="text-base font-semibold leading-7 text-gray-900">
+      Documentation
+    </p>
+    <p class="mt-1 text-sm leading-6 text-gray-900 italic">
+      *Photos of the property (interior and exterior) Property surveys or site
+      plans
+      <br />
+      Any other relevant documents or certificates Transaction Details (if
+      applicable):
+    </p>
+
+    <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6 mb-20">
+      <div class="col-span-4">
+        <p class="text-base font-semibold leading-7 text-gray-900">
+          Photos of the property
+        </p>
+        <div
+          class="mt-2 flex flex-row justify-between text-sm leading-6 text-gray-600"
+        >
+          <span class="text-sm font-medium leading-6 text-gray-900">
+            Property interior <br />
+            <span class="text-xs font-normal italic"
+              >*( Provide a visual interior tour of your property )</span
+            >
+          </span>
+          <label
+            for="file-upload"
+            class="relative cursor-pointer rounded-md bg-white font-semibold text-blue-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-blue-600 focus-within:ring-offset-2 hover:text-blue-500"
+          >
+            <span>Upload a file</span>
+            <input
+              id="file-upload"
+              name="file-upload"
+              type="file"
+              class="sr-only"
+            />
+          </label>
+        </div>
+        <p class="text-xs leading-5 text-gray-600">PNG, JPG, GIF up to 10MB</p>
+      </div>
+      <div class="col-span-4">
+        <div
+          class="mt-2 flex flex-row justify-between text-sm leading-6 text-gray-600"
+        >
+          <span class="text-sm font-medium leading-6 text-gray-900">
+            Property exterior <br />
+            <span class="text-xs font-normal italic"
+              >*( Provide a visual exterior tour of your property )</span
+            >
+          </span>
+          <label
+            for="file-upload"
+            class="relative cursor-pointer rounded-md bg-white font-semibold text-blue-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-blue-600 focus-within:ring-offset-2 hover:text-blue-500"
+          >
+            <span>Upload a file</span>
+            <input
+              id="file-upload"
+              name="file-upload"
+              type="file"
+              class="sr-only"
+            />
+          </label>
+        </div>
+        <p class="text-xs leading-5 text-gray-600">PNG, JPG, GIF up to 10MB</p>
+      </div>
+      <div class="col-span-4">
+        <p class="text-base font-semibold leading-7 text-gray-900">
+          Property surveys or site plans
+        </p>
+        <div
+          class="mt-2 flex flex-row justify-between text-sm leading-6 text-gray-600"
+        >
+          <span class="text-sm font-medium leading-6 text-gray-900">
+            Survey or plan <br />
+            <span class="text-xs font-normal italic"
+              >*( Submit a survey or plan detailing the layout and boundaries of
+              your property.)</span
+            >
+          </span>
+          <label
+            for="file-upload"
+            class="relative cursor-pointer rounded-md bg-white font-semibold text-blue-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-blue-600 focus-within:ring-offset-2 hover:text-blue-500"
+          >
+            <span>Upload a file</span>
+            <input
+              id="file-upload"
+              name="file-upload"
+              type="file"
+              class="sr-only"
+            />
+          </label>
+        </div>
+        <p class="text-xs leading-5 text-gray-600">PNG, JPG, GIF up to 10MB</p>
+      </div>
+      <div class="col-span-5">
+        <div class="mt-6 flex items-center justify-end gap-x-6">
+          <button
+            routerLink="/dashboard/features/register-property/legal-regulatory"
+            type="button"
+            class="text-sm font-semibold leading-6 text-yellow-600"
+          >
+            Previous
+          </button>
+          <button
+            routerLink="/dashboard/features/transfer-property/additional-notes"
+            class="rounded-sm w-40 bg-gray-900 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
+          >
+            Next
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

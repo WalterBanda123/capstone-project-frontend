@@ -1,5 +1,5 @@
 <div
-  class="container flex flex-col w-full h-full border-[1px] border-gray-200 bg-gray-100"
+  class="container flex flex-col w-full h-full border-[1px] border-gray-200 shadow-md bg-gray-900 text-white"
 >
   <div class="px-5 my-5">
     <div class="flex flex-1 justify-end">
@@ -29,7 +29,7 @@
       <div class="container px-10 w-3/4 h-3/4 grid grid-col grid-cols-3 gap-10">
         <section class="col-span-1 flex flex-col">
           <a
-           [routerLinkActive]="'menu-panel-active'"
+            [routerLinkActive]="'menu-panel-active'"
             routerLink="/dashboard/features/register-property"
             (click)="closeDialog($event)"
             class="font-bold text-lg cursor-pointer hover:text-green-500"
@@ -38,8 +38,8 @@
           <p class="text-sm text-justify">
             Officially recording ownership rights
           </p>
-          <a
-           [routerLinkActive]="'menu-panel-active'"
+          <!-- <a
+            [routerLinkActive]="'menu-panel-active'"
             routerLink="/dashboard/features/smart-contracts"
             (click)="closeDialog($event)"
             class="font-bold text-lg cursor-pointer hover:text-green-500"
@@ -56,9 +56,9 @@
                 >Review<span aria-hidden="true">&rarr;</span></a
               >
             </li>
-          </ul>
+          </ul> -->
           <a
-           [routerLinkActive]="'menu-panel-active'"
+            [routerLinkActive]="'menu-panel-active'"
             routerLink="/dashboard/features/conflict-resolution"
             (click)="closeDialog($event)"
             class="font-bold text-lg cursor-pointer hover:text-green-500 mt-5"
@@ -70,33 +70,17 @@
             >Search Deeds</a
           >
           <p class="text-sm text-justify">Advanced Title Deed search</p>
-          <a class="font-bold text-lg cursor-pointer">Transactions</a>
-          <ul>
-            <li class="py-1">
-              <a class="cursor-pointer hover:text-green-500"
-                >Selling <span aria-hidden="true">&rarr;</span></a
-              >
-            </li>
-            <li class="py-1">
-              <a class="cursor-pointer hover:text-green-500"
-                >Renting <span aria-hidden="true">&rarr;</span></a
-              >
-            </li>
-            <li class="py-1">
-              <a class="cursor-pointer hover:text-green-500"
-                >Leasing <span aria-hidden="true">&rarr;</span></a
-              >
-            </li>
-            <li class="py-1">
-              <a class="cursor-pointer hover:text-green-500">
-                Exchanging <span aria-hidden="true">&rarr;</span></a
-              >
-            </li>
-          </ul>
+          <a
+            class="font-bold text-lg cursor-pointer hover:text-green-500 mt-5"
+            [routerLinkActive]="'menu-panel-active'"
+            routerLink="/dashboard/features/transactions"
+            (click)="closeDialog($event)"
+            >Transactions</a
+          >
         </section>
         <section class="col-span-1">
           <a
-           [routerLinkActive]="'menu-panel-active'"
+            [routerLinkActive]="'menu-panel-active'"
             routerLink="/dashboard/features/transfer-property"
             (click)="closeDialog($event)"
             class="font-bold text-lg cursor-pointer hover:text-green-500"

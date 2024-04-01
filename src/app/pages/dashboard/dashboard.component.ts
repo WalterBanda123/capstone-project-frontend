@@ -42,7 +42,8 @@ export class DashboardComponent implements OnInit {
       this.dialogRef = this.dialog.open(MenuPanelComponent,
         {
           hasBackdrop: false,
-          position: { top: "50px", left: '', right: '', bottom: '' },
+          position: { top: "63px", left: '', right: '', bottom: '' },
+          backdropClass:"backdrop"
         })
 
       this.dialogRef.componentInstance.handleClose.subscribe((event: Event) => {

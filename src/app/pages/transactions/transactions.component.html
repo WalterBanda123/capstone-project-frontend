@@ -1,0 +1,73 @@
+<div class="w-full flex flex-row fixed h-screen justify-center">
+  <div class="w-3/4 grid grid-flow-col grid-cols-12 gap-5">
+    <section class="col-span-3 h-screen">
+      <div class="inline-flex justify-center">
+        <span class="font-semibold text-green-600">Features</span>
+        <span class="material-symbols-outlined"> navigate_next </span>
+        <span class="text-blue-500 font-semibold">Transactions</span>
+      </div>
+      <ul class="mt-14">
+        <li
+          class="cursor-pointer my-4"
+          routerLink="/dashboard/features/transactions/property-details"
+          [ngClass]="{
+            activesection: isRouteActive(
+              '/dashboard/features/transactions/property-details'
+            )
+          }"
+        >
+          Property Details
+        </li>
+        <li
+          class="cursor-pointer my-4"
+          routerLink="/dashboard/features/transactions/transaction-terms"
+          [ngClass]="{
+            activesection: isRouteActive(
+              '/dashboard/features/transactions/transaction-terms'
+            )
+          }"
+        >
+          Transactions Terms
+        </li>
+        <li
+          class="cursor-pointer my-4"
+          routerLink="/dashboard/features/transactions/buyer-information"
+          [ngClass]="{
+            activesection: isRouteActive(
+              '/dashboard/features/transactions/buyer-information'
+            )
+          }"
+        >
+          Buyer Information
+        </li>
+        <li
+          class="cursor-pointer my-4"
+          routerLink="/dashboard/features/transactions/payments"
+          [ngClass]="{
+            activesection: isRouteActive(
+              '/dashboard/features/transactions/payments'
+            )
+          }"
+        >
+          Payments & Settlements
+        </li>
+        <li
+          class="cursor-pointer my-4"
+          routerLink="/dashboard/features/transactions/review-submit"
+          [ngClass]="{
+            activesection: isRouteActive(
+              '/dashboard/features/transactions/review-submit'
+            )
+          }"
+        >
+          Review & Submit
+        </li>
+      </ul>
+    </section>
+    <section class="col-span-9 overflow-y-auto section-element">
+      <div class="w-full mb-20">
+        <router-outlet></router-outlet>
+      </div>
+    </section>
+  </div>
+</div>

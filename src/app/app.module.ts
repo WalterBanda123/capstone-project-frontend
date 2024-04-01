@@ -50,6 +50,12 @@ import { TransferDetailsComponent } from './components/transfer-sections/transfe
 import { DocumentationComponent } from './components/transfer-sections/documentation/documentation.component';
 import { AdditionalNotesComponent } from './components/transfer-sections/additional-notes/additional-notes.component';
 import { ReviewSubmitTransferComponent } from './components/transfer-sections/review-submit-transfer/review-submit-transfer.component';
+import { TransactionsComponent } from './pages/transactions/transactions.component';
+import { PropertyDetailsComponent } from './components/transactions-sections/property-details/property-details.component';
+import { TransactionTermsComponent } from './components/transactions-sections/transaction-terms/transaction-terms.component';
+import { BuyerInformationComponent } from './components/transactions-sections/buyer-information/buyer-information.component';
+import { PaymentsComponent } from './components/transactions-sections/payments/payments.component';
+import { ReviewPaymentsComponent } from './components/transactions-sections/review-payments/review-payments.component';
 
 
 @NgModule({
@@ -89,6 +95,12 @@ import { ReviewSubmitTransferComponent } from './components/transfer-sections/re
     DocumentationComponent,
     AdditionalNotesComponent,
     ReviewSubmitTransferComponent,
+    TransactionsComponent,
+    PropertyDetailsComponent,
+    TransactionTermsComponent,
+    BuyerInformationComponent,
+    PaymentsComponent,
+    ReviewPaymentsComponent,
   ],
   imports: [
     BrowserModule,

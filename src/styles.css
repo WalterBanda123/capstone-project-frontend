@@ -27,6 +27,9 @@
   @apply border-b-4 border-black;
 }
 
+/* .backdrop{
+  @apply
+} */
 
 .mat-dialog-container {
     box-shadow: none;
