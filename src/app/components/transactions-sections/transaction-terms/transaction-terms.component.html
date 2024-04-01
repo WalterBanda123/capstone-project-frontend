@@ -4,6 +4,24 @@
       Transaction Terms
     </p>
     <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6 mb-20">
+      <div class="col-span-4">
+        <label
+          for="first-name"
+          class="block text-sm font-medium leading-6 text-gray-900"
+        >
+          Asking Price
+        </label>
+        <div class="mt-2">
+          <input
+            type="text"
+            name="first-name"
+            id="first-name"
+            autocomplete="given-name"
+            class="block w-full rounded-sm px-3 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+          />
+        </div>
+      </div>
+
       <div class="sm:col-span-3">
         <label
           for="country"
@@ -58,7 +76,130 @@
           </select>
         </div>
       </div>
+
+      <div class="col-span-full">
+        <p class="text-base font-semibold leading-7 text-gray-900">
+          Payment Schedule/Term
+        </p>
+        <span class="text-xs font-normal italic">
+          *Time to be taken to pay for the property
+        </span>
+      </div>
+
+      <div class="col-span-2">
+        <label
+          for="first-name"
+          class="block text-sm font-medium leading-6 text-gray-900"
+        >
+          Starting Date
+        </label>
+        <div class="mt-2">
+          <input
+            type="date"
+            name="first-name"
+            id="first-name"
+            autocomplete="given-name"
+            class="block w-full rounded-sm px-3 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+          />
+        </div>
+      </div>
+
+      <div class="col-span-2">
+        <label
+          for="last-name"
+          class="block text-sm font-medium leading-6 text-gray-900"
+          >Ending Date</label
+        >
+        <div class="mt-2">
+          <input
+            type="date"
+            name="last-name"
+            id="last-name"
+            autocomplete="family-name"
+            class="block w-full rounded-sm px-3 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+          />
+        </div>
+      </div>
+      <div class="col-span-full">
+        <p class="text-base font-semibold leading-7 text-gray-900">
+          Financing Details
+        </p>
+      </div>
+
+      <div class="col-span-3">
+        <label
+          for="first-name"
+          class="block text-sm font-medium leading-6 text-gray-900"
+        >
+          Down Payment
+          <span class="text-xs font-normal italic">
+            *(Initial amount paid by the buyer towards purchase)
+          </span>
+        </label>
+        <div class="mt-2">
+          <input
+            type="text"
+            name="first-name"
+            id="first-name"
+            autocomplete="given-name"
+            class="block w-full rounded-sm px-3 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+          />
+        </div>
+      </div>
+
+      <div class="col-span-3">
+        <label
+          for="last-name"
+          class="block text-sm font-medium leading-6 text-gray-900"
+          >Monthly Payment
+          <span>*(Monthly payment be paid)</span>
+        </label>
+        <div class="mt-2">
+          <input
+            type="text"
+            name="last-name"
+            id="last-name"
+            autocomplete="family-name"
+            class="block w-full rounded-sm px-3 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+          />
+        </div>
+      </div>
+      <div class="col-span-5">
+        <label
+          for="about"
+          class="block text-sm font-medium leading-6 text-gray-900"
+          >Additional Financing Terms
+          <span class="text-xs font-normal italic"
+            >*(Any other terms or conditions related to this financing
+            arragement)</span
+          >
+        </label>
+        <div class="mt-2">
+          <textarea
+            id="about"
+            name="about"
+            rows="3"
+            class="block w-full rounded-sm px-3 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+          ></textarea>
+        </div>
+      </div>
+      <div class="col-span-5">
+        <div class="mt-6 flex items-center justify-end gap-x-6">
+          <button
+            routerLink="/dashboard/features/transactions/property-details"
+            type="button"
+            class="text-sm font-semibold leading-6 text-yellow-600"
+          >
+            Previous
+          </button>
+          <button
+            routerLink="/dashboard/features/transactions/buyer-information"
+            class="rounded-sm w-40 bg-gray-900 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
+          >
+            Next
+          </button>
+        </div>
+      </div>
     </div>
   </div>
 </div>
-<p>transaction-terms works!</p>

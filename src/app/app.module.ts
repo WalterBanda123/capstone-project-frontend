@@ -56,6 +56,8 @@ import { TransactionTermsComponent } from './components/transactions-sections/tr
 import { BuyerInformationComponent } from './components/transactions-sections/buyer-information/buyer-information.component';
 import { PaymentsComponent } from './components/transactions-sections/payments/payments.component';
 import { ReviewPaymentsComponent } from './components/transactions-sections/review-payments/review-payments.component';
+import { AdvancedSearchComponent } from './pages/advanced-search/advanced-search.component';
+import { RecentSearchedTitleComponent } from './components/recent-searched-title/recent-searched-title.component';
 
 
 @NgModule({
@@ -101,6 +103,8 @@ import { ReviewPaymentsComponent } from './components/transactions-sections/revi
     BuyerInformationComponent,
     PaymentsComponent,
     ReviewPaymentsComponent,
+    AdvancedSearchComponent,
+    RecentSearchedTitleComponent,
   ],
   imports: [
     BrowserModule,

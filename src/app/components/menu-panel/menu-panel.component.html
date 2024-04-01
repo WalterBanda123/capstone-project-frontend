@@ -66,7 +66,11 @@
           >
         </section>
         <section class="col-span-1">
-          <a class="font-bold text-lg cursor-pointer hover:text-green-500"
+          <a
+            class="font-bold text-lg cursor-pointer hover:text-green-500"
+            [routerLinkActive]="'menu-panel-active'"
+            routerLink="/dashboard/features/advanced-search"
+            (click)="closeDialog($event)"
             >Search Deeds</a
           >
           <p class="text-sm text-justify">Advanced Title Deed search</p>

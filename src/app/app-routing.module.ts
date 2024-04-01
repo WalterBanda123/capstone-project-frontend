@@ -33,6 +33,7 @@ import { TransactionTermsComponent } from './components/transactions-sections/tr
 import { BuyerInformationComponent } from './components/transactions-sections/buyer-information/buyer-information.component';
 import { PaymentsComponent } from './components/transactions-sections/payments/payments.component';
 import { ReviewPaymentsComponent } from './components/transactions-sections/review-payments/review-payments.component';
+import { AdvancedSearchComponent } from './pages/advanced-search/advanced-search.component';
 
 
 const routes: Routes = [
@@ -82,7 +83,8 @@ const routes: Routes = [
               { path: 'payments', component: PaymentsComponent },
               { path: 'review-submit', component: ReviewPaymentsComponent },
             ]
-          }
+          },
+          { path: 'advanced-search', component: AdvancedSearchComponent }
         ]
       },
       { path: 'contracts', component: ContractsComponent },
