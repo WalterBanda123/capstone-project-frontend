@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { NgxSpinnerService } from 'ngx-spinner';
-import { MapDisplayComponent } from 'src/app/components/map-display/map-display.component';
+// import { MapDisplayComponent } from 'src/app/components/map-display/map-display.component';
 
 @Component({
   selector: 'app-advanced-search',
@@ -25,7 +25,7 @@ export class AdvancedSearchComponent implements OnInit {
   handleDisplayOnMap(searchId: any): void {
     //Should grab the coordinates of the item selected and display on map
     //Should do an auto focus
-    this.dialog.open(MapDisplayComponent)
+    // this.dialog.open(MapDisplayComponent)
   }
   ngOnInit(): void {
   }

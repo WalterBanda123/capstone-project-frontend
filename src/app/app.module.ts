@@ -9,6 +9,8 @@ import { MatExpansionModule } from '@angular/material/expansion'
 import { MatTableModule } from '@angular/material/table'
 import { MatRippleModule } from "@angular/material/core";
 import { MatBadgeModule } from "@angular/material/badge";
+import { MatSnackBarModule } from "@angular/material/snack-bar";
+
 
 
 import { NgxSpinnerModule } from "ngx-spinner";
@@ -56,11 +58,13 @@ import { TransactionTermsComponent } from './components/transactions-sections/tr
 import { BuyerInformationComponent } from './components/transactions-sections/buyer-information/buyer-information.component';
 import { PaymentsComponent } from './components/transactions-sections/payments/payments.component';
 import { ReviewPaymentsComponent } from './components/transactions-sections/review-payments/review-payments.component';
-import { AdvancedSearchComponent } from './pages/advanced-search/advanced-search.component';
+import { AdvancedSearchComponent } from './components/advanced-search/advanced-search.component';
 import { RecentSearchedTitleComponent } from './components/recent-searched-title/recent-searched-title.component';
 import { MapDisplayComponent } from './components/map-display/map-display.component';
 import { PropertyOverviewComponent } from './components/property-overview/property-overview.component';
 import { QuickActionsComponent } from './components/quick-actions/quick-actions.component';
+// import { ConfirmDelitionComponent } from 'confirm-delition/confirm-delition.component';
+import { ToastMessageComponent } from './components/toast-message/toast-message.component';
 
 
 @NgModule({
@@ -111,6 +115,8 @@ import { QuickActionsComponent } from './components/quick-actions/quick-actions.
     MapDisplayComponent,
     PropertyOverviewComponent,
     QuickActionsComponent,
+    // ConfirmDelitionComponent,
+    ToastMessageComponent,
   ],
   imports: [
     BrowserModule,
@@ -124,7 +130,8 @@ import { QuickActionsComponent } from './components/quick-actions/quick-actions.
     MatExpansionModule,
     MatTableModule,
     MatRippleModule,
-    MatBadgeModule
+    MatBadgeModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent],

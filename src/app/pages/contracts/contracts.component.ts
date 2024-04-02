@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatTableDataSource } from '@angular/material/table';
 import { NgxSpinnerService } from 'ngx-spinner';
-import { LandContract } from 'src/app/interfaces/Contract.interface';
+// import { ConfirmDelitionComponent } from 'src/app/components/confirm-delition/confirm-delition.component';
+import { ToastMessageComponent } from 'src/app/components/toast-message/toast-message.component';
 import { CONTRACTS } from 'src/app/mock/Contracts';
 import { TRANSACTIONS } from 'src/app/mock/Transactions';
 
@@ -13,7 +16,8 @@ import { TRANSACTIONS } from 'src/app/mock/Transactions';
 })
 export class ContractsComponent implements OnInit {
 
-  constructor(private spinner: NgxSpinnerService) { }
+  constructor(private spinner: NgxSpinnerService, private dialog: MatDialog, private _toast: MatSnackBar) { }
+
   dataSource: MatTableDataSource<any> = new MatTableDataSource<any>([])
   transactionData: MatTableDataSource<any> = new MatTableDataSource<any>([])
 
@@ -44,6 +48,21 @@ export class ContractsComponent implements OnInit {
       }
       this.spinner.hide()
     }, 1200);
+  }
+
+  handleTransactionDeletion(element: any): void {
+    // const dialogRef = this.dialog.open(ConfirmDelitionComponent, { hasBackdrop: false })
+    // dialogRef.afterClosed().subscribe({
+    //   next: (response: any) => {
+    //     console.log('Response', response);
+    //     if (response === 'Deleted') {
+    //       this._toast.openFromComponent(ToastMessageComponent, { duration: 5000 })
+    //     }
+    //   }, error: (error: any) => {
+    //     console.log(error)
+    //   }
+    // })
+    console.log(element);
   }
 
   ngOnInit(): void {
