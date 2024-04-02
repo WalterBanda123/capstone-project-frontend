@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { MapDisplayComponent } from 'src/app/components/map-display/map-display.component';
 
 @Component({
   selector: 'app-advanced-search',
@@ -9,7 +11,8 @@ import { NgxSpinnerService } from 'ngx-spinner';
 })
 export class AdvancedSearchComponent implements OnInit {
 
-  constructor(private spinner: NgxSpinnerService) { }
+  constructor(private spinner: NgxSpinnerService, private dialog: MatDialog) { }
+
   isSearching: boolean = false
   handleAdvancedSearch(form: NgForm): void {
     this.spinner.show()
@@ -17,6 +20,12 @@ export class AdvancedSearchComponent implements OnInit {
     setTimeout(() => {
       this.spinner.hide()
     }, 1000);
+  }
+
+  handleDisplayOnMap(searchId: any): void {
+    //Should grab the coordinates of the item selected and display on map
+    //Should do an auto focus
+    this.dialog.open(MapDisplayComponent)
   }
   ngOnInit(): void {
   }

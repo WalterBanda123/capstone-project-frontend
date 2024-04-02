@@ -58,6 +58,9 @@ import { PaymentsComponent } from './components/transactions-sections/payments/p
 import { ReviewPaymentsComponent } from './components/transactions-sections/review-payments/review-payments.component';
 import { AdvancedSearchComponent } from './pages/advanced-search/advanced-search.component';
 import { RecentSearchedTitleComponent } from './components/recent-searched-title/recent-searched-title.component';
+import { MapDisplayComponent } from './components/map-display/map-display.component';
+import { PropertyOverviewComponent } from './components/property-overview/property-overview.component';
+import { QuickActionsComponent } from './components/quick-actions/quick-actions.component';
 
 
 @NgModule({
@@ -105,6 +108,9 @@ import { RecentSearchedTitleComponent } from './components/recent-searched-title
     ReviewPaymentsComponent,
     AdvancedSearchComponent,
     RecentSearchedTitleComponent,
+    MapDisplayComponent,
+    PropertyOverviewComponent,
+    QuickActionsComponent,
   ],
   imports: [
     BrowserModule,

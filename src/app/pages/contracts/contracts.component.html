@@ -5,7 +5,7 @@
       <p>View all your blockchain transactions and contracts</p>
     </div>
     <div
-      class="w-full flex flex-row justify-start text-sm font-semibold gap-5 mt-10"
+      class="w-full flex flex-row justify-start text-base font-semibold gap-5 mt-10"
     >
       <span
         class="cursor-pointer hover:text-green-600"
@@ -50,16 +50,20 @@
       >
         <!-- Position Column -->
         <ng-container matColumnDef="contract">
-          <mat-header-cell *matHeaderCellDef class="text-base"
+          <mat-header-cell *matHeaderCellDef class="text-sm font-semibold"
             >Contract</mat-header-cell
           >
-          <mat-cell mat-cell *matCellDef="let element" class="text-sm">
+          <mat-cell
+            mat-cell
+            *matCellDef="let element"
+            class="text-xs font-medium"
+          >
             {{ element.contract_id }}
           </mat-cell>
         </ng-container>
 
         <ng-container matColumnDef="property">
-          <mat-header-cell *matHeaderCellDef class="text-base"
+          <mat-header-cell *matHeaderCellDef class="text-sm font-semibold"
             >Property</mat-header-cell
           >
           <mat-cell mat-cell *matCellDef="let element">{{
@@ -69,7 +73,7 @@
 
         <!-- Weight Column -->
         <ng-container matColumnDef="deed">
-          <mat-header-cell *matHeaderCellDef class="text-base"
+          <mat-header-cell *matHeaderCellDef class="text-sm font-semibold"
             >Deed</mat-header-cell
           >
           <mat-cell mat-cell *matCellDef="let element">{{
@@ -79,28 +83,34 @@
 
         <!-- Symbol Column -->
         <ng-container matColumnDef="owner">
-          <mat-header-cell *matHeaderCellDef class="text-base"
+          <mat-header-cell *matHeaderCellDef class="text-sm font-semibold"
             >Owner</mat-header-cell
           >
           <mat-cell *matCellDef="let element">{{ element.owner }}</mat-cell>
         </ng-container>
         <ng-container matColumnDef="status">
-          <mat-header-cell *matHeaderCellDef class="text-base"
+          <mat-header-cell *matHeaderCellDef class="text-sm font-semibold"
             >Status</mat-header-cell
           >
-          <mat-cell mat-cell *matCellDef="let element">
+          <mat-cell
+            mat-cell
+            *matCellDef="let element"
+            class="{{
+              element.contract_status === 'Inactive'
+                ? 'text-red-400'
+                : 'text-green-400'
+            }}"
+          >
             {{ element.contract_status }}
           </mat-cell>
         </ng-container>
 
         <ng-container matColumnDef="action">
-          <mat-header-cell *matHeaderCellDef class="text-base">
-            Edit / Delete
+          <mat-header-cell *matHeaderCellDef class="text-sm font-semibold">
+            Actions
           </mat-header-cell>
           <mat-cell *matCellDef="let element" class="gap-5 items-center">
-            <a class="mx-4"
-              ><span class="material-symbols-outlined"> edit </span></a
-            >
+            <a class="mx-4 text-yellow-700">Edit</a>
             <a><span class="material-symbols-outlined"> delete </span></a>
           </mat-cell>
         </ng-container>
@@ -110,7 +120,7 @@
           *matHeaderRowDef="displayedColumns"
         ></mat-header-row>
         <mat-row
-         class="hover:bg-green-200 hover:text-white hover:cursor-pointer"
+          class="hover:bg-green-200 hover:text-white hover:cursor-pointer"
           matRipple
           mat-row
           *matRowDef="let row; columns: displayedColumns"
@@ -132,7 +142,7 @@
       >
         <!-- Position Column -->
         <ng-container matColumnDef="date">
-          <mat-header-cell *matHeaderCellDef class="text-base"
+          <mat-header-cell *matHeaderCellDef class="text-sm font-semibold"
             >Date</mat-header-cell
           >
           <mat-cell *matCellDef="let element" class="text-sm">
@@ -140,7 +150,7 @@
           </mat-cell>
         </ng-container>
         <ng-container matColumnDef="transactionType">
-          <mat-header-cell *matHeaderCellDef class="text-base">
+          <mat-header-cell *matHeaderCellDef class="text-sm font-semibold">
             Transaction Type
           </mat-header-cell>
           <mat-cell *matCellDef="let element" class="text-sm">
@@ -148,15 +158,24 @@
           </mat-cell>
         </ng-container>
         <ng-container matColumnDef="status">
-          <mat-header-cell *matHeaderCellDef class="text-base"
+          <mat-header-cell *matHeaderCellDef class="text-sm font-semibold"
             >Status</mat-header-cell
           >
-          <mat-cell *matCellDef="let element" class="text-sm">
+          <mat-cell
+            *matCellDef="let element"
+            class="text-sm {{
+              element.status === 'Completed'
+                ? 'text-green-400'
+                : element.status === 'Pending'
+                ? 'text-yellow-400'
+                : 'text-red-400'
+            }} font-medium"
+          >
             {{ element.status }}
           </mat-cell>
         </ng-container>
         <ng-container matColumnDef="party">
-          <mat-header-cell *matHeaderCellDef class="text-base"
+          <mat-header-cell *matHeaderCellDef class="text-sm font-semibold"
             >Party</mat-header-cell
           >
           <mat-cell *matCellDef="let element" class="text-sm">
@@ -164,13 +183,11 @@
           </mat-cell>
         </ng-container>
         <ng-container matColumnDef="action">
-          <mat-header-cell *matHeaderCellDef class="text-base">
-            Edit / Delete
+          <mat-header-cell *matHeaderCellDef class="text-sm font-semibold">
+            Actions
           </mat-header-cell>
           <mat-cell *matCellDef="let element" class="text-sm">
-            <a class="mx-4"
-              ><span class="material-symbols-outlined"> edit </span></a
-            >
+            <a class="mx-4 text-yellow-700">Edit</a>
             <a><span class="material-symbols-outlined"> delete </span></a>
           </mat-cell>
         </ng-container>
@@ -180,7 +197,7 @@
           *matHeaderRowDef="transactionColumns"
         ></mat-header-row>
         <mat-row
-        class="hover:bg-green-400 hover:text-white"
+          class="hover:bg-green-400 hover:text-white"
           matRipple
           mat-row
           *matRowDef="let row; columns: transactionColumns"

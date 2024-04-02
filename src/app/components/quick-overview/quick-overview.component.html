@@ -17,13 +17,7 @@
       >
         Property Overview</span
       >
-      <span
-        class="p-0 cursor-pointer text-base text-center font-semibold"
-        (click)="onClick('smart-contract')"
-        [class]="selectedOverview === 'smart-contract' ? 'active' : ''"
-      >
-        Smart Contract Overview</span
-      >
+
       <span
         class="p-0 cursor-pointer text-base text-center font-semibold"
         (click)="onClick('quick-action')"
@@ -32,10 +26,16 @@
         Quick Action</span
       >
     </div>
-    <div class="w-3/4">
-      <ng-container *ngIf="selectedOverview === 'recent'">
+    <ng-container *ngIf="selectedOverview === 'recent'">
+      <div class="w-3/4">
         <app-recent-activities></app-recent-activities>
-      </ng-container>
-    </div>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="selectedOverview === 'property'">
+      <app-property-overview></app-property-overview>
+    </ng-container>
+    <ng-container *ngIf="selectedOverview === 'quick-action'">
+      <app-quick-actions></app-quick-actions>
+    </ng-container>
   </div>
 </div>

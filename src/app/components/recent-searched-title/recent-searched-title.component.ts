@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-recent-searched-title',
@@ -9,6 +9,11 @@ export class RecentSearchedTitleComponent implements OnInit {
 
   constructor() { }
   @Input() searchedTitle: any = null
+  @Output() openOnMap: EventEmitter<any> = new EventEmitter<any>()
+
+  handleOpeningOnMap(id: any): void {
+    this.openOnMap.emit(id)
+  }
   ngOnInit(): void {
   }
 

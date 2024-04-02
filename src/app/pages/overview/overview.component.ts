@@ -14,16 +14,17 @@ export class OverviewComponent implements OnInit {
 
   constructor(private spinner: NgxSpinnerService) { }
 
-  selectedOverview: 'recent' | 'property' | 'smart-contract' | 'quick-action' = 'recent'
+  selectedOverview: 'recent' | 'property' | 'quick-action' = 'recent'
 
   isSearched: boolean = false
   handleSelectedOverview(tab: any): void {
-    this.spinner.show()
 
-    setTimeout(() => {
-      this.selectedOverview = tab
-      this.spinner.hide()
-    }, 1000);
+
+    this.selectedOverview = tab
+    //   this.spinner.show()
+    // setTimeout(() => {
+    //   this.spinner.hide()
+    // }, 1000);
   }
   handleTitleDeedSearch(form: NgForm): void {
     this.spinner.show()
