@@ -28,7 +28,10 @@ export class DashboardComponent implements OnInit {
 
     }
   }
+
   handleLogout(): void {
+    console.log('What is this ?');
+
     this.authService.signOutUser().then((res) => {
       console.log('Res; ', res);
     }).catch((error) => {

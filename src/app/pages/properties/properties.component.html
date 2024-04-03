@@ -1,5 +1,138 @@
 <div class="flex flex-col items-center w-full">
   <div class="container p-10 flex flex-col w-3/4">
-    Properties
+    <div class="flex flex-row w-full gap-x-3 items-center my-5">
+      <span class="text-lg font-medium text"
+        >Registered Property and Assets</span
+      >
+      <button
+        routerLink="/dashboard/features/transactions"
+        class="font-semibold text-sm bg-gray-900 py-1 px-2 text-white transition-transform transform hover:scale-105"
+      >
+        Register New Land
+      </button>
+    </div>
+    <div
+      class="w-full flex flex-row justify-between border-b-2 border-gray-100 py-5"
+    >
+      <section class="w-1/2 flex flex-row items-center">
+        <p class="text-base italic">
+          All <span class="font-medium">({{ properties.data.length }})</span>
+        </p>
+      </section>
+      <section class="w-1/2 flex flex-row-reverse">
+        <div class="w-3/4">
+          <form #searchForm="ngForm" (submit)="handleSearch(searchForm)">
+            <div class="flex flex-row justify-center">
+              <input
+                ngModel
+                #search="ngModel"
+                type="text"
+                placeholder="Search for properties, land ..."
+                name="search"
+                id="search"
+                class="block w-full border-0 py-2.5 text-gray-900 shadow-sm ring-1 ring-gray-300 px-2"
+              />
+              <button class="bg-black px-2 py-1" type="submit">
+                <span class="material-symbols-outlined text-white">
+                  search
+                </span>
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </div>
+    <ng-container>
+      <table
+        mat-table
+        [dataSource]="properties"
+        class="mat-elevation-z0 w-full border-[1px] border-gray-200 mt-5"
+      >
+        <ng-container matColumnDef="image">
+          <mat-header-cell *matHeaderCellDef class="text-sm font-semibold"
+            >Image</mat-header-cell
+          >
+          <mat-cell *matCellDef="let element" class="text-sm">
+            <img
+              class="h-full w-full rounded-sm"
+              src="{{ element.image }}"
+              alt=""
+            />
+          </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="title">
+          <mat-header-cell *matHeaderCellDef class="text-sm font-semibold">
+            Title
+          </mat-header-cell>
+          <mat-cell
+            *matCellDef="let element"
+            class="text-sm flex flex-col font-light"
+          >
+            {{ element.title }}
+            <button class="inline-flex font-semibold justify-center text-blue-700 items-start">
+              View<span class="material-symbols-outlined text-blue-700">
+                pin_invoke
+              </span>
+            </button>
+          </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="location">
+          <mat-header-cell *matHeaderCellDef class="text-sm font-medium"
+            >Location</mat-header-cell
+          >
+          <mat-cell *matCellDef="let element" class="text-sm font-medium">
+            {{ element.location }}
+          </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="value">
+          <mat-header-cell *matHeaderCellDef class="text-sm font-semibold"
+            >Market Value</mat-header-cell
+          >
+          <mat-cell *matCellDef="let element" class="text-sm">
+            {{ element.price }}
+          </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="beds">
+          <mat-header-cell *matHeaderCellDef class="text-sm font-semibold">
+            Beds
+          </mat-header-cell>
+          <mat-cell *matCellDef="let element" class="text-sm"
+            >{{ element.beds }}
+          </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="category">
+          <mat-header-cell *matHeaderCellDef class="text-sm font-semibold"
+            >Category</mat-header-cell
+          >
+          <mat-cell *matCellDef="let element" class="text-sm">
+            {{ element.category }}
+          </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="registeredOn">
+          <mat-header-cell *matHeaderCellDef class="text-sm font-semibold"
+            >Registered On</mat-header-cell
+          >
+          <mat-cell *matCellDef="let element" class="text-sm">
+            <time datetime="2027-03-27">{{ element.registeredOn }}</time>
+          </mat-cell>
+        </ng-container>
+
+        <mat-header-row
+          mat-header-row
+          *matHeaderRowDef="propertiesColumns"
+        ></mat-header-row>
+        <mat-row
+          class="py-2 hover:text-white px-0 gap-x-2"
+          mat-row
+          *matRowDef="let row; columns: propertiesColumns"
+        ></mat-row>
+
+        <tr class="mat-row" *matNoDataRow>
+          <td class="mat-cell text-center font-semibold" colspan="6">
+            No data found!
+          </td>
+        </tr>
+      </table>
+    </ng-container>
   </div>
 </div>

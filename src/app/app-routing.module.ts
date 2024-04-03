@@ -34,6 +34,13 @@ import { BuyerInformationComponent } from './components/transactions-sections/bu
 import { PaymentsComponent } from './components/transactions-sections/payments/payments.component';
 import { ReviewPaymentsComponent } from './components/transactions-sections/review-payments/review-payments.component';
 import { AdvancedSearchComponent } from './components/advanced-search/advanced-search.component';
+import { CreateConflictCaseComponent } from './pages/create-conflict-case/create-conflict-case.component';
+import { SectionTwoComponent } from './components/conflict-case-sections/section-two/section-two.component';
+import { SectionThreeComponent } from './components/conflict-case-sections/section-three/section-three.component';
+import { SectionFourComponent } from './components/conflict-case-sections/section-four/section-four.component';
+import { SectionFiveComponent } from './components/conflict-case-sections/section-five/section-five.component';
+import { SectionOneConflictComponent } from './components/conflict-case-sections/section-one-conflict/section-one-conflict.component';
+
 
 
 const routes: Routes = [
@@ -84,7 +91,18 @@ const routes: Routes = [
               { path: 'review-submit', component: ReviewPaymentsComponent },
             ]
           },
-          { path: 'advanced-search', component: AdvancedSearchComponent }
+          { path: 'advanced-search', component: AdvancedSearchComponent },
+          {
+            path: 'create-conflict-case', component: CreateConflictCaseComponent, children: [
+              { path: '', redirectTo: 'section-one', pathMatch: 'full' },
+              { path: 'section-one', component: SectionOneConflictComponent },
+              { path: 'section-two', component: SectionTwoComponent },
+              { path: 'section-three', component: SectionThreeComponent },
+              { path: 'section-four', component: SectionFourComponent },
+              { path: 'section-five', component: SectionFiveComponent },
+            ]
+          },
+
         ]
       },
       { path: 'contracts', component: ContractsComponent },

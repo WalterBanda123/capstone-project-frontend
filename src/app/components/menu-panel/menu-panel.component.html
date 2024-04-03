@@ -1,5 +1,5 @@
 <div
-  class="container flex flex-col w-full h-full border-[1px] border-gray-200 shadow-md bg-gray-900 text-white"
+  class="container flex flex-col w-full h-full border-[1px] border-gray-200 shadow-md"
 >
   <div class="px-5 my-5">
     <div class="flex flex-1 justify-end">
@@ -64,6 +64,17 @@
             class="font-bold text-lg cursor-pointer hover:text-green-500 mt-5"
             >Conflict Relosution</a
           >
+          <ul>
+            <li class="py-1">
+              <a
+                [routerLinkActive]="'menu-panel-active'"
+                routerLink="/dashboard/features/create-conflict-case"
+                (click)="closeDialog($event)"
+                class="cursor-pointer hover:text-green-500"
+                >Create new case <span aria-hidden="true">&rarr;</span></a
+              >
+            </li>
+          </ul>
         </section>
         <section class="col-span-1">
           <a

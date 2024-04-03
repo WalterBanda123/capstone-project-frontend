@@ -65,6 +65,12 @@ import { PropertyOverviewComponent } from './components/property-overview/proper
 import { QuickActionsComponent } from './components/quick-actions/quick-actions.component';
 // import { ConfirmDelitionComponent } from 'confirm-delition/confirm-delition.component';
 import { ToastMessageComponent } from './components/toast-message/toast-message.component';
+import { CreateConflictCaseComponent } from './pages/create-conflict-case/create-conflict-case.component';
+import { SectionTwoComponent } from './components/conflict-case-sections/section-two/section-two.component';
+import { SectionThreeComponent } from './components/conflict-case-sections/section-three/section-three.component';
+import { SectionFourComponent } from './components/conflict-case-sections/section-four/section-four.component';
+import { SectionFiveComponent } from './components/conflict-case-sections/section-five/section-five.component';
+import { SectionOneConflictComponent } from './components/conflict-case-sections/section-one-conflict/section-one-conflict.component';
 
 
 @NgModule({
@@ -117,6 +123,12 @@ import { ToastMessageComponent } from './components/toast-message/toast-message.
     QuickActionsComponent,
     // ConfirmDelitionComponent,
     ToastMessageComponent,
+    CreateConflictCaseComponent,
+    SectionTwoComponent,
+    SectionThreeComponent,
+    SectionFourComponent,
+    SectionFiveComponent,
+    SectionOneConflictComponent,
   ],
   imports: [
     BrowserModule,
