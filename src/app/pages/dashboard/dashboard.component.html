@@ -18,7 +18,7 @@
         <div class="flex lg:hidden">
           <button
             type="button"
-            class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+            class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-900 font-semibold"
           >
             <span class="sr-only">Open main menu</span>
             <svg
@@ -45,7 +45,7 @@
             >Dashboard</a
           >
           <button
-            (click)="openDialog()"
+            [matMenuTriggerFor]="actions"
             class="menu-container text-white font-medium px-3 cursor-pointer inline-flex items-center gap-x-1 leading-6 relative hover:active"
           >
             <span class="text-base font-medium cursor-pointer"
@@ -64,6 +64,9 @@
               />
             </svg>
           </button>
+          <mat-menu #actions="matMenu">
+            <app-menu-panel></app-menu-panel>
+          </mat-menu>
           <a
             routerLink="/dashboard/contracts"
             [routerLinkActive]="'active'"
@@ -105,35 +108,29 @@
             </svg>
           </button>
 
-          <!-- Profile dropdown -->
-          <div class="menu-popover relative ml-3">
-            <div>
-              <button
-                (click)="showMenuPopup()"
-                type="button"
-                class="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
-                id="user-menu-button"
-                aria-expanded="false"
-                aria-haspopup="true"
-              >
-                <span class="absolute -inset-1.5"></span>
-                <span class="sr-only">Open user menu</span>
-                <img
-                  class="h-8 w-8 rounded-full"
-                  src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                  alt=""
-                />
-              </button>
-            </div>
+          <div class="relative ml-3">
+            <button
+              [matMenuTriggerFor]="menu"
+              class="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+              id="user-menu-button"
+            >
+              <span class="absolute -inset-1.5"></span>
+              <span class="sr-only">Open user menu</span>
+              <img
+                class="h-8 w-8 rounded-full"
+                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                alt=""
+              />
+            </button>
 
-            <div
-              *ngIf="showMenu"
-              class="absolute -right-5 isolation-auto inset-auto mt-2 w-48 origin-top-left bg-gray-200 py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none font-semibold"
-
+            <mat-menu
+              #menu="matMenu"
+              class="absolute z-10 inset-auto mt-2 w-48 origin-top-left  py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none font-semibold"
             >
               <button
+                mat-menu-item
                 (click)="handleLogout()"
-                class="block px-4 py-2 text-sm text-gray-700"
+                class="block px-4 py-2 text-sm text-gray-900 font-semibold"
                 role="menuitem"
                 tabindex="-1"
                 id="user-menu-item-2"
@@ -141,28 +138,32 @@
                 Sign out
               </button>
               <a
-                class="block px-4 py-2 text-sm text-gray-700"
+                mat-menu-item
+                (click)="handleDisplayingProfile()"
+                class="block px-4 py-2 text-sm text-gray-900 font-semibold"
                 role="menuitem"
                 tabindex="-1"
                 id="user-menu-item-0"
                 >Your Profile</a
               >
               <a
-                class="block px-4 py-2 text-sm text-gray-700"
+                mat-menu-item
+                class="block px-4 py-2 text-sm text-gray-900 font-semibold"
                 role="menuitem"
                 tabindex="-1"
                 id="user-menu-item-1"
                 >Settings</a
               >
               <a
+                mat-menu-item
                 href="#"
-                class="block px-4 py-2 text-sm text-gray-700"
+                class="block px-4 py-2 text-sm text-gray-900 font-semibold"
                 role="menuitem"
                 tabindex="-1"
                 id="user-menu-item-1"
                 >Help Center</a
               >
-            </div>
+            </mat-menu>
           </div>
         </div>
       </nav>

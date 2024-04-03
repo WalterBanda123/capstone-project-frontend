@@ -1,5 +1,5 @@
 <div
-  class="container flex flex-col w-full h-full border-[1px] border-gray-200 shadow-md"
+  class="container flex flex-col w-full h-ful"
 >
   <div class="px-5 my-5">
     <div class="flex flex-1 justify-end">
@@ -24,7 +24,7 @@
       </button>
     </div>
   </div>
-  <mat-dialog-content class="px-5">
+  <div class="px-5">
     <div class="p-2 flex flex-row justify-center items-center">
       <div class="container px-10 w-3/4 h-3/4 grid grid-col grid-cols-3 gap-10">
         <section class="col-span-1 flex flex-col">
@@ -38,25 +38,7 @@
           <p class="text-sm text-justify">
             Officially recording ownership rights
           </p>
-          <!-- <a
-            [routerLinkActive]="'menu-panel-active'"
-            routerLink="/dashboard/features/smart-contracts"
-            (click)="closeDialog($event)"
-            class="font-bold text-lg cursor-pointer hover:text-green-500"
-            >Smart Contracts</a
-          >
-          <ul>
-            <li class="py-1">
-              <a class="cursor-pointer hover:text-green-500"
-                >Create new contract <span aria-hidden="true">&rarr;</span></a
-              >
-            </li>
-            <li class="py-1">
-              <a class="cursor-pointer hover:text-green-500"
-                >Review<span aria-hidden="true">&rarr;</span></a
-              >
-            </li>
-          </ul> -->
+          
           <a
             [routerLinkActive]="'menu-panel-active'"
             routerLink="/dashboard/features/conflict-resolution"
@@ -119,5 +101,5 @@
         </section>
       </div>
     </div>
-  </mat-dialog-content>
+  </div>
 </div>

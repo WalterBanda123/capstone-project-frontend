@@ -16,22 +16,10 @@ export class DashboardComponent implements OnInit {
   showMenu: boolean = false
   showMenuPopup(): void {
     this.showMenu = !this.showMenu
-    console.log('called');
-
-  }
-  @HostListener('document:click', ['$event'])
-  hidPopover(event: MouseEvent) {
-    const targetElement = event.target as HTMLElement
-    if (!targetElement.closest('.menu-popover') && this.showMenu) {
-      this.showMenuPopup()
-      console.log('This is called ');
-
-    }
   }
 
   handleLogout(): void {
     console.log('What is this ?');
-
     this.authService.signOutUser().then((res) => {
       console.log('Res; ', res);
     }).catch((error) => {
@@ -54,6 +42,11 @@ export class DashboardComponent implements OnInit {
         this.dialogRef = undefined
       })
     }
+  }
+
+  handleDisplayingProfile():void{
+    console.log('Displaying the user profile');
+
   }
   ngOnInit(): void {
 

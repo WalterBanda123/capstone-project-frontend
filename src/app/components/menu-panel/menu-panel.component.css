@@ -1,0 +1,6 @@
+::ng-deep .mat-menu-panel {
+  min-width: 4000px;
+  max-width: 400px;
+  border-radius: 0px;
+}
+

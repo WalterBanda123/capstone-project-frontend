@@ -10,6 +10,7 @@ import { MatTableModule } from '@angular/material/table'
 import { MatRippleModule } from "@angular/material/core";
 import { MatBadgeModule } from "@angular/material/badge";
 import { MatSnackBarModule } from "@angular/material/snack-bar";
+import { MatMenuModule } from "@angular/material/menu";
 
 
 
@@ -143,7 +144,8 @@ import { SectionOneConflictComponent } from './components/conflict-case-sections
     MatTableModule,
     MatRippleModule,
     MatBadgeModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent],

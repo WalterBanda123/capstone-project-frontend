@@ -43,8 +43,9 @@
       >
     </div>
 
-    <div class="w-full flex flex-row mt-10">
-      <div class="w-full">
+    <div class="w-full flex flex-row justify-between items-center mt-10">
+      <p>All ({{dataSource.data.length}})</p>
+      <div class="w-2/4">
         <form #searchForm="ngForm" (submit)="handleSearch(searchForm)">
           <div class="mt-2 flex flex-row justify-center">
             <input
@@ -68,7 +69,7 @@
       <table
         mat-table
         [dataSource]="dataSource"
-        class="mat-elevation-z1 w-full border-t-2 border-gray-300 mt-5"
+        class="mat-elevation-z0 w-full border-[1px] border-gray-200 mt-5"
       >
         <!-- Position Column -->
         <ng-container matColumnDef="contract">
@@ -132,7 +133,11 @@
             Actions
           </mat-header-cell>
           <mat-cell *matCellDef="let element" class="gap-5 items-center">
-            <a class="mx-4 text-yellow-700">Edit</a>
+            <button class="inline-flex font-semibold justify-center text-blue-700 items-start">
+              View<span class="material-symbols-outlined text-blue-700">
+                pin_invoke
+              </span>
+            </button>
             <a><span class="material-symbols-outlined"> delete </span></a>
           </mat-cell>
         </ng-container>
@@ -209,7 +214,11 @@
             Actions
           </mat-header-cell>
           <mat-cell *matCellDef="let element" class="text-sm">
-            <a class="mx-4 text-yellow-700">Edit</a>
+            <button class="inline-flex font-semibold justify-center text-blue-700 items-start">
+              View<span class="material-symbols-outlined text-blue-700">
+                pin_invoke
+              </span>
+            </button>
             <button (click)="handleTransactionDeletion(element)">
               <span class="material-symbols-outlined"> delete </span>
             </button>
