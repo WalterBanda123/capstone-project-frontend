@@ -1,0 +1,188 @@
+<div
+  mat-dialog-title
+  class="font-medium text-base italic flex flex-row justify-between"
+>
+  <div class="flex flex-row items-center gap-x-3">
+    <span class="material-symbols-outlined"> text_snippet </span> Conflict Case
+    ID
+    <span class="font-semibold text-base">{{ data.caseID }}</span>
+  </div>
+  <div class="flex flex-row gap-x-3">
+    <button>
+      <span class="material-symbols-outlined font-bold text-gray-900">
+        print
+      </span>
+    </button>
+    <button
+      mat-button
+      mat-dialog-close
+      class="font-semibold text-sm py-2 px-2 text-gray-900 transition-transform transform hover:scale-105"
+    >
+      Close
+    </button>
+  </div>
+</div>
+<mat-dialog-content class="mat-typography">
+  <div class="flex flex-col mt-4">
+    <p class="font-semibold text-base italic">Parties Involved</p>
+    <div class="flex flex-col">
+      <span> <b>Complainant</b>: [Name/Entity] </span
+      ><span><b>Respondent</b>: [Name/Entity]</span>
+    </div>
+
+    <div class="mt-4 flex flex-col">
+      <p class="font-semibold text-base">Case Description:</p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. In id commodi
+        iste omnis nihil. Animi vel, id dolor totam nihil laboriosam cumque
+        aspernatur facere ratione eaque repudiandae voluptatem minus numquam?
+        Nulla porro eos at quidem iste, accusamus rerum quod omnis aliquam minus
+        vero officia optio nemo quibusdam laboriosam ratione aperiam architecto
+        nisi, fugit eum illum veritatis neque. Labore, cupiditate nisi. Eos,
+        similique reiciendis. Ex amet sequi libero eius deleniti quaerat.
+        Expedita, officia cupiditate sit corrupti fuga quibusdam perspiciatis!
+        Placeat rem molestiae nobis qui delectus, veniam nemo perspiciatis
+        architecto sapiente at. Quibusdam at provident ratione debitis ipsam
+        assumenda tempore voluptatem veniam. Ex ipsum in architecto officiis
+        voluptatem eius quaerat culpa itaque temporibus quae rerum, fugiat porro
+        saepe perspiciatis nihil ratione assumenda?
+      </p>
+    </div>
+    <div class="flex flex-col mt-4">
+      <span><b>Date of Submission</b>: January 1, 2024</span>
+      <span><b>Status</b>: Pending</span>
+      <p class="font-semibold text-base">Arbitrators Assigned:</p>
+      <span>
+        <i class="font-light py-2">1. [Arbitrator 1]</i>
+      </span>
+      <span>
+        <i class="font-light py-2">2. [Arbitrator 2]</i>
+      </span>
+    </div>
+
+    <div class="flex flex-col mt-4">
+      <p class="font-semibold text-base">Evidence Submitted:</p>
+      <span class="my-3">
+        <i class="font-light py-2">1. [Description of evidence 1] </i>
+        <br />Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos esse
+        facilis quaerat? Rem perspiciatis numquam mollitia debitis id illum
+        blanditiis, repellendus culpa est modi excepturi qui cumque ducimus
+        quaerat aut.
+        <span
+          class="flex items-center justify-between py-4 pl-4 pr-5 text-sm leading-6"
+        >
+          <div class="flex w-0 flex-1 items-center">
+            <svg
+              class="h-5 w-5 flex-shrink-0 text-gray-400"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M15.621 4.379a3 3 0 00-4.242 0l-7 7a3 3 0 004.241 4.243h.001l.497-.5a.75.75 0 011.064 1.057l-.498.501-.002.002a4.5 4.5 0 01-6.364-6.364l7-7a4.5 4.5 0 016.368 6.36l-3.455 3.553A2.625 2.625 0 119.52 9.52l3.45-3.451a.75.75 0 111.061 1.06l-3.45 3.451a1.125 1.125 0 001.587 1.595l3.454-3.553a3 3 0 000-4.242z"
+                cspanp-rule="evenodd"
+              />
+            </svg>
+            <div class="ml-4 flex min-w-0 flex-1 gap-2">
+              <span class="truncate font-medium"
+                >title_of_evidence_document.pdf</span
+              >
+              <span class="flex-shrink-0 text-gray-400">4.5mb</span>
+            </div>
+          </div>
+          <div class="ml-4 flex-shrink-0">
+            <a
+              href="#"
+              class="font-medium text-indigo-600 hover:text-indigo-500"
+              >Download</a
+            >
+          </div>
+        </span>
+      </span>
+      <span class="my-3">
+        <i class="font-light py-2">2. [Description of evidence 2] </i> <br />
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rem atque
+        suscipit eaque modi, ad porro nesciunt pariatur officia amet iure eum,
+        facilis fuga culpa, molestias iste minus adipisci alias vero!
+        <b> [Insert Timeframe]</b> days of the payment receipt.
+
+        <span
+          class="flex items-center justify-between py-4 pl-4 pr-5 text-sm leading-6"
+        >
+          <div class="flex w-0 flex-1 items-center">
+            <svg
+              class="h-5 w-5 flex-shrink-0 text-gray-400"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M15.621 4.379a3 3 0 00-4.242 0l-7 7a3 3 0 004.241 4.243h.001l.497-.5a.75.75 0 011.064 1.057l-.498.501-.002.002a4.5 4.5 0 01-6.364-6.364l7-7a4.5 4.5 0 016.368 6.36l-3.455 3.553A2.625 2.625 0 119.52 9.52l3.45-3.451a.75.75 0 111.061 1.06l-3.45 3.451a1.125 1.125 0 001.587 1.595l3.454-3.553a3 3 0 000-4.242z"
+                cspanp-rule="evenodd"
+              />
+            </svg>
+            <div class="ml-4 flex min-w-0 flex-1 gap-2">
+              <span class="truncate font-medium"
+                >title_of_evidence_document.pdf</span
+              >
+              <span class="flex-shrink-0 text-gray-400">4.5mb</span>
+            </div>
+          </div>
+          <div class="ml-4 flex-shrink-0">
+            <a
+              href="#"
+              class="font-medium text-indigo-600 hover:text-indigo-500"
+              >Download</a
+            >
+          </div>
+        </span>
+      </span>
+    </div>
+    <div class="flex flex-col mt-4">
+      <p class="font-semibold text-base">Timeline:</p>
+      <span class="my-1"><b>Last Update</b>: February 15, 2024</span>
+      <span class="my-1"
+        ><b>Resolution Date</b>: [Date of resolution, if resolved]/Pending</span
+      >
+
+      <p class="font-semibold text-base">Recent Communication Logs:</p>
+      <span class="my-1"><b>Last Update</b>: February 15, 2024</span>
+      <span class="my-1"
+        ><b>Resolution Date</b>: [Date of resolution, if resolved]/Pending</span
+      >
+      <span>
+        <i class="font-light py-2 my-1">1. February 1, 2024 - Complainant </i>:
+        This Contract Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      </span>
+      <span>
+        <i class="font-light py-2 my-1">2. February 5, 2024 - Arbitrator 1:</i>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      </span>
+      <span>
+        <i class="font-light py-2 my-1">3. February 10, 2024 - Respondent:</i>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      </span>
+    </div>
+
+    <div class="flex flex-col mt-2">
+      <p class="font-semibold text-base">Resolution Decision:</p>
+      <span> [Description of the decision reached by the arbitrators] </span>
+    </div>
+    <div class="flex flex-col mt-2">
+      <p class="font-semibold text-base">Appeals:</p>
+      <span> [Details of any appeals filed, if applicable] </span>
+    </div>
+    <div class="flex flex-col mt-2">
+      <p class="font-semibold text-base">Additional Notes/Comments:</p>
+      <span>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dignissim
+        justo in velit bibendum, vitae tempor nisi sagittis.
+      </span>
+    </div>
+  </div>
+</mat-dialog-content>
+<!-- <mat-dialog-actions align="end">
+
+</mat-dialog-actions> -->
