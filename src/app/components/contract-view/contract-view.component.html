@@ -1,0 +1,128 @@
+<div
+  mat-dialog-title
+  class="font-medium text-base italic flex flex-row justify-between"
+>
+  <div class="flex flex-row items-center gap-x-3">
+    <span class="material-symbols-outlined"> text_snippet </span> Contract ID
+    <span class="font-semibold text-base">{{ data.contract_id }}</span>
+  </div>
+  <div class="flex flex-row gap-x-3">
+    <button>
+      <span class="material-symbols-outlined font-bold text-gray-900"> print </span>
+    </button>
+    <button
+      mat-button
+      mat-dialog-close
+      class=" font-semibold text-sm py-2 px-2 text-gray-900 transition-transform transform hover:scale-105"
+    >
+      Close
+    </button>
+  </div>
+</div>
+<mat-dialog-content class="mat-typography">
+  <div class="flex flex-col mt-4">
+    <p class="font-semibold text-base italic">
+      This Electronic Contract ("Contract") is entered into by and between:
+    </p>
+
+    <div class="inline-flex">
+      [Party A Name], [Address], [City], [Country] (hereinafter referred to as
+      "Landowner"),
+    </div>
+    <div class="">And</div>
+    <div class="">
+      [Party B Name], [Address], [City], [Country] (hereinafter referred to as
+      "Buyer"),
+    </div>
+    <div class="">Hereinafter collectively referred to as the "Parties".</div>
+    <div class="flex flex-col">
+      <p class="font-semibold text-base">Background:</p>
+      <span>
+        <i class="font-light py-2">1. The Landowner is the legal owner of the property situated at
+        [Property Address], described in more detail in the attached documents
+        ("Property").</i>
+      </span>
+      <span>
+         <i class="font-light py-2">2. The Buyer wishes to purchase the Property from the Landowner and has
+        agreed to the terms and conditions outlined in this Contract.</i>
+      </span>
+    </div>
+
+    <div class="flex flex-col mt-4">
+      <p class="font-semibold text-base">Terms and Conditions</p>
+      <span>
+         <i class="font-light py-2">1. Purchase Price: </i>The Purchase Price for the Property shall be <b>[Insert
+        Purchase Price] [Currency].</b>  The Buyer shall make the payment in full to
+        the Landowner upon signing this Contract.
+      </span>
+      <span>
+         <i class="font-light py-2">2. Transfer of Ownership: </i>Upon receipt of the Purchase Price, the
+        Landowner agrees to transfer full ownership of the Property to the
+        Buyer. The transfer shall be recorded on the Decentralized Land Registry
+        System within <b> [Insert Timeframe]</b> days of the payment receipt.
+      </span>
+      <span>
+         <i class="font-light py-2">3. Title Deed:</i> The Landowner shall provide the Buyer with a valid and
+        legal Title Deed confirming the Buyer's ownership of the Property. The
+        Title Deed shall be transferred digitally through the Decentralized Land
+        Registry System.
+      </span>
+      <span>
+         <i class="font-light py-2">4. Property Description:</i> The Property is described as [Insert Property
+        Description]. The Buyer acknowledges that they have inspected the
+        Property and accepts it in its current condition.
+      </span>
+      <span>
+         <i class="font-light py-2">5. Legal Compliance:</i> Both Parties agree to comply with all applicable
+        laws and regulations governing the sale and transfer of real property in
+        the jurisdiction where the Property is located.
+      </span>
+      <span>
+         <i class="font-light py-2">6. Dispute Resolution:</i> Any disputes arising from or related to this
+        Contract shall be resolved through arbitration in accordance with the
+        rules of the [Arbitration Institution]. The decision of the
+        arbitrator(s) shall be final and binding on both Parties.
+      </span>
+    </div>
+    <div class="flex flex-col mt-4">
+      <p class="font-semibold text-base">General Provisions</p>
+      <span>
+        <i class="font-light py-2 my-1">1. Entire Agreement</i>: This Contract constitutes the entire agreement
+        between the Parties and supersedes any prior agreements or
+        understandings, whether written or oral.
+      </span>
+      <span>
+       <i class="font-light py-2 my-1">2. Amendments:</i>  Any amendments or modifications to this Contract must be
+        made in writing and signed by both Parties.
+      </span>
+      <span>
+       <i class="font-light py-2 my-1">3. Severability:</i>  If any provision of this Contract is found to be
+        invalid or unenforceable, the remaining provisions shall remain in full
+        force and effect.
+      </span>
+      <span>
+        <i class="font-light py-2">4. Governing Law:</i> This Contract shall be governed by and construed in
+        accordance with the laws of [Jurisdiction].
+      </span>
+    </div>
+
+    <div class="flex flex-col mt-2">
+      <p class="font-semibold text-base">Signatures</p>
+      <span>
+        The Parties hereto have executed this Contract as of the date first
+        written above.
+      </span>
+      <span
+        >Landowner <br />
+        [Signature] [Name] [Date]
+      </span>
+      <span>
+        Buyer <br />
+        [Signature] [Name] [Date]
+      </span>
+    </div>
+  </div>
+</mat-dialog-content>
+<!-- <mat-dialog-actions align="end">
+
+</mat-dialog-actions> -->

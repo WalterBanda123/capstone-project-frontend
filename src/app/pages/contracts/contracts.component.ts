@@ -4,6 +4,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatTableDataSource } from '@angular/material/table';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { ContractViewComponent } from 'src/app/components/contract-view/contract-view.component';
 // import { ConfirmDelitionComponent } from 'src/app/components/confirm-delition/confirm-delition.component';
 import { ToastMessageComponent } from 'src/app/components/toast-message/toast-message.component';
 import { CONTRACTS } from 'src/app/mock/Contracts';
@@ -50,6 +51,20 @@ export class ContractsComponent implements OnInit {
     }, 1200);
   }
 
+  handleContractView(element: any): void {
+    const dialogRef = this.dialog.open(ContractViewComponent, {
+      hasBackdrop: true, data: element, width: '60%',
+      height: '100%',
+      panelClass: 'dialog-custom-width-height',
+
+       })
+
+    dialogRef.afterClosed().subscribe({
+      next: (result) => {
+        console.log(`Result is ${result} and the element is: `, element);
+      }
+    })
+  }
   handleTransactionDeletion(element: any): void {
     // const dialogRef = this.dialog.open(ConfirmDelitionComponent, { hasBackdrop: false })
     // dialogRef.afterClosed().subscribe({
