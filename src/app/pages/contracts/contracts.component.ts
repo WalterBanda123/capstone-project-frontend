@@ -7,6 +7,7 @@ import { NgxSpinnerService } from 'ngx-spinner';
 import { ContractViewComponent } from 'src/app/components/contract-view/contract-view.component';
 // import { ConfirmDelitionComponent } from 'src/app/components/confirm-delition/confirm-delition.component';
 import { ToastMessageComponent } from 'src/app/components/toast-message/toast-message.component';
+import { TransactionViewComponent } from 'src/app/components/transaction-view/transaction-view.component';
 import { CONTRACTS } from 'src/app/mock/Contracts';
 import { TRANSACTIONS } from 'src/app/mock/Transactions';
 
@@ -57,12 +58,19 @@ export class ContractsComponent implements OnInit {
       height: '100%',
       panelClass: 'dialog-custom-width-height',
 
-       })
+    })
 
     dialogRef.afterClosed().subscribe({
       next: (result) => {
         console.log(`Result is ${result} and the element is: `, element);
       }
+    })
+  }
+
+  handleTransactionView(element: any): void {
+    const dialogRef = this.dialog.open(TransactionViewComponent, {
+      data: element, hasBackdrop: true, width: '60%',
+      height: '100%',
     })
   }
   handleTransactionDeletion(element: any): void {

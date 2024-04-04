@@ -44,9 +44,24 @@
     </div>
 
     <div class="w-full flex flex-row justify-between items-center mt-10">
-      <p>All ({{ dataSource.data.length }})</p>
-      <div class="w-2/4">
-        <form #searchForm="ngForm" (submit)="handleSearch(searchForm)">
+      <p class="font-base">
+        All
+        <i>
+          <b>
+            ({{
+              selectedTab === "transactions"
+                ? transactionData.data.length
+                : dataSource.data.length
+            }})
+          </b>
+        </i>
+      </p>
+      <div class="w-3/4 flex flex-row justify-end items-center gap-x-3">
+        <form
+          #searchForm="ngForm"
+          class="w-3/4"
+          (submit)="handleSearch(searchForm)"
+        >
           <div class="mt-2 flex flex-row justify-center">
             <input
               ngModel
@@ -62,6 +77,11 @@
             </button>
           </div>
         </form>
+        <span
+          class="w-10 h-10 bg-gray-100 flex flex-row justify-center items-center rounded-full transition-transform transform hover:scale-105 cursor-pointer"
+        >
+          <span class="material-symbols-outlined text-gray-900"> refresh </span>
+        </span>
       </div>
     </div>
 
@@ -69,7 +89,7 @@
       <table
         mat-table
         [dataSource]="dataSource"
-        class="mat-elevation-z0 w-full border-[1px] border-gray-200 mt-5"
+        class="mat-elevation-z0 w-full border-[1px] border-gray-200 mt-5 mb-20"
       >
         <!-- Position Column -->
         <ng-container matColumnDef="contract">
@@ -171,7 +191,7 @@
       <table
         mat-table
         [dataSource]="transactionData"
-        class="mat-elevation-z1 w-full border-t-2 border-gray-300 mt-5"
+        class="mat-elevation-z0 w-full border-[1px] border-gray-200 mt-5 mb-20"
       >
         <!-- Position Column -->
         <ng-container matColumnDef="date">
@@ -221,6 +241,7 @@
           </mat-header-cell>
           <mat-cell *matCellDef="let element" class="text-sm">
             <button
+              (click)="handleTransactionView(element)"
               class="inline-flex font-semibold justify-center text-blue-700 items-start"
             >
               View<span class="material-symbols-outlined text-blue-700">

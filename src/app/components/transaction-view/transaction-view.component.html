@@ -1,0 +1,65 @@
+<div
+  mat-dialog-title
+  class="font-medium text-base italic flex flex-row justify-between"
+>
+  <div class="flex flex-row items-center gap-x-3">
+    <span class="material-symbols-outlined"> text_snippet </span> Transaction ID
+    <span class="font-semibold text-base"></span>
+  </div>
+  <div class="flex flex-row gap-x-3">
+    <button>
+      <span class="material-symbols-outlined font-bold text-gray-900">
+        print
+      </span>
+    </button>
+    <button
+      mat-button
+      mat-dialog-close
+      class="font-semibold text-sm py-2 px-2 text-gray-900 transition-transform transform hover:scale-105"
+    >
+      Close
+    </button>
+  </div>
+</div>
+<mat-dialog-content class="mat-typography">
+  <div class="flex flex-col mt-4">
+    <div class="flex flex-col mt-5">
+      <p class="font-semibold text-base italic">Property Details</p>
+      <span><b>Property Address</b>: [Property Address] </span
+      ><span><b>Property ID</b>: [Property ID]</span
+      ><span><b>Transaction Type</b>: [Buy/Sell]</span>
+    </div>
+    <div class="flex flex-col mt-4">
+      <p class="font-semibold text-base italic">Parties Involved</p>
+      <span><b>Seller </b>: [Seller's Name/Entity] </span
+      ><span><b>Buyer </b>: [Buyer's Name/Entity]</span>
+    </div>
+    <div class="flex flex-col mt-5">
+      <p class="font-semibold text-base italic">Transaction Details</p>
+      <span><b>Transaction Date</b> : [Transaction Date]</span
+      ><span><b>Purchase Price </b>: [Purchase Price]</span>
+      <span><b>Currency </b> : [Currency]</span>
+    </div>
+
+    <div class="flex flex-col mt-5">
+      <p class="font-semibold text-base italic">Document Verification Status</p>
+      <span><b>Title Deed </b> : [Verified/Not Verified]</span
+      ><span><b>Contract </b>: [Verified/Not Verified]</span>
+      <span><b>Survey Maps</b>: [Verified/Not Verified]</span>
+    </div>
+
+    <div class="flex flex-col mt-5">
+      <p class="font-semibold text-base italic">Transaction Status</p>
+      <span><b>Status </b> : [Pending/Processed]</span
+      ><span><b>Date Processed </b>: [Date Processed, if applicable]</span>
+      <span
+        ><b>Transaction Hash</b>: [Transaction Hash, if recorded on
+        blockchain]</span
+      >
+    </div>
+    <div class="flex flex-col mt-5">
+      <p class="font-semibold text-base italic">Additional Information</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad enim similique autem tempora accusamus exercitationem aut, consequatur, et, possimus cum vitae nemo at error saepe sapiente? Beatae excepturi animi praesentium!</p>
+    </div>
+  </div>
+</mat-dialog-content>

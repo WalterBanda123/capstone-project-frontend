@@ -3,6 +3,7 @@ import { NgForm } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
 import { ConflictCaseComponent } from 'src/app/components/conflict-case/conflict-case.component';
+import { TransactionViewComponent } from 'src/app/components/transaction-view/transaction-view.component';
 import { CONFLICTS } from 'src/app/mock/Conflicts';
 
 @Component({
@@ -40,6 +41,8 @@ export class ConflictResolutionComponent implements OnInit {
       }
     })
   }
+
+ 
   ngOnInit(): void {
     this.conflicts = new MatTableDataSource<any>(CONFLICTS)
   }

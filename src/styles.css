@@ -16,7 +16,7 @@
 }
 
 .activesection{
-  @apply text-green-600 cursor-pointer italic
+  @apply text-gray-900 cursor-pointer italic font-semibold
 }
 
 .menu-panel-active{

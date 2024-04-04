@@ -74,6 +74,7 @@ import { SectionFiveComponent } from './components/conflict-case-sections/sectio
 import { SectionOneConflictComponent } from './components/conflict-case-sections/section-one-conflict/section-one-conflict.component';
 import { ContractViewComponent } from './components/contract-view/contract-view.component';
 import { ConflictCaseComponent } from './components/conflict-case/conflict-case.component';
+import { TransactionViewComponent } from './components/transaction-view/transaction-view.component';
 
 
 @NgModule({
@@ -134,6 +135,7 @@ import { ConflictCaseComponent } from './components/conflict-case/conflict-case.
     SectionOneConflictComponent,
     ContractViewComponent,
     ConflictCaseComponent,
+    TransactionViewComponent,
   ],
   imports: [
     BrowserModule,
