@@ -34,15 +34,25 @@
     </div>
   </div>
   <ng-container *ngIf="!isSearched">
-    <app-quick-overview [selectedOverview]="selectedOverview" (handleSelectedOverview)="handleSelectedOverview($event)"></app-quick-overview>
+    <app-quick-overview
+      [selectedOverview]="selectedOverview"
+      (handleSelectedOverview)="handleSelectedOverview($event)"
+    ></app-quick-overview>
   </ng-container>
   <ng-container *ngIf="isSearched">
-    <div class="w-full flex flex-col items-center mt-20">
-      <div class="w-3/4 h-20">
+    <div class="w-full flex flex-row justify-center  mt-20">
+      <div class="w-2/4">
+
+
+      <div class="min-w-full h-20">
         <div
-          class="w-full flex flex-row justify-end gap-x-5 border-[1px] border-gray-300 py-3.5 px-2"
+          class="w-full flex flex-row justify-start gap-x-5 border-[1px] border-gray-300 py-3.5 px-2"
         >
           <span
+            >Results (<i><b>14</b></i
+            >)</span
+          >
+          <!-- <span
             class="p-0 cursor-pointer text-base text-center font-semibold"
             (click)="setSelectedSearchedDeedTab('title')"
             [class]="
@@ -68,10 +78,10 @@
             "
           >
             Request Deed</span
-          >
+          > -->
         </div>
       </div>
-      <div class="w-3/4" *ngIf="selectedSearchedDeedTab === 'title'">
+      <ng-container *ngIf="selectedSearchedDeedTab === 'title'">
         <app-title-deed
           *ngFor="let titleDeed of titles"
           [title]="titleDeed.title"
@@ -83,7 +93,7 @@
           [status]="titleDeed.status"
         ></app-title-deed>
 
-        <div class="flex flex-row justify-between items-center w-3/4 my-20">
+        <div class="flex flex-row justify-between items-center w-full my-20">
           <p class="text-sm text-gray-700">
             Showing
             <span class="font-medium">1</span>
@@ -173,7 +183,7 @@
             </nav>
           </div>
         </div>
-      </div>
+      </ng-container>
       <div class="w-3/4" *ngIf="selectedSearchedDeedTab === 'owner'">
         <app-owner-profile></app-owner-profile>
       </div>
@@ -181,5 +191,6 @@
         <app-request-deed></app-request-deed>
       </div>
     </div>
+     </div>
   </ng-container>
 </div>

@@ -75,6 +75,9 @@ import { SectionOneConflictComponent } from './components/conflict-case-sections
 import { ContractViewComponent } from './components/contract-view/contract-view.component';
 import { ConflictCaseComponent } from './components/conflict-case/conflict-case.component';
 import { TransactionViewComponent } from './components/transaction-view/transaction-view.component';
+import { NotificationsComponent } from './pages/notifications/notifications.component';
+import { PropertyViewComponent } from './components/property-view/property-view.component';
+import { PropertiesOverviewComponent } from './components/properties-overview/properties-overview.component';
 
 
 @NgModule({
@@ -136,6 +139,9 @@ import { TransactionViewComponent } from './components/transaction-view/transact
     ContractViewComponent,
     ConflictCaseComponent,
     TransactionViewComponent,
+    NotificationsComponent,
+    PropertyViewComponent,
+    PropertiesOverviewComponent,
   ],
   imports: [
     BrowserModule,

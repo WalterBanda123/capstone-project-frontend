@@ -40,6 +40,9 @@ import { SectionThreeComponent } from './components/conflict-case-sections/secti
 import { SectionFourComponent } from './components/conflict-case-sections/section-four/section-four.component';
 import { SectionFiveComponent } from './components/conflict-case-sections/section-five/section-five.component';
 import { SectionOneConflictComponent } from './components/conflict-case-sections/section-one-conflict/section-one-conflict.component';
+import { NotificationsComponent } from './pages/notifications/notifications.component';
+import { PropertyViewComponent } from './components/property-view/property-view.component';
+import { PropertiesOverviewComponent } from './components/properties-overview/properties-overview.component';
 
 
 
@@ -54,6 +57,7 @@ const routes: Routes = [
     children: [
       { path: '', redirectTo: 'overview', pathMatch: 'full' },
       { path: 'overview', component: OverviewComponent },
+      { path: 'notifications', component: NotificationsComponent },
       {
         path: 'features', component: FeaturesTemplateComponent, children: [
           {
@@ -106,7 +110,13 @@ const routes: Routes = [
         ]
       },
       { path: 'contracts', component: ContractsComponent },
-      { path: 'properties', component: PropertiesComponent },
+      {
+        path: 'properties', component: PropertiesComponent, children: [
+          { path: '', redirectTo: 'properties-overview', pathMatch: 'full' },
+          { path: 'properties-overview', component: PropertiesOverviewComponent },
+          { path: 'property-view/:id', component: PropertyViewComponent }
+        ]
+      },
 
     ]
   },
