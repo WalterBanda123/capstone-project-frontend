@@ -29,25 +29,25 @@ export class GetStartedComponent implements OnInit {
   handleUserRegistration(credentials: NgForm): void {
     const { email, password, confirmPassword } = credentials.value
     this.spinner.show()
-    // setTimeout(() => {
-    //   if (password !== confirmPassword) {
-    //     this.isPasswordMatching = false
-    //     this.spinner.hide()
-    //     return;
-    //   }
+    setTimeout(() => {
+      if (password !== confirmPassword) {
+        this.isPasswordMatching = false
+        this.spinner.hide()
+        return;
+      }
 
-    //   this.authService.registerUser(email, password).then((response) => {
-    //     credentials.form.reset()
-    //     this.router.navigate(['registration'])
-    //   }).catch((error: AuthError) => {
-    //     this.errorMessage = 'Email is already in use.'
-    //   }).finally(() => {
-    //     this.spinner.hide()
-    //     this.isPasswordMatching = true
-    //   })
+      this.authService.registerUser(email, password).then((response) => {
+        credentials.form.reset()
+        this.router.navigate(['dashboard'])
+      }).catch((error: AuthError) => {
+        this.errorMessage = 'Email is already in use.'
+      }).finally(() => {
+        this.spinner.hide()
+        this.isPasswordMatching = true
+      })
 
-    // }, 1500)
-    this.router.navigate(['registration'])
+    }, 1500)
+    // this.router.navigate(['registration'])
   }
 
   ngOnInit(): void {

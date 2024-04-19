@@ -3,180 +3,197 @@
     <h2 class="text-base font-semibold leading-7 text-gray-900">
       Basic Information
     </h2>
-    <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
-      <div class="col-span-5">
-        <label
-          for="street-address"
-          class="block text-sm font-medium leading-6 text-gray-900"
-          >Street address
-          <span class="text-xs font-normal italic">
-            *(Provide the complete street address, eg. street, house number,
-            town)
-          </span></label
-        >
-        <div class="mt-2">
-          <textarea
-            id="about"
-            name="about"
-            rows="2"
-            class="block w-full rounded-sm px-3 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-          ></textarea>
-        </div>
-      </div>
-
-      <div class="sm:col-span-3">
-        <label
-          for="country"
-          class="block text-sm font-medium leading-6 text-gray-900"
-          >City</label
-        >
-        <div class="mt-2">
-          <select
-            id="country"
-            name="country"
-            autocomplete="country-name"
-            class="block w-full rounded-sm border-0 py-2 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
+    <form #firstForm="ngForm" (ngSubmit)="saveFirstForm(firstForm)">
+      <div class="mt-10 grid gap-x-6 gap-y-8 grid-cols-6">
+        <div class="col-span-5">
+          <label
+            for="streetAddress"
+            class="block text-sm font-medium leading-6 text-gray-900"
+            >Street address
+            <span class="text-xs font-normal italic">
+              *(Provide the complete street address, eg. street, house number,
+              town)
+            </span></label
           >
-            <option>Mutare</option>
-            <option>Harare</option>
-            <option>Marondera</option>
-          </select>
+          <div class="mt-2">
+            <textarea
+              id="streetAddress"
+              name="streetAddress"
+              #streetAddress="ngModel"
+              ngModel
+              [(ngModel)]="fieldsValues$.streetAddress"
+              rows="2"
+              class="block w-full rounded-sm px-3 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-gray-600 sm:text-sm leading-6"
+            ></textarea>
+          </div>
         </div>
-      </div>
 
-      <div class="sm:col-span-2">
-        <label
-          for="last-name"
-          class="block text-sm font-medium leading-6 text-gray-900"
-          >Zip code</label
-        >
-        <div class="mt-2">
-          <input
-            type="text"
-            name="last-name"
-            id="last-name"
-            autocomplete="family-name"
-            class="block w-full rounded-sm px-3 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-          />
-        </div>
-      </div>
-
-      <div class="sm:col-span-2">
-        <label
-          for="email"
-          class="block text-sm font-medium leading-6 text-gray-900"
-          >Longitude</label
-        >
-        <div class="mt-2">
-          <input
-            id="email"
-            name="email"
-            type="email"
-            autocomplete="email"
-            class="block w-full rounded-sm px-3 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-          />
-        </div>
-      </div>
-
-      <div class="sm:col-span-2">
-        <label
-          for="email"
-          class="block text-sm font-medium leading-6 text-gray-900"
-          >Latitude</label
-        >
-        <div class="mt-2">
-          <input
-            id="email"
-            name="email"
-            type="email"
-            autocomplete="email"
-            class="block w-full rounded-sm px-3 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-          />
-        </div>
-      </div>
-
-      <div class="sm:col-span-5">
-        <label
-          for="email"
-          class="block text-sm font-medium leading-6 text-gray-900"
-          >Land area/size
-          <span class="text-xs font-normal italic"
-            >*(Specify the land area or size of the property in either square
-            meters or acres eg. <b>200m²</b>)</span
-          ></label
-        >
-        <div class="mt-2">
-          <input
-            id="email"
-            name="email"
-            type="email"
-            autocomplete="email"
-            class="block w-full rounded-sm px-3 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-          />
-        </div>
-      </div>
-
-      <div class="sm:col-span-4">
-        <label
-          for="country"
-          class="block text-sm font-medium leading-6 text-gray-900"
-          >Property type
-          <span class="text-xs font-normal italic"
-            >*(Choose the appropriate property type from the provided
-            options)</span
-          ></label
-        >
-        <div class="mt-2">
-          <select
-            id="country"
-            name="country"
-            autocomplete="country-name"
-            class="block w-full rounded-sm border-0 py-2 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
+        <div class="sm:col-span-3">
+          <label
+            for="city"
+            class="block text-sm font-medium leading-6 text-gray-900"
+            >City</label
           >
-            <option>Family</option>
-            <option>Commercial</option>
-            <option>Government</option>
-          </select>
+          <div class="mt-2">
+            <select
+              id="city"
+              name="city"
+              #city="ngModel"
+              ngModel
+              [(ngModel)]="fieldsValues$.city"
+              autocomplete="city-name"
+              class="block w-full rounded-sm border-0 py-2 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-gray-600 sm:max-w-xs sm:text-sm sm:leading-6"
+            >
+              <option *ngFor="let city of cities">{{ city }}</option>
+            </select>
+          </div>
         </div>
-      </div>
 
-      <div class="col-span-5">
-        <label
-          for="about"
-          class="block text-sm font-medium leading-6 text-gray-900"
-          >Legal description
-          <span class="text-xs font-normal italic"
-            >*(lot number, block number, subdivision name)</span
+        <div class="col-span-2">
+          <label
+            for="zipCode"
+            class="block text-sm font-medium leading-6 text-gray-900"
+            >Zip code</label
           >
-        </label>
-        <div class="mt-2">
-          <textarea
-            id="about"
-            name="about"
-            rows="3"
-            class="block w-full rounded-sm px-3 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-          ></textarea>
+          <div class="mt-2">
+            <input
+              type="text"
+              name="zipCode"
+              #zipCode="ngModel"
+              ngModel
+              [(ngModel)]="fieldsValues$.zipCode"
+              id="zipCode"
+              class="block w-full rounded-sm px-3 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-gray-600 sm:text-sm sm:leading-6"
+            />
+          </div>
         </div>
-        <!-- <p class="mt-3 text-sm leading-6 text-gray-600">
-          Write a few sentences about yourself.
-        </p> -->
-      </div>
-      <div class="col-span-5">
-        <div class="mt-6 flex items-center justify-end gap-x-6">
-          <button
-            type="button"
-            class="text-sm font-semibold leading-6 text-yellow-600"
+
+        <div class="col-span-2">
+          <label
+            for="longitude"
+            class="block text-sm font-medium leading-6 text-gray-900"
+            >Longitude</label
           >
-            Cancel
-          </button>
-          <button
-            routerLink="/dashboard/features/register-property/ownership-details"
-            class="rounded-sm w-40 bg-gray-900 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
+          <div class="mt-2">
+            <input
+              id="longitude"
+              name="longitude"
+              #longitude="ngModel"
+              ngModel
+              type="text"
+              [(ngModel)]="fieldsValues$.longitude"
+              class="block w-full rounded-sm px-3 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-gray-600 sm:text-sm sm:leading-6"
+            />
+          </div>
+        </div>
+
+        <div class="sm:col-span-2">
+          <label
+            for="latitude"
+            class="block text-sm font-medium leading-6 text-gray-900"
+            >Latitude</label
           >
-            Next
-          </button>
+          <div class="mt-2">
+            <input
+              id="latitude"
+              name="latitude"
+              type="text"
+              #latitude="ngModel"
+              [(ngModel)]="fieldsValues$.latitude"
+              ngModel
+              autocomplete="email"
+              class="block w-full rounded-sm px-3 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-gray-600 sm:text-sm sm:leading-6"
+            />
+          </div>
+        </div>
+
+        <div class="col-span-5">
+          <label
+            for="landSize"
+            class="block text-sm font-medium leading-6 text-gray-900"
+            >Land area/size
+            <span class="text-xs font-normal italic"
+              >*(Specify the land area or size of the property in either square
+              meters or acres eg. <b>200m²</b>)</span
+            ></label
+          >
+          <div class="mt-2">
+            <input
+              id="landSize"
+              name="landSize"
+              type="number"
+              #landSize="ngModel"
+              [(ngModel)]="fieldsValues$.landSize"
+              ngModel
+              class="block w-full rounded-sm px-3 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-gray-600 sm:text-sm sm:leading-6"
+            />
+          </div>
+        </div>
+
+        <div class="sm:col-span-4">
+          <label
+            for="propertyType"
+            class="block text-sm font-medium leading-6 text-gray-900"
+            >Property type
+            <span class="text-xs font-normal italic"
+              >*(Choose the appropriate property type from the provided
+              options)</span
+            ></label
+          >
+          <div class="mt-2">
+            <select
+              id="propertyType"
+              name="propertyType"
+              #propertyType="ngModel"
+              ngModel
+              [(ngModel)]="fieldsValues$.propertyType"
+              class="block w-full rounded-sm border-0 py-2 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-gray-600 sm:max-w-xs sm:text-sm leading-6"
+            >
+              <option *ngFor="let type of propertyTypes">
+                {{ type }}
+              </option>
+            </select>
+          </div>
+        </div>
+
+        <div class="col-span-5">
+          <label
+            for="legalDescription"
+            class="block text-sm font-medium leading-6 text-gray-900"
+            >Legal description
+            <span class="text-xs font-normal italic"
+              >*(lot number, block number, subdivision name)</span
+            >
+          </label>
+          <div class="mt-2">
+            <textarea
+              id="legalDescription"
+              name="legalDescription"
+              #legalDescription="ngModel"
+              ngModel
+              rows="3"
+              [(ngModel)]="fieldsValues$.legalDescription"
+              class="block w-full rounded-sm px-3 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-gray-600 sm:text-sm sm:leading-6"
+            ></textarea>
+          </div>
+        </div>
+        <div class="col-span-5">
+          <div class="mt-6 flex items-center justify-end gap-x-6">
+            <button
+              type="button"
+              class="text-sm font-semibold leading-6 text-yellow-600"
+            >
+              Cancel
+            </button>
+            <button
+              type="submit"
+              class="rounded-sm w-40 bg-gray-900 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
+            >
+              Next
+            </button>
+          </div>
         </div>
       </div>
-    </div>
+    </form>
   </div>
 </div>

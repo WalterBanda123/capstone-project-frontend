@@ -15,6 +15,8 @@ export class LoginComponent implements OnInit {
   handleUserLogin(credentials: NgForm): void {
     const { email, password } = credentials.value
     this.authService.handleUserLogin(email, password)
+    console.log('Login');
+
   }
 
   handleGoogleAuth(): void {

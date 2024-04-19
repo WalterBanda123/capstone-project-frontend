@@ -12,8 +12,6 @@ export class AuthService {
   constructor(private auth: Auth, private router: Router) {
     onAuthStateChanged(this.auth, (user) => {
       if (user) {
-        console.log(user);
-
         this.authenticatedUser = user
         localStorage.setItem("user", JSON.stringify(this.authenticatedUser))
       }
