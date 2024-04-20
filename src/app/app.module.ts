@@ -78,6 +78,10 @@ import { TransactionViewComponent } from './components/transaction-view/transact
 import { NotificationsComponent } from './pages/notifications/notifications.component';
 import { PropertyViewComponent } from './components/property-view/property-view.component';
 import { PropertiesOverviewComponent } from './components/properties-overview/properties-overview.component';
+import { MainSectionComponent } from './components/verification-pages/main-section/main-section.component';
+import { SurveyPlansComponent } from './components/verification-pages/survey-plans/survey-plans.component';
+import { DeedsComponent } from './components/verification-pages/deeds/deeds.component';
+import { TaxAssessmentsComponent } from './components/verification-pages/tax-assessments/tax-assessments.component';
 
 
 @NgModule({
@@ -142,6 +146,10 @@ import { PropertiesOverviewComponent } from './components/properties-overview/pr
     NotificationsComponent,
     PropertyViewComponent,
     PropertiesOverviewComponent,
+    MainSectionComponent,
+    SurveyPlansComponent,
+    DeedsComponent,
+    TaxAssessmentsComponent,
   ],
   imports: [
     BrowserModule,

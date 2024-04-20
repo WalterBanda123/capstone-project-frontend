@@ -43,6 +43,10 @@ import { SectionOneConflictComponent } from './components/conflict-case-sections
 import { NotificationsComponent } from './pages/notifications/notifications.component';
 import { PropertyViewComponent } from './components/property-view/property-view.component';
 import { PropertiesOverviewComponent } from './components/properties-overview/properties-overview.component';
+import { MainSectionComponent } from './components/verification-pages/main-section/main-section.component';
+import { SurveyPlansComponent } from './components/verification-pages/survey-plans/survey-plans.component';
+import { DeedsComponent } from './components/verification-pages/deeds/deeds.component';
+import { TaxAssessmentsComponent } from './components/verification-pages/tax-assessments/tax-assessments.component';
 
 
 
@@ -84,7 +88,16 @@ const routes: Routes = [
               { path: 'review-submit', component: ReviewSubmitTransferComponent },
             ]
           },
-          { path: 'verification-validation', component: VerificationValidationComponent },
+          {
+            path: 'verification-validation', component: VerificationValidationComponent,
+            children: [
+              { path: '', redirectTo: 'main-section', pathMatch: 'full' },
+              { path: 'main-section', component: MainSectionComponent },
+              { path: 'survey-plan', component: SurveyPlansComponent },
+              { path: 'deeds', component: DeedsComponent },
+              { path: 'tax-assessments', component: TaxAssessmentsComponent },
+            ]
+          },
           {
             path: 'transactions', component: TransactionsComponent, children: [
               { path: '', redirectTo: 'property-details', pathMatch: 'full' },
