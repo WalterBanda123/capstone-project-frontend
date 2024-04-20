@@ -82,6 +82,7 @@ import { MainSectionComponent } from './components/verification-pages/main-secti
 import { SurveyPlansComponent } from './components/verification-pages/survey-plans/survey-plans.component';
 import { DeedsComponent } from './components/verification-pages/deeds/deeds.component';
 import { TaxAssessmentsComponent } from './components/verification-pages/tax-assessments/tax-assessments.component';
+import { IdentificationsComponent } from './components/verification-pages/identifications/identifications.component';
 
 
 @NgModule({
@@ -150,6 +151,7 @@ import { TaxAssessmentsComponent } from './components/verification-pages/tax-ass
     SurveyPlansComponent,
     DeedsComponent,
     TaxAssessmentsComponent,
+    IdentificationsComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,1 +1,156 @@
-<p>deeds works!</p>
+<div class="w-full flex flex-col mt-10 h-screen">
+  <p class="text-xl font-medium text-gray-900">Documents Details</p>
+  <p>
+    Welcome to the Document Verification and Validation page. Here, you can
+    verify the authenticity and integrity of various land-related documents,
+    ensuring transparency and security in property transactions. Through our
+    decentralized validation system, you can validate the accuracy and legality
+    of documents such as deeds, survey plans, tax assessments, identifications,
+    and more. Upload your documents and follow the verification process to
+    ensure compliance and trustworthiness in your land dealings.
+  </p>
+
+  <div class="w-full flex flex-row my-5 border-b-2 border-gray-100 py-2">
+    <span class="font-medium text-base text-gray-400"> Overview </span>
+    <span
+      class="flex flex-row items-center text-blue-900 font-semibold ml-6 cursor-pointer"
+    >
+      <span class="material-symbols-outlined"> add </span> Add Document
+    </span>
+  </div>
+  <div class="w-full flex flex-row mb-4">
+    <form class="w-full">
+      <input
+        type="search"
+        placeholder="Search for documents"
+        class="search-input w-2/4 ring-1 ring-gray-300 py-2 px-2"
+      />
+    </form>
+  </div>
+
+  <div
+    class="mt-2 flex justify-center rounded-lg border border-dashed border-gray-900/25 px-6 py-10"
+  >
+    <div class="text-center">
+      <svg
+        class="mx-auto h-12 w-12 text-gray-300"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        aria-hidden="true"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M1.5 6a2.25 2.25 0 012.25-2.25h16.5A2.25 2.25 0 0122.5 6v12a2.25 2.25 0 01-2.25 2.25H3.75A2.25 2.25 0 011.5 18V6zM3 16.06V18c0 .414.336.75.75.75h16.5A.75.75 0 0021 18v-1.94l-2.69-2.689a1.5 1.5 0 00-2.12 0l-.88.879.97.97a.75.75 0 11-1.06 1.06l-5.16-5.159a1.5 1.5 0 00-2.12 0L3 16.061zm10.125-7.81a1.125 1.125 0 112.25 0 1.125 1.125 0 01-2.25 0z"
+          clip-rule="evenodd"
+        />
+      </svg>
+      <div class="mt-4 flex text-sm leading-6 text-gray-600">
+        <label
+          for="file-upload"
+          class="relative cursor-pointer rounded-md bg-white font-semibold text-blue-900 focus-within:outline-none focus-within:ring-2 focus-within:ring-blue-900 focus-within:ring-offset-2 hover:text-blue-800"
+        >
+          <span>Upload a file</span>
+          <input
+            id="file-upload"
+            name="file-upload"
+            type="file"
+            class="sr-only"
+          />
+        </label>
+        <p class="pl-1">or drag and drop</p>
+      </div>
+      <p class="text-xs leading-5 text-gray-600">PNG, JPG, GIF up to 10MB</p>
+    </div>
+  </div>
+
+  <table mat-table class="mat-elevation-z1 my-10" [dataSource]="dataSource">
+    <!-- Position Column -->
+    <ng-container matColumnDef="name">
+      <th
+        mat-header-cell
+        *matHeaderCellDef
+        class="text-sm text-gray-700 font-semibold"
+      >
+        Document Name
+      </th>
+      <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="type">
+      <th
+        mat-header-cell
+        *matHeaderCellDef
+        class="text-sm text-gray-700 font-semibold"
+      >
+        Document Type
+      </th>
+      <td mat-cell *matCellDef="let element">{{ element.type }}</td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="date">
+      <th
+        mat-header-cell
+        *matHeaderCellDef
+        class="text-sm text-gray-700 font-semibold"
+      >
+        Document Date
+      </th>
+      <td mat-cell *matCellDef="let element">{{ element.date }}</td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="owners">
+      <th
+        mat-header-cell
+        *matHeaderCellDef
+        class="text-sm text-gray-700 font-semibold"
+      >
+        Owners
+      </th>
+      <td mat-cell *matCellDef="let element">{{ element.owners }}</td>
+    </ng-container>
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="status">
+      <th
+        mat-header-cell
+        *matHeaderCellDef
+        class="text-sm text-gray-700 font-semibold"
+      >
+        Status
+      </th>
+      <td mat-cell *matCellDef="let element">{{ element.status }}</td>
+    </ng-container>
+    <ng-container matColumnDef="operations">
+      <th
+        mat-header-cell
+        *matHeaderCellDef
+        class="text-sm text-gray-700 font-semibold"
+      >
+        Operations Selected
+      </th>
+      <td mat-cell *matCellDef="let element">
+        <span
+          class="material-symbols-outlined text-lg bg-gray-100 px-2 rounded-md py-1 text-blue-900 cursor-pointer mx-1"
+        >
+          pin_invoke
+        </span>
+        <span
+          class="material-symbols-outlined text-lg bg-gray-100 px-2 rounded-md py-1 text-blue-900 cursor-pointer mx-1"
+        >
+          delete
+        </span>
+        <span
+          class="material-symbols-outlined text-lg bg-gray-100 px-2 rounded-md py-1 text-blue-900 cursor-pointer mx-1"
+        >
+          download
+        </span>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+  <div class="w-full flex flex-row">pagination here</div>
+</div>

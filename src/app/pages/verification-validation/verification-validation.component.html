@@ -3,7 +3,13 @@
     <div class="inline-flex w-3/4">
       <span class="font-semibold">Features</span>
       <span class="material-symbols-outlined"> navigate_next </span>
-      <span class="text-gray-700 font-semibold">Verification & Validation</span>
+      <span class="text-gray-700 font-semibold"
+        ><a routerLink="/dashboard/features/verification-validation/main-section">Verification & Validation</a></span
+      >
+      <span class="material-symbols-outlined" *ngIf="pageName">
+        navigate_next
+      </span>
+      <span class="text-gray-700 font-semibold">{{ pageName }}</span>
     </div>
     <router-outlet></router-outlet>
   </div>

@@ -47,6 +47,7 @@ import { MainSectionComponent } from './components/verification-pages/main-secti
 import { SurveyPlansComponent } from './components/verification-pages/survey-plans/survey-plans.component';
 import { DeedsComponent } from './components/verification-pages/deeds/deeds.component';
 import { TaxAssessmentsComponent } from './components/verification-pages/tax-assessments/tax-assessments.component';
+import { IdentificationsComponent } from './components/verification-pages/identifications/identifications.component';
 
 
 
@@ -93,9 +94,10 @@ const routes: Routes = [
             children: [
               { path: '', redirectTo: 'main-section', pathMatch: 'full' },
               { path: 'main-section', component: MainSectionComponent },
-              { path: 'survey-plan', component: SurveyPlansComponent },
-              { path: 'deeds', component: DeedsComponent },
-              { path: 'tax-assessments', component: TaxAssessmentsComponent },
+              { path: 'survey-plan', component: SurveyPlansComponent, data: { pageName: 'Survey Plans' } },
+              { path: 'deeds', component: DeedsComponent, data: { pageName: 'Deed of title' } },
+              { path: 'tax-assessment', component: TaxAssessmentsComponent, data: { pageName: 'Tax Assessments' } },
+              { path: 'identifications', component: IdentificationsComponent, data: { pageName: 'Identifications Documents' } },
             ]
           },
           {
