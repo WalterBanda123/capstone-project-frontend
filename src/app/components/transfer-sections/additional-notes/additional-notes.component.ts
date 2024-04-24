@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
+import { TransferService } from 'src/app/providers/transfer.service';
 
 @Component({
   selector: 'app-additional-notes',
@@ -7,9 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdditionalNotesComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router, private transferService: TransferService) { }
 
+  fieldSets$:any = {}
+  handleFormThree(form: NgForm): void {
+    const data = form.value
+    console.log(data);
+    this.transferService.updateSectionThreeData(data)
+    this.router.navigate(['/dashboard/features/transfer-property/review-submit'])
+  }
   ngOnInit(): void {
+    this.fieldSets$ = this.transferService.sectionThreeData
   }
 
 }

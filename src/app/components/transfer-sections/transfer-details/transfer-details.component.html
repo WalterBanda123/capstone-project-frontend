@@ -1,109 +1,114 @@
 <div class="w-full">
-  <div class="border-b border-gray-900/10 pb-12">
-    <h2 class="text-base font-semibold leading-7 text-gray-900">
-      Transfer Details
-    </h2>
-    <p class="mt-1 text-sm leading-6 text-gray-900 italic">
-      *Property address (street address, city, state, zip code) GPS coordinates
-      (latitude and longitude) <br />
-      Legal description (lot number, block number, subdivision name)
-      <br />Property type (residential, commercial, agricultural, etc.) Land
-      area/size (in square meters or acres).
-    </p>
+  <form #formTwo="ngForm" (ngSubmit)="handleFormTwo(formTwo)">
+    <div class="border-b border-gray-900/10 pb-12">
+      <h2 class="text-base font-semibold leading-7 text-gray-900">
+        Transfer Details
+      </h2>
 
-    <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
-      <div class="col-span-5">
-        <label
-          for="street-address"
-          class="block text-sm font-medium leading-6 text-gray-900"
-        >
-          Recipient verified account name
-          <span class="text-xs font-normal italic">
-            *(Provide the account name of the Recipient)
-          </span></label
-        >
-        <div class="mt-2">
-          <input
-            id="email"
-            name="email"
-            type="email"
-            autocomplete="email"
-            class="block w-full rounded-sm px-3 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-          />
-        </div>
-      </div>
-
-      <div class="sm:col-span-3">
-        <label
-          for="country"
-          class="block text-sm font-medium leading-6 text-gray-900"
-          >Email<span class="text-xs font-normal italic">
-            *(Provide the recipient email)
-          </span></label
-        >
-        <div class="mt-2">
-          <input
-            type="email"
-            name="last-name"
-            id="last-name"
-            autocomplete="family-name"
-            class="block w-full rounded-sm px-3 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-          />
-        </div>
-      </div>
-
-      <div class="sm:col-span-3">
-        <label
-          for="last-name"
-          class="block text-sm font-medium leading-6 text-gray-900"
-          >Telephone<span class="text-xs font-normal italic">
-            *(Provide the recipient primary contact number)
-          </span></label
-        >
-        <div class="mt-2">
-          <input
-            type="tel"
-            name="last-name"
-            id="last-name"
-            autocomplete="family-name"
-            class="block w-full rounded-sm px-3 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-          />
-        </div>
-      </div>
-      <div class="col-span-5">
-        <label
-          for="street-address"
-          class="block text-sm font-medium leading-6 text-gray-900"
-          >Message
-          <span class="text-xs font-normal italic">
-            *(Message to recipient)
-          </span></label
-        >
-        <div class="mt-2">
-          <textarea
-            id="about"
-            name="about"
-            rows="2"
-            class="block w-full rounded-sm px-3 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-          ></textarea>
-        </div>
-      </div>
-      <div class="col-span-5">
-        <div class="mt-6 flex items-center justify-end gap-x-6">
-          <button
-            type="button"
-            class="text-sm font-semibold leading-6 text-yellow-600"
+      <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+        <div class="col-span-5">
+          <label
+            for="propertyRecepient"
+            class="block text-sm font-medium leading-6 text-gray-900"
           >
-            Cancel
-          </button>
-          <button
-            routerLink="/dashboard/features/transfer-property/documentation"
-            class="rounded-sm w-40 bg-gray-900 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
+            Recipient verified account name
+            <span class="text-xs font-normal italic">
+              *(Provide the account name of the Recipient)
+            </span></label
           >
-            Next
-          </button>
+          <div class="mt-2">
+            <input
+              id="propertyRecepient"
+              name="propertyRecepient"
+              type="text"
+              #propertyRecepient="ngModel"
+              ngModel
+              [(ngModel)]="fieldSets$.propertyRecepient"
+              class="block w-full rounded-sm px-3 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+            />
+          </div>
+        </div>
+
+        <div class="sm:col-span-3">
+          <label
+            for="email"
+            class="block text-sm font-medium leading-6 text-gray-900"
+            >Email<span class="text-xs font-normal italic">
+              *(Provide the recipient email)
+            </span></label
+          >
+          <div class="mt-2">
+            <input
+              type="email"
+              name="email"
+              id="email"
+              ngModel
+              #email="ngModel"
+              [(ngModel)]="fieldSets$.email"
+              class="block w-full rounded-sm px-3 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+            />
+          </div>
+        </div>
+
+        <div class="sm:col-span-3">
+          <label
+            for="telephone"
+            class="block text-sm font-medium leading-6 text-gray-900"
+            >Telephone<span class="text-xs font-normal italic">
+              *(Provide the recipient primary contact number)
+            </span></label
+          >
+          <div class="mt-2">
+            <input
+              type="tel"
+              name="telephone"
+              id="telephone"
+              #telephone="ngModel"
+              ngModel
+              [(ngModel)]="fieldSets$.telephone"
+              class="block w-full rounded-sm px-3 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+            />
+          </div>
+        </div>
+        <div class="col-span-5">
+          <label
+            for="message"
+            class="block text-sm font-medium leading-6 text-gray-900"
+            >Message
+            <span class="text-xs font-normal italic">
+              *(Message to recipient)
+            </span></label
+          >
+          <div class="mt-2">
+            <textarea
+              id="message"
+              name="message"
+              rows="2"
+              ngModel
+              #message="ngModel"
+              [(ngModel)]="fieldSets$.message"
+              class="block w-full rounded-sm px-3 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+            ></textarea>
+          </div>
+        </div>
+        <div class="col-span-5">
+          <div class="mt-6 flex items-center justify-end gap-x-6">
+            <button
+              routerLink="/dashboard/features/transfer-property/property-information"
+              type="button"
+              class="text-sm font-semibold leading-6 text-yellow-600"
+            >
+              Previous
+            </button>
+            <button
+              type="submit"
+              class="rounded-sm w-40 bg-gray-900 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
+            >
+              Next
+            </button>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  </form>
 </div>

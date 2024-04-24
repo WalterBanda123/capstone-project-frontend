@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TransferService } from 'src/app/providers/transfer.service';
 
 @Component({
   selector: 'app-review-submit-transfer',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReviewSubmitTransferComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private transferService: TransferService) { }
+  transactionInformation$: any = {}
+  
   ngOnInit(): void {
+    this.transactionInformation$ = this.transferService.getFormData()
   }
 
 }

@@ -86,7 +86,7 @@ const routes: Routes = [
               { path: 'transfer-details', component: TransferDetailsComponent },
               { path: 'documentation', component: DocumentationComponent },
               { path: 'additional-notes', component: AdditionalNotesComponent },
-              { path: 'review-submit', component: ReviewSubmitComponent },
+              { path: 'review-submit', component: ReviewSubmitTransferComponent },
             ]
           },
           {
