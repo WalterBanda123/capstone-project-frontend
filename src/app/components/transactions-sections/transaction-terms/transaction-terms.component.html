@@ -18,6 +18,7 @@
               ngModel
               type="text"
               name="askingPrice"
+              [(ngModel)]="fieldSets$.askingPrice"
               id="askingPrice"
               class="block w-full rounded-sm px-3 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
             />
@@ -39,6 +40,7 @@
               name="paymentMethod"
               #paymentMethod="ngModel"
               ngModel
+              [(ngModel)]="fieldSets$.paymentMethod"
               class="block w-full rounded-sm border-0 py-2 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
             >
               <option>Nostro (USD)</option>
@@ -66,6 +68,7 @@
               name="fundingSource"
               ngModel
               #fundingSource="ngModel"
+              [(ngModel)]="fieldSets$.fundingSource"
               class="block w-full rounded-sm border-0 py-2 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
             >
               <option>Personal Funds</option>
@@ -104,6 +107,7 @@
               id="startingDate"
               #startingDate="ngModel"
               ngModel
+              [(ngModel)]="fieldSets$.startingDate"
               class="block w-full rounded-sm px-3 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
             />
           </div>
@@ -122,6 +126,7 @@
               id="endDate"
               ngModel
               #endDate="ngModel"
+              [(ngModel)]="fieldSets$.endDate"
               class="block w-full rounded-sm px-3 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
             />
           </div>
@@ -148,6 +153,7 @@
               name="downPayment"
               id="downPayment"
               #downPayment="ngModel"
+              [(ngModel)]="fieldSets$.downPayment"
               ngModel
               class="block w-full rounded-sm px-3 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
             />
@@ -168,6 +174,7 @@
               id="monthlyPayment"
               #monthlyPayment="ngModel"
               ngModel
+              [(ngModel)]="fieldSets$.monthlyPayment"
               class="block w-full rounded-sm px-3 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
             />
           </div>
@@ -189,6 +196,7 @@
               rows="3"
               ngModel
               #financingTerms="ngModel"
+              [(ngModel)]="fieldSets$.financingTerms"
               class="block w-full rounded-sm px-3 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
             ></textarea>
           </div>

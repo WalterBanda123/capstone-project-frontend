@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TransactionsService } from 'src/app/providers/transactions.service';
 
 @Component({
   selector: 'app-review-payments',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReviewPaymentsComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private transactionService: TransactionsService) { }
+  transactionInformation$: any = {}
   ngOnInit(): void {
+    this.transactionInformation$ = this.transactionService.getFormData()
   }
 
 }

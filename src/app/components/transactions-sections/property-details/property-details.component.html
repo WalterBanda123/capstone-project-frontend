@@ -20,6 +20,7 @@
               name="property"
               ngModel
               #property="ngModel"
+              [(ngModel)]="fieldSets$.property"
               class="block w-full rounded-sm border-0 py-2 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
             >
               <option>Property 1</option>
@@ -46,6 +47,7 @@
               class="block w-full rounded-sm border-0 py-2 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
               #transferType="ngModel"
               ngModel
+              [(ngModel)]="fieldSets$.transferType"
             >
               <option>Sale</option>
               <option>Gift</option>

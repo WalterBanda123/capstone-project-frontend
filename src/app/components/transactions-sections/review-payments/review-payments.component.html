@@ -17,6 +17,8 @@
         </dt>
         <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
           <p>.</p>
+          <p>{{ transactionInformation$.property }}</p>
+          <p>{{ transactionInformation$.transferType }}</p>
         </dd>
       </div>
       <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
@@ -33,10 +35,14 @@
         </dt>
         <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
           <p>.</p>
-          <p></p>
-
-          <p></p>
-          <p></p>
+          <p>{{ transactionInformation$.askingPrice }}</p>
+          <p>{{ transactionInformation$.paymentMethod }}</p>
+          <p>{{ transactionInformation$.fundingSource }}</p>
+          <p>{{ transactionInformation$.startingDate }}</p>
+          <p>{{ transactionInformation$.endDate }}</p>
+          <p>{{ transactionInformation$.downPayment }}</p>
+          <p>{{ transactionInformation$.monthlyPayment }}</p>
+          <p>{{ transactionInformation$.financingTerms }}</p>
         </dd>
       </div>
       <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
@@ -49,6 +55,8 @@
           class="mt-1 p text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0"
         >
           <p class="">.</p>
+          <p class="">{{ transactionInformation$.buyerID }}</p>
+          <p class="">{{ transactionInformation$.propertyRequest }}</p>
         </dd>
       </div>
     </dl>
