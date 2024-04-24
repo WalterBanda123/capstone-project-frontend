@@ -22,6 +22,7 @@
               id="firstParty"
               #firstParty="ngModel"
               ngModel
+              [(ngModel)]="fieldSets$.firstParty"
               class="block w-full rounded-sm px-3 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-gray-600 sm:text-sm sm:leading-6"
             />
           </div>
@@ -41,6 +42,7 @@
               name="partyAtoProperty"
               #partyAtoProperty="ngModel"
               ngModel
+              [(ngModel)]="fieldSets$.partyAtoProperty"
               class="block w-full rounded-sm border-0 py-2 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-gray-600 sm:max-w-xs sm:text-sm sm:leading-6"
             >
               <option>Owner</option>
@@ -65,6 +67,7 @@
               id="secondParty"
               #secondParty="ngModel"
               ngModel
+              [(ngModel)]="fieldSets$.secondParty"
               class="block w-full rounded-sm px-3 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-gray-600 sm:text-sm sm:leading-6"
             />
           </div>
@@ -85,6 +88,7 @@
               name="partyBtoProperty"
               #partyBtoProperty="ngModel"
               ngModel
+              [(ngModel)]="fieldSets$.partyBtoProperty"
               class="block w-full rounded-sm border-0 py-2 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-gray-600 sm:max-w-xs sm:text-sm sm:leading-6"
             >
               <option>Owner</option>

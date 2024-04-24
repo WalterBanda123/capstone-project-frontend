@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ConflictsService } from 'src/app/providers/conflicts.service';
 
 @Component({
   selector: 'app-section-three',
@@ -9,11 +10,14 @@ import { Router } from '@angular/router';
 })
 export class SectionThreeComponent implements OnInit {
 
-  constructor(private router:Router) { }
+  constructor(private router: Router, private conflictService: ConflictsService) { }
 
- selectedTitleDeed:any = {}
- selectedPurchaseAgreement:any = {}
-  selectedSurveyPlan:any = {}
+  selectedTitleDeed: any = {}
+  deedFileName: string = ''
+  selectedPurchaseAgreement: any = {}
+  purchaseAgreementFileName: string = ''
+  selectedSurveyPlan: any = {}
+  planSurveyFileName: string = ''
 
   getPropertyDeeds(element: HTMLInputElement): void {
     if (element.files!.length > 0) {
@@ -34,12 +38,21 @@ export class SectionThreeComponent implements OnInit {
     }
   }
 
+  fieldSets$: any = {}
   handleFormThree(form: NgForm): void {
     const data = form.value
     console.log(data);
+    this.conflictService.updateSectionThreeData(data)
     this.router.navigate(['/dashboard/features/create-conflict-case/section-four'])
   }
   ngOnInit(): void {
+    this.fieldSets$ = this.conflictService.sectionThreeData
+
+    this.planSurveyFileName = this.fieldSets$["file-upload-plan"] && this.fieldSets$["file-upload-plan"].toString().split('\\')[2]
+
+    this.deedFileName = this.fieldSets$["file-upload-deed"] && this.fieldSets$["file-upload-deed"].toString().split('\\')[2]
+
+    this.purchaseAgreementFileName = this.fieldSets$["file-upload-agreement"] && this.fieldSets$["file-upload-agreement"].toString().split('\\')[2]
   }
 
 }

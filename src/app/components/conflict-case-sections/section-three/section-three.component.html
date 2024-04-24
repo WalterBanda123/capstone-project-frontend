@@ -25,7 +25,7 @@
               <span>
                 <p>Upload a file</p>
                 <p class="text-xs text-gray-900 font-medium">
-                  {{ selectedTitleDeed.name }}
+                  {{ selectedTitleDeed.name ?? deedFileName }}
                 </p>
               </span>
               <input
@@ -63,7 +63,9 @@
               <span>
                 <p>Upload a file</p>
                 <p class="text-xs text-gray-900 font-medium">
-                  {{ selectedPurchaseAgreement.name }}
+                  {{
+                    selectedPurchaseAgreement.name ?? purchaseAgreementFileName
+                  }}
                 </p>
               </span>
               <input
@@ -102,7 +104,7 @@
               <span>
                 <p>Upload a file</p>
                 <p class="text-xs text-gray-900 font-medium">
-                  {{ selectedSurveyPlan.name }}
+                  {{ selectedSurveyPlan.name ?? planSurveyFileName }}
                 </p>
               </span>
               <input
@@ -135,6 +137,7 @@
               name="additionalNotes"
               rows="3"
               ngModel
+              [(ngModel)]="fieldSets$.additionalNotes"
               #additionalNotes="ngModel"
               class="block w-full rounded-sm px-3 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-gray-600 sm:text-sm sm:leading-6"
             ></textarea>
@@ -143,7 +146,7 @@
         <div class="col-span-5">
           <div class="mt-6 flex items-center justify-end gap-x-6">
             <button
-              routerLink="/dashboard/features/create-conflict-case/section-one"
+              routerLink="/dashboard/features/create-conflict-case/section-two"
               type="button"
               class="text-sm font-semibold leading-6 text-yellow-600"
             >
