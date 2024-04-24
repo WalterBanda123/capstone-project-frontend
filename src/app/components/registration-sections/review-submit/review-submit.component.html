@@ -11,16 +11,16 @@
     <dl class="divide-y divide-gray-100">
       <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
         <dt class="text-sm font-medium leading-6 text-gray-900">
-          <p class="text-base">Basic Information</p>
-          <p class="font-normal">Street Address</p>
-          <p class="font-normal">City, Zip Code</p>
-          <p class="font-normal">Longitude, Latitude</p>
-          <p class="font-normal">Property Type</p>
-          <p class="font-normal">Land Size</p>
-          <p class="font-normal">Legal Description</p>
+          <p class="text-lg font-semibold">Basic Information</p>
+          <p class="font-semibold">Street Address</p>
+          <p class="font-semibold">City, Zip Code</p>
+          <p class="font-semibold">Longitude, Latitude</p>
+          <p class="font-semibold">Property Type</p>
+          <p class="font-semibold">Land Size</p>
+          <p class="font-semibold">Legal Description</p>
         </dt>
         <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
-          <p>...</p>
+          <p>.</p>
           <p>{{ propertyInformation$.streetAddress }}</p>
           <p>
             {{ propertyInformation$.city }}, {{ propertyInformation$.zipCode }}
@@ -35,14 +35,14 @@
         </dd>
       </div>
       <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-        <dt class="text-sm font-medium leading-6 text-gray-900">
-          <p class="text-base">Ownerships</p>
-          <p class="font-normal">Property Ownership</p>
-          <p class="font-normal">Identification</p>
+        <dt class="text-sm  leading-6 text-gray-900">
+          <p class="text-lg font-semibold">Ownerships</p>
+          <p class="font-semibold">Property Ownership</p>
+          <p class="font-semibold">Identification</p>
         </dt>
         <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
           <p>.</p>
-          <p>....</p>
+          <p>{{ propertyInformation$.propertyOwnershipType }}</p>
           <div class="flex flex-row">
             <div class="flex w-0 flex-1 items-center">
               <svg
@@ -74,35 +74,35 @@
       </div>
       <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
         <dt class="text-sm font-medium leading-6 text-gray-900">
-          <p class="text-base">Property Features</p>
-          <p class="font-normal">Building Type</p>
-          <p class="font-normal">Year Built</p>
-          <p class="font-normal">Number of rooms</p>
-          <p class="font-normal">Amenities</p>
-          <p class="font-normal">Conditions on the property</p>
+          <p class="text-lg font-semibold">Property Features</p>
+          <p class="font-semibold">Building Type</p>
+          <p class="font-semibold">Year Built</p>
+          <p class="font-semibold">Number of rooms</p>
+          <p class="font-semibold">Amenities</p>
+          <p class="font-semibold">Conditions on the property</p>
         </dt>
         <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
-          <p></p>
-          <p></p>
-          <p></p>
-          <p></p>
-          <p></p>
-          <p></p>
+          <p>.</p>
+          <p>{{ propertyInformation$.buildingType }}</p>
+          <p>{{ propertyInformation$.yearBuilt }}</p>
+          <p>{{ propertyInformation$.rooms }}</p>
+          <p>{{ propertyInformation$.amenities }}</p>
+          <p>{{ propertyInformation$.propertyCondition }}</p>
         </dd>
       </div>
       <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
         <dt class="text-sm font-medium leading-6 text-gray-900">
-          <p class="text-base">Legal And Regulatory Information</p>
-          <p class="font-normal">Property Use</p>
-          <p class="font-normal">Brief Description on use</p>
-          <p class="font-normal">Property Tax Details</p>
-          <p class="font-normal">Liens or Encumbrances on Property</p>
-          <p class="font-normal">Brief Description on Liens</p>
+          <p class="text-lg font-semibold">Legal And Regulatory Information</p>
+          <p class="font-semibold">Property Use</p>
+          <p class="font-semibold">Brief Description on use</p>
+          <p class="font-semibold">Property Tax Details</p>
+          <p class="font-semibold">Liens or Encumbrances on Property</p>
+          <p class="font-semibold">Brief Description on Liens</p>
         </dt>
         <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
           <p>.</p>
-          <p>.....</p>
-          <p>.</p>
+          <p>{{ propertyInformation$.propertyUse }}</p>
+          <p>{{ propertyInformation$.useDescription }}</p>
           <div class="flex flex-row">
             <div class="flex w-0 flex-1 items-center">
               <svg
@@ -130,20 +130,20 @@
               >
             </div>
           </div>
-          <p>.</p>
-          <p>.</p>
+          <p>{{ propertyInformation$.encumbrances }}</p>
+          <p>{{ propertyInformation$.encumbrancesDescription }}</p>
         </dd>
       </div>
       <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
         <dt class="text-sm font-medium leading-6 text-gray-900">
-          <p class="text-base">Additional Documentation</p>
-          <p class="font-normal">Property Exterior</p>
-          <p class="font-normal">Property Interior</p>
-          <p class="font-normal">Survey Plan</p>
+          <p class="text-lg font-semibold">Additional Documentation</p>
+          <p class="font-semibold">Property Exterior</p>
+          <p class="font-semibold">Property Interior</p>
+          <p class="font-semibold">Survey Plan</p>
         </dt>
-        <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
-          <div class="">...</div>
-          <div class="flex flex-row">
+        <dd class="mt-1 p text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
+          <p class="">.</p>
+          <div class="flex flex-row py-1">
             <div class="flex w-0 flex-1 items-center">
               <svg
                 class="h-5 w-5 flex-shrink-0 text-gray-400"
@@ -170,7 +170,7 @@
               >
             </div>
           </div>
-          <div class="flex flex-row">
+          <div class="flex flex-row py-1">
             <div class="flex w-0 flex-1 items-center">
               <svg
                 class="h-5 w-5 flex-shrink-0 text-gray-400"
@@ -197,20 +197,46 @@
               >
             </div>
           </div>
-          <div class="">...</div>
+          <div class="flex flex-row py-1">
+            <div class="flex w-0 flex-1 items-center">
+              <svg
+                class="h-5 w-5 flex-shrink-0 text-gray-400"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M15.621 4.379a3 3 0 00-4.242 0l-7 7a3 3 0 004.241 4.243h.001l.497-.5a.75.75 0 011.064 1.057l-.498.501-.002.002a4.5 4.5 0 01-6.364-6.364l7-7a4.5 4.5 0 016.368 6.36l-3.455 3.553A2.625 2.625 0 119.52 9.52l3.45-3.451a.75.75 0 111.061 1.06l-3.45 3.451a1.125 1.125 0 001.587 1.595l3.454-3.553a3 3 0 000-4.242z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+              <div class="ml-4 flex min-w-0 flex-1 gap-2">
+                <span class="truncate font-medium">survey_plan.pdf</span>
+                <span class="flex-shrink-0 text-gray-400">2.4mb</span>
+              </div>
+            </div>
+            <div class="ml-4 flex-shrink-0">
+              <a
+                href="#"
+                class="font-medium text-indigo-600 hover:text-indigo-500"
+                >Download</a
+              >
+            </div>
+          </div>
         </dd>
       </div>
       <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
         <dt class="text-sm font-medium leading-6 text-gray-900">
-          <p class="text-base">Purchase Price</p>
-          <p class="font-normal">Date of Purchase</p>
-          <p class="font-normal">Property Market Value</p>
-          <p class="font-normal">Affidavit of Payment</p>
+          <p class="text-lg font-semibold">Purchase Price</p>
+          <p class="font-semibold">Date of Purchase</p>
+          <p class="font-semibold">Property Market Value</p>
+          <p class="font-semibold">Affidavit of Payment</p>
         </dt>
-        <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
-          <p>....</p>
-          <p>.....</p>
-          <p>....</p>
+        <dd class="mt-1 text-sm leading-6 text-slate-700 sm:col-span-2 sm:mt-0">
+          <p>.</p>
+          <p>{{ propertyInformation$.purchasedOn }}</p>
+          <p>$ {{ propertyInformation$.marketValue | currency }}</p>
           <div class="flex flex-row">
             <div class="flex w-0 flex-1 items-center">
               <svg

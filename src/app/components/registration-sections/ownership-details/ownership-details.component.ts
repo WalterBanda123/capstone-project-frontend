@@ -36,7 +36,6 @@ export class OwnershipDetailsComponent implements OnInit {
   handleSubmittingSecondForm(form: NgForm): void {
     const data = form.value
     this.registrationService.updateSectionTwoData(data)
-    
     this.router.navigate(['/dashboard/features/register-property/property-features'])
   }
   ngOnInit(): void {

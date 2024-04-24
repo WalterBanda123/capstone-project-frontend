@@ -1,70 +1,74 @@
 <div class="w-full">
-  <div class="border-b border-gray-900/10 pb-12">
-    <p class="text-base font-semibold leading-7 text-gray-900">
-      Buyer Information
-    </p>
-    <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6 mb-20">
-      <div class="col-span-4">
-        <label
-          for="first-name"
-          class="block text-sm font-medium leading-6 text-gray-900"
-        >
-          Buyer Account ID/ Username
-          <span class="text-xs font-normal italic"
-            >*(Account ID or username of the buyer)</span
+  <form #formThree="ngForm" (ngSubmit)="handleFormThree(formThree)">
+    <div class="border-b border-gray-900/10 pb-12">
+      <p class="text-base font-semibold leading-7 text-gray-900">
+        Buyer Information
+      </p>
+      <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6 mb-20">
+        <div class="col-span-4">
+          <label
+            for="buyerID"
+            class="block text-sm font-medium leading-6 text-gray-900"
           >
-        </label>
-        <div class="mt-2">
-          <input
-            type="text"
-            name="first-name"
-            id="first-name"
-            autocomplete="given-name"
-            class="block w-full rounded-sm px-3 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-          />
+            Buyer Account ID/ Username
+            <span class="text-xs font-normal italic"
+              >*(Account ID or username of the buyer)</span
+            >
+          </label>
+          <div class="mt-2">
+            <input
+              type="text"
+              name="buyerID"
+              id="buyerID"
+              #buyerID="ngModel"
+              ngModel
+              class="block w-full rounded-sm px-3 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+            />
+          </div>
         </div>
-      </div>
 
-      <div class="sm:col-span-3">
-        <label
-          for="country"
-          class="block text-sm font-medium leading-6 text-gray-900"
-          >Select Request
-          <span class="text-xs font-normal italic"
-            >*(Select the request associated with this buyer)</span
-          ></label
-        >
-        <div class="mt-2">
-          <select
-            id="country"
-            name="country"
-            autocomplete="country-name"
-            class="block w-full rounded-sm border-0 py-2 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
+        <div class="sm:col-span-3">
+          <label
+            for="propertyRequest"
+            class="block text-sm font-medium leading-6 text-gray-900"
+            >Select Request
+            <span class="text-xs font-normal italic"
+              >*(Select the request associated with this buyer)</span
+            ></label
           >
-            <option>Request 1</option>
-            <option>Request 2</option>
-            <option>Request 3</option>
-          </select>
+          <div class="mt-2">
+            <select
+              id="propertyRequest"
+              name="propertyRequest"
+              ngModel
+              #propertyRequest="ngModel"
+              class="block w-full rounded-sm border-0 py-2 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
+            >
+              <option>Request 1</option>
+              <option>Request 2</option>
+              <option>Request 3</option>
+            </select>
+          </div>
         </div>
-      </div>
 
-      <div class="col-span-5">
-        <div class="mt-6 flex items-center justify-end gap-x-6">
-          <button
-            routerLink="/dashboard/features/transactions/transaction-terms"
-            type="button"
-            class="text-sm font-semibold leading-6 text-yellow-600"
-          >
-            Previous
-          </button>
-          <button
-            routerLink="/dashboard/features/transactions/review-submit"
-            class="rounded-sm w-40 bg-gray-900 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
-          >
-            Next
-          </button>
+        <div class="col-span-5">
+          <div class="mt-6 flex items-center justify-end gap-x-6">
+            <button
+              routerLink="/dashboard/features/transactions/transaction-terms"
+              type="button"
+              class="text-sm font-semibold leading-6 text-yellow-600"
+            >
+              Previous
+            </button>
+            <button
+              type="submit"
+              class="rounded-sm w-40 bg-gray-900 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
+            >
+              Next
+            </button>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  </form>
 </div>
