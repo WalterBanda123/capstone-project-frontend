@@ -37,7 +37,6 @@ export class AdditionalDocumentationComponent implements OnInit {
     }
   }
 
-
   handleFifthForm(form:NgForm):void{
     const data = form.value
     this.registrationService.updateSectionFifthData(data)

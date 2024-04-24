@@ -1,3 +1,4 @@
+import { registerLocaleData } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -10,7 +11,7 @@ import { RegistrationService } from 'src/app/providers/registration.service';
 })
 export class LegalRegulatoryComponent implements OnInit {
 
-  constructor(private regsitrationService: RegistrationService, private router: Router) { }
+  constructor(private registrationService: RegistrationService, private router: Router) { }
 
   propertyUses: string[] = [
     "Residential Use",
@@ -22,6 +23,7 @@ export class LegalRegulatoryComponent implements OnInit {
     "Vacant Land"
   ]
 
+  fieldsValues$: any = {}
   selectedFile$: any = {}
   getSelectedFile(element: HTMLInputElement): void {
     if (element.files!.length > 0) {
@@ -32,10 +34,11 @@ export class LegalRegulatoryComponent implements OnInit {
 
   handleForthForm(form: NgForm): void {
     const data = form.value
-    this.regsitrationService.updateSectionForthData(data)
+    this.registrationService.updateSectionForthData(data)
     this.router.navigate(['/dashboard/features/register-property/additional-documentation'])
   }
   ngOnInit(): void {
+    this.fieldsValues$ = this.registrationService.sectionFiveData
   }
 
 }

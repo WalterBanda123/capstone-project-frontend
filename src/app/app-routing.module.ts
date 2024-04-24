@@ -74,7 +74,7 @@ const routes: Routes = [
               { path: 'ownership-details', component: OwnershipDetailsComponent },
               { path: 'property-features', component: PropertyFeaturesComponent },
               { path: 'purchase-price', component: PurchasePriceComponent },
-              { path: 'review-submit', component: ReviewSubmitTransferComponent },
+              { path: 'review-submit', component: ReviewSubmitComponent },
             ]
           },
           { path: 'smart-contracts', component: SmartContractsComponent },
@@ -86,7 +86,7 @@ const routes: Routes = [
               { path: 'transfer-details', component: TransferDetailsComponent },
               { path: 'documentation', component: DocumentationComponent },
               { path: 'additional-notes', component: AdditionalNotesComponent },
-              { path: 'review-submit', component: ReviewSubmitTransferComponent },
+              { path: 'review-submit', component: ReviewSubmitComponent },
             ]
           },
           {

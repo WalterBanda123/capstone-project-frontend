@@ -44,6 +44,8 @@ export class RegistrationService {
 
 
   getFormData(): any {
+    console.log('called');
+
     return {
       ...this.sectionOneData,
       ...this.sectionTwoData,
