@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class SectionFiveComponent implements OnInit {
 
   constructor() { }
-
+  transactionInformation$:any = {}
   ngOnInit(): void {
   }
 

@@ -1,104 +1,111 @@
 <div class="w-full">
-  <div class="border-b border-gray-900/10 pb-12">
-    <h2 class="text-base font-semibold leading-7 text-gray-900">
-      Case Details
-    </h2>
+  <form #formOne="ngForm" (ngSubmit)="handleFormOne(formOne)">
+    <div class="border-b border-gray-900/10 pb-12">
+      <h2 class="text-base font-semibold leading-7 text-gray-900">
+        Case Details
+      </h2>
 
-    <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
-      <div class="col-span-5">
-        <label
-          for="street-address"
-          class="block text-sm font-medium leading-6 text-gray-900"
-          >Create Case ID
-          <span class="text-xs font-normal italic">
-            *(Create case identifier eg case001)
-          </span></label
-        >
-        <div class="mt-2">
-          <input
-            type="text"
-            name="last-name"
-            id="last-name"
-            autocomplete="family-name"
-            class="block w-full rounded-sm px-3 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-          />
-        </div>
-      </div>
-      <div class="col-span-5">
-        <label
-          for="street-address"
-          class="block text-sm font-medium leading-6 text-gray-900"
-          >Create Case Title
-          <span class="text-xs font-normal italic">
-            *(Case title or brief description)
-          </span></label
-        >
-        <div class="mt-2">
-          <input
-            type="text"
-            name="last-name"
-            id="last-name"
-            autocomplete="family-name"
-            class="block w-full rounded-sm px-3 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-          />
-        </div>
-      </div>
-      <div class="col-span-5">
-        <label
-          for="street-address"
-          class="block text-sm font-medium leading-6 text-gray-900"
-          >Dispute Description
-          <span class="text-xs font-normal italic">
-            *(Description of the conflict/dispute)
-          </span></label
-        >
-        <div class="mt-2">
-          <textarea
-            id="about"
-            name="about"
-            rows="2"
-            class="block w-full rounded-sm px-3 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-          ></textarea>
-        </div>
-      </div>
-      <div class="col-span-5">
-        <label
-          for="country"
-          class="block text-sm font-medium leading-6 text-gray-900"
-          >Dispute Type
-          <span class="text-xs font-normal italic">
-            *(Selection of the type of conflict e.g., property boundary dispute,
-            ownership dispute)
-          </span></label
-        >
-        <div class="mt-2">
-          <select
-            id="country"
-            name="country"
-            autocomplete="country-name"
-            class="block w-full rounded-sm border-0 py-2 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
+      <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+        <div class="col-span-5">
+          <label
+            for="caseID"
+            class="block text-sm font-medium leading-6 text-gray-900"
+            >Create Case ID
+            <span class="text-xs font-normal italic">
+              *(Create case identifier eg case001)
+            </span></label
           >
-            <option>Property boundary dispute</option>
-            <option>Ownership dispute</option>
-          </select>
+          <div class="mt-2">
+            <input
+              type="text"
+              name="caseID"
+              id="caseID"
+              #caseID="ngModel"
+              ngModel
+              class="block w-full rounded-sm px-3 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+            />
+          </div>
         </div>
-      </div>
-    <div class="col-span-5">
-        <div class="mt-6 flex items-center justify-end gap-x-6">
-          <button
-            type="button"
-            class="text-sm font-semibold leading-6 text-yellow-600"
+        <div class="col-span-5">
+          <label
+            for="caseTitle"
+            class="block text-sm font-medium leading-6 text-gray-900"
+            >Create Case Title
+            <span class="text-xs font-normal italic">
+              *(Case title or brief description)
+            </span></label
           >
-            Cancel
-          </button>
-          <button
-            routerLink="/dashboard/features/create-conflict-case/section-two"
-            class="rounded-sm w-40 bg-gray-900 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
+          <div class="mt-2">
+            <input
+              type="text"
+              name="caseTitle"
+              id="caseTitle"
+              #caseTitle="ngModel"
+              ngModel
+              class="block w-full rounded-sm px-3 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+            />
+          </div>
+        </div>
+        <div class="col-span-5">
+          <label
+            for="disputesDescription"
+            class="block text-sm font-medium leading-6 text-gray-900"
+            >Dispute Description
+            <span class="text-xs font-normal italic">
+              *(Description of the conflict/dispute)
+            </span></label
           >
-            Next
-          </button>
+          <div class="mt-2">
+            <textarea
+              id="disputesDescription"
+              name="disputesDescription"
+              rows="2"
+              ngModel
+              #disputesDescription="ngModel"
+              class="block w-full rounded-sm px-3 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+            ></textarea>
+          </div>
+        </div>
+        <div class="col-span-5">
+          <label
+            for="disputeType"
+            class="block text-sm font-medium leading-6 text-gray-900"
+            >Dispute Type
+            <span class="text-xs font-normal italic">
+              *(Selection of the type of conflict e.g., property boundary
+              dispute, ownership dispute)
+            </span></label
+          >
+          <div class="mt-2">
+            <select
+              id="disputeType"
+              name="disputeType"
+              #disputeType="ngModel"
+              ngModel
+              class="block w-full rounded-sm border-0 py-2 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
+            >
+              <option>Property boundary dispute</option>
+              <option>Ownership dispute</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-span-5">
+          <div class="mt-6 flex items-center justify-end gap-x-6">
+            <button
+              type="button"
+              class="text-sm font-semibold leading-6 text-yellow-600"
+            >
+              Cancel
+            </button>
+            <button
+              type="submit"
+              class="rounded-sm w-40 bg-gray-900 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
+            >
+              Next
+            </button>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  </form>
 </div>

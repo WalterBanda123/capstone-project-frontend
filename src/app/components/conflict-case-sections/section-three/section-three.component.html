@@ -1,129 +1,163 @@
 <div class="w-full">
-  <div class="border-b border-gray-900/10 pb-12">
-    <p class="text-base font-semibold leading-7 text-gray-900">
-      Evidence Submission
-    </p>
-    <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
-      <div class="col-span-5">
-        <p class="text-base font-semibold leading-7 text-gray-900">
-          Upload Documents
-        </p>
-        <div
-          class="mt-2 flex flex-row justify-between text-sm leading-6 text-gray-600"
-        >
-          <span class="text-sm font-medium leading-6 text-gray-900">
-            Property Deeds
-            <span class="text-xs font-normal italic"
-              >*( Provide proof of your property deed )</span
+  <form #formThree="ngForm" (ngSubmit)="handleFormThree(formThree)">
+    <div class="border-b border-gray-900/10 pb-12">
+      <p class="text-base font-semibold leading-7 text-gray-900">
+        Evidence Submission
+      </p>
+      <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+        <div class="col-span-5">
+          <p class="text-base font-semibold leading-7 text-gray-900">
+            Upload Documents
+          </p>
+          <div
+            class="mt-2 flex flex-row justify-between text-sm leading-6 text-gray-600"
+          >
+            <span class="text-sm font-medium leading-6 text-gray-900">
+              Property Deeds
+              <span class="text-xs font-normal italic"
+                >*( Provide proof of your property deed )</span
+              >
+            </span>
+            <label
+              for="file-upload-deed"
+              class="relative cursor-pointer rounded-md bg-white font-semibold text-blue-600"
             >
-          </span>
-          <label
-            for="file-upload"
-            class="relative cursor-pointer rounded-md bg-white font-semibold text-blue-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-blue-600 focus-within:ring-offset-2 hover:text-blue-500"
-          >
-            <span>Upload a file</span>
-            <input
-              id="file-upload"
-              name="file-upload"
-              type="file"
-              class="sr-only"
-            />
-          </label>
+              <span>
+                <p>Upload a file</p>
+                <p class="text-xs text-gray-900 font-medium">
+                  {{ selectedTitleDeed.name }}
+                </p>
+              </span>
+              <input
+                id="file-upload-deed"
+                name="file-upload-deed"
+                type="file"
+                class="sr-only"
+                #propertyDeeds
+                (change)="getPropertyDeeds(propertyDeeds)"
+                ngModel
+              />
+            </label>
+          </div>
+          <p class="text-xs leading-5 text-gray-600">
+            PNG, JPG, GIF up to 10MB
+          </p>
         </div>
-        <p class="text-xs leading-5 text-gray-600">PNG, JPG, GIF up to 10MB</p>
-      </div>
-      <div class="col-span-5">
-        <p class="text-base font-semibold leading-7 text-gray-900">
-          Upload Documents
-        </p>
-        <div
-          class="mt-2 flex flex-row justify-between text-sm leading-6 text-gray-600"
-        >
-          <span class="text-sm font-medium leading-6 text-gray-900">
-            Purchase agreements
-            <span class="text-xs font-normal italic"
-              >*(Provide proof of purchase agreements if applicable )</span
+        <div class="col-span-5">
+          <p class="text-base font-semibold leading-7 text-gray-900">
+            Upload Documents
+          </p>
+          <div
+            class="mt-2 flex flex-row justify-between text-sm leading-6 text-gray-600"
+          >
+            <span class="text-sm font-medium leading-6 text-gray-900">
+              Purchase agreements
+              <span class="text-xs font-normal italic"
+                >*(Provide proof of purchase agreements if applicable )</span
+              >
+            </span>
+            <label
+              for="file-upload-agreement"
+              class="relative cursor-pointer rounded-md bg-white font-semibold text-blue-600"
             >
-          </span>
-          <label
-            for="file-upload"
-            class="relative cursor-pointer rounded-md bg-white font-semibold text-blue-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-blue-600 focus-within:ring-offset-2 hover:text-blue-500"
-          >
-            <span>Upload a file</span>
-            <input
-              id="file-upload"
-              name="file-upload"
-              type="file"
-              class="sr-only"
-            />
-          </label>
+              <span>
+                <p>Upload a file</p>
+                <p class="text-xs text-gray-900 font-medium">
+                  {{ selectedPurchaseAgreement.name }}
+                </p>
+              </span>
+              <input
+                id="file-upload-agreement"
+                name="file-upload-agreement"
+                type="file"
+                class="sr-only"
+                #purchaseAgreement
+                (change)="getPurchaseAgreement(purchaseAgreement)"
+                ngModel
+              />
+            </label>
+          </div>
+          <p class="text-xs leading-5 text-gray-600">
+            PNG, JPG, GIF up to 10MB
+          </p>
         </div>
-        <p class="text-xs leading-5 text-gray-600">PNG, JPG, GIF up to 10MB</p>
-      </div>
-      <div class="col-span-5">
-        <p class="text-base font-semibold leading-7 text-gray-900">
-          Upload Documents
-        </p>
-        <div
-          class="mt-2 flex flex-row justify-between text-sm leading-6 text-gray-600"
-        >
-          <span class="text-sm font-medium leading-6 text-gray-900">
-            Survey maps
-            <span class="text-xs font-normal italic"
-              >*( detailed maps created by surveyors to accurately represent the
-              boundaries, features )</span
+        <div class="col-span-5">
+          <p class="text-base font-semibold leading-7 text-gray-900">
+            Upload Documents
+          </p>
+          <div
+            class="mt-2 flex flex-row justify-between text-sm leading-6 text-gray-600"
+          >
+            <span class="text-sm font-medium leading-6 text-gray-900">
+              Survey maps
+              <span class="text-xs font-normal italic"
+                >*( detailed maps created by surveyors to accurately represent
+                the boundaries, features )</span
+              >
+            </span>
+            <label
+              for="file-upload-plan"
+              class="relative cursor-pointer rounded-md bg-white font-semibold text-blue-600"
             >
-          </span>
+              <span>
+                <p>Upload a file</p>
+                <p class="text-xs text-gray-900 font-medium">
+                  {{ selectedSurveyPlan.name }}
+                </p>
+              </span>
+              <input
+                id="file-upload-plan"
+                name="file-upload-plan"
+                type="file"
+                class="sr-only"
+                #plan
+                (change)="getPlan(plan)"
+                ngModel
+              />
+            </label>
+          </div>
+          <p class="text-xs leading-5 text-gray-600">
+            PNG, JPG, GIF up to 10MB
+          </p>
+        </div>
+        <div class="col-span-5">
           <label
-            for="file-upload"
-            class="relative cursor-pointer rounded-md bg-white font-semibold text-blue-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-blue-600 focus-within:ring-offset-2 hover:text-blue-500"
+            for="additionalNotes"
+            class="block text-sm font-medium leading-6 text-gray-900"
+            >Additional Notes & Description
+            <span class="text-xs font-normal italic">
+              *(additional notes or descriptions related to the evidence)
+            </span></label
           >
-            <span>Upload a file</span>
-            <input
-              id="file-upload"
-              name="file-upload"
-              type="file"
-              class="sr-only"
-            />
-          </label>
+          <div class="mt-2">
+            <textarea
+              id="additionalNotes"
+              name="additionalNotes"
+              rows="3"
+              ngModel
+              #additionalNotes="ngModel"
+              class="block w-full rounded-sm px-3 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-gray-600 sm:text-sm sm:leading-6"
+            ></textarea>
+          </div>
         </div>
-        <p class="text-xs leading-5 text-gray-600">PNG, JPG, GIF up to 10MB</p>
-      </div>
-      <div class="col-span-5">
-        <label
-          for="street-address"
-          class="block text-sm font-medium leading-6 text-gray-900"
-          >Additional Notes & Description
-          <span class="text-xs font-normal italic">
-            *(additional notes or descriptions related to the evidence)
-          </span></label
-        >
-        <div class="mt-2">
-          <textarea
-            id="about"
-            name="about"
-            rows="2"
-            class="block w-full rounded-sm px-3 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-          ></textarea>
-        </div>
-      </div>
-      <div class="col-span-5">
-        <div class="mt-6 flex items-center justify-end gap-x-6">
-          <button
-            routerLink="/dashboard/features/create-conflict-case/section-one"
-            type="button"
-            class="text-sm font-semibold leading-6 text-yellow-600"
-          >
-            Previous
-          </button>
-          <button
-            routerLink="/dashboard/features/create-conflict-case/section-four"
-            class="rounded-sm w-40 bg-gray-900 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
-          >
-            Next
-          </button>
+        <div class="col-span-5">
+          <div class="mt-6 flex items-center justify-end gap-x-6">
+            <button
+              routerLink="/dashboard/features/create-conflict-case/section-one"
+              type="button"
+              class="text-sm font-semibold leading-6 text-yellow-600"
+            >
+              Previous
+            </button>
+            <button
+              type="submit"
+              class="rounded-sm w-40 bg-gray-900 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
+            >
+              Next
+            </button>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  </form>
 </div>
