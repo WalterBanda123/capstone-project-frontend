@@ -1,14 +1,7 @@
 <div class="w-full">
-  <div class="border-b border-gray-900/10 ">
+  <div class="border-b border-gray-900/10">
     <p class="text-base font-semibold leading-7 text-gray-900">
       Additional Documentation
-    </p>
-    <p class="mt-1 text-sm leading-6 text-gray-900 italic">
-      *Photos of the property (interior and exterior) Property surveys or site
-      plans
-      <br />
-      Any other relevant documents or certificates Transaction Details (if
-      applicable):
     </p>
 
     <form #fifthForm="ngForm" (ngSubmit)="handleFifthForm(fifthForm)">
@@ -33,7 +26,11 @@
               <span>
                 <p>Upload a file</p>
                 <p class="text-xs text-gray-900 font-medium">
-                  {{ selectedInteriorImage?.name}}
+                  {{
+                    selectedInteriorImage?.name
+                     ?? interiorImage
+                    
+                  }}
                 </p>
               </span>
               <input
@@ -43,6 +40,7 @@
                 name="file-upload-interior"
                 type="file"
                 class="sr-only"
+                ngModel
               />
             </label>
           </div>
@@ -68,7 +66,7 @@
               <span>
                 <p>Upload a file</p>
                 <p class="text-xs text-gray-900 font-medium">
-                  {{ selectedExteriorImage?.name }}
+                  {{ selectedExteriorImage?.name ?? exteriorImage }}
                 </p>
               </span>
               <input
@@ -78,6 +76,7 @@
                 name="file-upload-exterior"
                 type="file"
                 class="sr-only"
+                ngModel
               />
             </label>
           </div>
@@ -106,7 +105,7 @@
               <span>
                 <p>Upload a file</p>
                 <p class="text-xs text-gray-900 font-medium">
-                  {{ selectedPlan?.name }}
+                  {{ selectedPlan?.name ?? planFile }}
                 </p>
               </span>
               <input
@@ -117,7 +116,6 @@
                 type="file"
                 class="sr-only"
                 ngModel
-
               />
             </label>
           </div>

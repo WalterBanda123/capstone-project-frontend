@@ -25,6 +25,7 @@ export class OwnershipDetailsComponent implements OnInit {
 
   fieldsValues$: any = {}
   selectedFile: any = {}
+  fileName: string = ''
   getSelectedFile(element: HTMLInputElement): void {
     if (element.files!.length > 0) {
       this.selectedFile = element.files?.item(0)
@@ -33,13 +34,16 @@ export class OwnershipDetailsComponent implements OnInit {
   }
 
   handleSubmittingSecondForm(form: NgForm): void {
-    const { propertyOwnershipType } = form.value
-    this.registrationService.updateSectionTwoData({ propertyOwnershipType, ownershipProof: this.selectedFile.name })
+    const data = form.value
+    this.registrationService.updateSectionTwoData(data)
+    
     this.router.navigate(['/dashboard/features/register-property/property-features'])
   }
   ngOnInit(): void {
     this.fieldsValues$ = this.registrationService.sectionTwoData
-    this.selectedFile.name = this.fieldsValues$.ownershipProof
+    if (this.fieldsValues$["file-upload-identification"]) {
+      this.fileName = this.fieldsValues$["file-upload-identification"].toString().split('\\')[2]
+    }
   }
 
 }

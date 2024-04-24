@@ -45,25 +45,25 @@
               >
             </span>
             <label
-              for="file-upload"
+              for="file-upload-identification"
               class="relative cursor-pointer rounded-md bg-white font-semibold text-blue-600 focus-within:outline-none hover:text-blue-500"
             >
               <span class="flex flex-col">
                 <p>Upload a file</p>
                 <p class="text-xs text-gray-900 font-medium">
-                  {{ selectedFile?.name }}
+                  {{ selectedFile?.name ?? fileName }}
                 </p>
               </span>
 
               <input
-                #fileInput
+                #identification
                 #ownershipProof="ngModel"
                 ngModel
-                id="file-upload"
-                name="fileInput"
+                id="file-upload-identification"
+                name="file-upload-identification"
                 type="file"
                 class="sr-only"
-                (change)="getSelectedFile(fileInput)"
+                (change)="getSelectedFile(identification)"
               />
             </label>
           </div>

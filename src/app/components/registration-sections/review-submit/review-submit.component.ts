@@ -9,11 +9,10 @@ import { RegistrationService } from 'src/app/providers/registration.service';
 export class ReviewSubmitComponent implements OnInit {
 
   constructor(private registrationService:RegistrationService) { }
-  propertyInformation:any ={}
+  propertyInformation$:any ={}
   ngOnInit(): void {
-    this.propertyInformation = this.registrationService.getFormData()
-    console.log(this.registrationService.getFormData());
-    
+    this.propertyInformation$ = this.registrationService.getFormData()
+    console.log(this.registrationService.registerProperty());
   }
 
 }

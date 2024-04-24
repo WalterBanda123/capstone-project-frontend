@@ -12,6 +12,7 @@ export class RegistrationService {
   sectionThreeData: any = {}
   sectionFourData: any = {}
   sectionFiveData: any = {}
+  selectedSixData: any = {}
 
 
   updateSectionOneData(data: any): void {
@@ -42,17 +43,27 @@ export class RegistrationService {
 
   }
 
+  updateSectionSixData(data: any): void {
+    this.selectedSixData = { ...this.selectedSixData, ...data }
+    console.log(this.selectedSixData, ': Section Six Data');
+
+  }
+
 
   getFormData(): any {
-    console.log('called');
-
     return {
       ...this.sectionOneData,
       ...this.sectionTwoData,
       ...this.sectionThreeData,
       ...this.sectionFourData,
-      ...this.sectionFiveData
+      ...this.sectionFiveData,
+      ...this.selectedSixData
     }
+  }
+
+  registerProperty(): void {
+    const formData = { ...this.getFormData() }
+    console.log('The form Data is as follows: ', formData);
   }
 
 }

@@ -25,6 +25,7 @@ export class LegalRegulatoryComponent implements OnInit {
 
   fieldsValues$: any = {}
   selectedFile$: any = {}
+
   getSelectedFile(element: HTMLInputElement): void {
     if (element.files!.length > 0) {
       this.selectedFile$ = element.files?.item(0)
@@ -34,6 +35,7 @@ export class LegalRegulatoryComponent implements OnInit {
 
   handleForthForm(form: NgForm): void {
     const data = form.value
+    // console.log(data);
     this.registrationService.updateSectionForthData(data)
     this.router.navigate(['/dashboard/features/register-property/additional-documentation'])
   }
