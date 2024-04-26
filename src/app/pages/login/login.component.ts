@@ -9,14 +9,16 @@ import { AuthService } from 'src/app/providers/auth.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, ) { }
 
 
   handleUserLogin(credentials: NgForm): void {
     const { email, password } = credentials.value
-    this.authService.handleUserLogin(email, password)
-    console.log('Login');
-
+    this.authService.handleUserLogin(email, password).then((response) => {
+      console.log('Login response', response);
+    }).catch((error) => {
+      console.log('Auth Error', error);
+    })
   }
 
   handleGoogleAuth(): void {

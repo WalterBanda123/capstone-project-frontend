@@ -86,6 +86,7 @@ import { TaxAssessmentsComponent } from './components/verification-pages/tax-ass
 import { IdentificationsComponent } from './components/verification-pages/identifications/identifications.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { ChangePasswordComponent } from './pages/change-password/change-password.component';
+import { ResetPasswordComponent } from './pages/reset-password/reset-password.component';
 
 
 @NgModule({
@@ -157,6 +158,7 @@ import { ChangePasswordComponent } from './pages/change-password/change-password
     IdentificationsComponent,
     ProfileComponent,
     ChangePasswordComponent,
+    ResetPasswordComponent,
   ],
   imports: [
     BrowserModule,

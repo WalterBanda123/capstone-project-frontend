@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Auth, User, onAuthStateChanged, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, signInWithEmailLink, ActionCodeSettings, signOut, createUserWithEmailAndPassword } from '@angular/fire/auth';
+import { Auth, User, onAuthStateChanged, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, signInWithEmailLink, ActionCodeSettings, signOut, createUserWithEmailAndPassword, sendPasswordResetEmail, confirmPasswordReset } from '@angular/fire/auth';
 import { Router } from '@angular/router';
 
 @Injectable({
@@ -64,5 +64,17 @@ export class AuthService {
     }).catch((error) => {
       console.log(error);
     })
+  }
+
+  async changePassword(email: string) {
+    return sendPasswordResetEmail(this.auth, email, { url: 'http://localhost:4200/reset-password' }).then((response) => {
+      console.log(response);
+    }).catch((error) => {
+      console.log(error);
+    })
+  }
+
+  async resetPassword(newPassword:string, oobCode:string){
+    return confirmPasswordReset(this.auth, oobCode, newPassword)
   }
 }

@@ -49,6 +49,8 @@ import { DeedsComponent } from './components/verification-pages/deeds/deeds.comp
 import { TaxAssessmentsComponent } from './components/verification-pages/tax-assessments/tax-assessments.component';
 import { IdentificationsComponent } from './components/verification-pages/identifications/identifications.component';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { ChangePasswordComponent } from './pages/change-password/change-password.component';
+import { ResetPasswordComponent } from './pages/reset-password/reset-password.component';
 
 
 
@@ -57,6 +59,8 @@ const routes: Routes = [
   { path: "landing-page", component: LandingPageComponent },
   { path: "get-started", component: GetStartedComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'change-password', component: ChangePasswordComponent },
+  { path: 'reset-password', component: ResetPasswordComponent },
   {
     path: 'dashboard', component: DashboardComponent,
     canActivate: [AuthGuard],
@@ -137,7 +141,7 @@ const routes: Routes = [
 
     ]
   },
-  { path: 'registration', component: RegistrationComponent }
+  { path: 'registration', component: RegistrationComponent, canActivate: [AuthGuard], }
 ];
 
 @NgModule({
