@@ -1,9 +1,15 @@
 <div class="container w-full h-screen px-2 py-3">
   <div class="container w-full flex flex-row justify-center">
-    <form class="w-2/4">
+    <form
+      class="w-2/4"
+      #registration="ngForm"
+      (ngSubmit)="handleRegistration(registration)"
+    >
       <div class="space-y-12">
         <div class="border-b border-gray-900/10 pb-12">
-          <div class="isolate flex flex-wrap items-center gap-x-4 gap-y-2 font-bold text-lg py-5">
+          <div
+            class="isolate flex flex-wrap items-center gap-x-4 gap-y-2 font-bold text-lg py-5"
+          >
             <img
               routerLink="/landing-page"
               class="h-8 w-auto rounded-full cursor-pointer"
@@ -41,7 +47,9 @@
                     type="text"
                     name="username"
                     id="username"
-                    autocomplete="username"
+                    #username="ngModel"
+                    ngModel
+                    [(ngModel)]="userEmail"
                     class="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
                     placeholder="janesmith"
                   />
@@ -60,6 +68,8 @@
                   id="about"
                   name="about"
                   rows="3"
+                  ngModel
+                  #aboutMe="ngModel"
                   class="block w-full rounded-sm px-3 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 ></textarea>
               </div>
@@ -129,6 +139,8 @@
                         name="file-upload"
                         type="file"
                         class="sr-only"
+                        ngModel
+                        #nationalID="ngModel"
                       />
                     </label>
                     <p class="pl-1">or drag and drop</p>
@@ -162,7 +174,8 @@
                   type="text"
                   name="firstName"
                   id="firstName"
-                  autocomplete="given-name"
+                  #firstName="ngModel"
+                  ngModel
                   class="block w-full rounded-sm px-3 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
               </div>
@@ -179,6 +192,8 @@
                   type="text"
                   name="lastName"
                   id="lastName"
+                  #lastName="ngModel"
+                  ngModel
                   autocomplete="family-name"
                   class="block w-full rounded-sm px-3 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
@@ -193,29 +208,32 @@
               >
               <div class="mt-2">
                 <select
-                  id="city"
-                  name="city"
-                  autocomplete="city"
+                  id="gender"
+                  name="gender"
+                  #gender="ngModel"
+                  ngModel
                   class="block w-full rounded-sm border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
                 >
-                  <option>Male</option>
-                  <option>Female</option>
-                  <option>Other</option>
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                  <option value="Other">Other</option>
                 </select>
               </div>
             </div>
 
             <div class="sm:col-span-3">
               <label
-                for="city"
+                for="dateOfBirth"
                 class="block text-sm font-medium leading-6 text-gray-900"
                 >Date Of Birth</label
               >
               <div class="mt-2">
                 <input
                   type="date"
-                  name="dob"
-                  id="dob"
+                  name="dateOfBirth"
+                  id="dateOfBirth"
+                  #dateOfBirth="ngModel"
+                  ngModel
                   autocomplete="dob"
                   class="block w-full rounded-sm px-3 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
@@ -232,6 +250,8 @@
                   type="tel"
                   name="mobileNumber"
                   id="mobileNumber"
+                  #mobileNumber="ngModel"
+                  ngModel
                   class="block w-full rounded-sm px-3 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
               </div>
@@ -248,6 +268,8 @@
                   id="email"
                   name="email"
                   type="email"
+                  #email="ngModel"
+                  ngModel
                   autocomplete="email"
                   class="block w-full rounded-sm px-3 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
@@ -265,6 +287,8 @@
                   id="city"
                   name="city"
                   autocomplete="city"
+                  ngModel
+                  #city="ngModel"
                   class="block w-full rounded-sm px-3 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
                 >
                   <option>Harare</option>
@@ -282,13 +306,12 @@
               <div class="mt-2">
                 <input
                   type="tel"
-                  name="nationalID"
-                  id="nationalID"
+                  name="nationalNumber"
+                  id="nationalNumber"
                   class="block w-full rounded-sm px-3 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
               </div>
             </div>
-
             <div class="col-span-full">
               <label
                 for="street-address"
@@ -298,8 +321,10 @@
               <div class="mt-2">
                 <input
                   type="text"
-                  name="street-address"
-                  id="street-address"
+                  name="streetAddress"
+                  id="streetAddress"
+                  #streetAddress="ngModel"
+                  ngModel
                   autocomplete="street-address"
                   class="block w-full rounded-sm px-3 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
@@ -308,16 +333,17 @@
 
             <div class="sm:col-span-3">
               <label
-                for="region"
+                for="province"
                 class="block text-sm font-medium leading-6 text-gray-900"
                 >State / Province</label
               >
               <div class="mt-2">
                 <input
                   type="text"
-                  name="region"
-                  id="region"
-                  autocomplete="address-level1"
+                  name="province"
+                  id="province"
+                  #province="ngModel"
+                  ngModel
                   class="block w-full rounded-sm px-3 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
               </div>
@@ -325,16 +351,17 @@
 
             <div class="sm:col-span-3">
               <label
-                for="postal-code"
+                for="postalCode"
                 class="block text-sm font-medium leading-6 text-gray-900"
                 >ZIP / Postal code</label
               >
               <div class="mt-2">
                 <input
                   type="text"
-                  name="postal-code"
-                  id="postal-code"
-                  autocomplete="postal-code"
+                  name="postalCode"
+                  id="postalCode"
+                  #postalCode="ngModel"
+                  ngModel
                   class="block w-full rounded-sm px-3 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
               </div>
@@ -353,16 +380,17 @@
           <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
             <div class="sm:col-span-3">
               <label
-                for="firstName"
+                for="nextFirstName"
                 class="block text-sm font-medium leading-6 text-gray-900"
                 >First name</label
               >
               <div class="mt-2">
                 <input
                   type="text"
-                  name="firstName"
-                  id="firstName"
-                  autocomplete="given-name"
+                  name="nextFirstName"
+                  id="nextFirstName"
+                  #nextFirstName="ngModel"
+                  ngModel
                   class="block w-full rounded-sm px-3 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
               </div>
@@ -370,16 +398,17 @@
 
             <div class="sm:col-span-3">
               <label
-                for="lastName"
+                for="nextLastName"
                 class="block text-sm font-medium leading-6 text-gray-900"
                 >Last name</label
               >
               <div class="mt-2">
                 <input
                   type="text"
-                  name="lastName"
-                  id="lastName"
-                  autocomplete="family-name"
+                  name="nextLastName"
+                  id="nextLastName"
+                  #nextLastName="ngModel"
+                  ngModel
                   class="block w-full rounded-sm px-3 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
               </div>
@@ -387,16 +416,17 @@
 
             <div class="col-span-full">
               <label
-                for="street-address"
+                for="nextStreetAddress"
                 class="block text-sm font-medium leading-6 text-gray-900"
                 >Street address</label
               >
               <div class="mt-2">
                 <input
                   type="text"
-                  name="street-address"
-                  id="street-address"
-                  autocomplete="street-address"
+                  name="nextStreetAddress"
+                  id="nextStreetAddress"
+                  #nextStreetAddress="ngModel"
+                  ngModel
                   class="block w-full rounded-sm px-3 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
               </div>
@@ -415,16 +445,16 @@
                   autocomplete="city"
                   class="block w-full rounded-sm px-3 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
                 >
-                  <option>Harare</option>
-                  <option>Mutare</option>
-                  <option>Masvingo</option>
+                  <option value="Harare">Harare</option>
+                  <option value="Mutare">Mutare</option>
+                  <option value="Masvingo">Masvingo</option>
                 </select>
               </div>
             </div>
 
             <div class="sm:col-span-3">
               <label
-                for="region"
+                for="nokMobile"
                 class="block text-sm font-medium leading-6 text-gray-900"
                 >Mobile</label
               >
@@ -433,7 +463,8 @@
                   type="tel"
                   name="nokMobile"
                   id="nokMobile"
-                  autocomplete="address-level1"
+                  #nokMobile="ngModel"
+                  ngModel
                   class="block w-full rounded-sm px-3 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
               </div>
@@ -451,7 +482,7 @@
           </p>
 
           <div class="mt-10 space-y-10">
-            <fieldset>
+            <!-- <fieldset>
               <legend class="text-sm font-semibold leading-6 text-gray-900">
                 By Email
               </legend>
@@ -493,7 +524,7 @@
                   </div>
                 </div>
               </div>
-            </fieldset>
+            </fieldset> -->
             <fieldset>
               <legend class="text-sm font-semibold leading-6 text-gray-900">
                 Push Notifications
@@ -507,6 +538,8 @@
                     id="push-everything"
                     name="push-notifications"
                     type="radio"
+                    ngModel
+                    #pushEverything="ngModel"
                     class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600"
                   />
                   <label
@@ -520,6 +553,8 @@
                     id="push-email"
                     name="push-notifications"
                     type="radio"
+                    ngModel
+                    #pushEmail="ngModel"
                     class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600"
                   />
                   <label
@@ -534,6 +569,8 @@
                     name="push-notifications"
                     type="radio"
                     class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600"
+                    #pushNothing="ngModel"
+                    ngModel
                   />
                   <label
                     for="push-nothing"
@@ -549,6 +586,7 @@
 
       <div class="mt-6 flex items-center justify-end gap-x-6 mb-10">
         <button
+          (click)="goBack()"
           type="button"
           class="text-sm font-semibold leading-6 text-gray-900 w-40"
           routerLink="/get-started"

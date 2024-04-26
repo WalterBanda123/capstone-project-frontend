@@ -48,6 +48,7 @@ import { SurveyPlansComponent } from './components/verification-pages/survey-pla
 import { DeedsComponent } from './components/verification-pages/deeds/deeds.component';
 import { TaxAssessmentsComponent } from './components/verification-pages/tax-assessments/tax-assessments.component';
 import { IdentificationsComponent } from './components/verification-pages/identifications/identifications.component';
+import { ProfileComponent } from './pages/profile/profile.component';
 
 
 
@@ -62,6 +63,7 @@ const routes: Routes = [
     children: [
       { path: '', redirectTo: 'overview', pathMatch: 'full' },
       { path: 'overview', component: OverviewComponent },
+      { path: 'profile', component: ProfileComponent },
       { path: 'notifications', component: NotificationsComponent },
       {
         path: 'features', component: FeaturesTemplateComponent, children: [

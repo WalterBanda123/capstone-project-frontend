@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-recent-activities',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RecentActivitiesComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
   currentDate: Date = new Date()
   recentRequest: any = {
     title: "Property Title Deed Request",
@@ -20,6 +21,10 @@ export class RecentActivitiesComponent implements OnInit {
     neededByDate: new Date("2024-04-10"),
     requestStatus: "Under Consideration",
     requestValidity: "Valid until 2024-04-10"
+  }
+
+  handleCompletingRegistration(id: string): void {
+    this.router.navigate(['/dashboard/features/register-property/section-one'], { state: { propertyID: id } })
   }
   ngOnInit(): void {
   }

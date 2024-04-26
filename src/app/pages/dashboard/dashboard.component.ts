@@ -1,5 +1,6 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { MenuPanelComponent } from 'src/app/components/menu-panel/menu-panel.component';
 import { AuthService } from 'src/app/providers/auth.service';
 
@@ -10,7 +11,7 @@ import { AuthService } from 'src/app/providers/auth.service';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor(private authService: AuthService, private dialog: MatDialog) { }
+  constructor(private authService: AuthService, private dialog: MatDialog, private router:Router) { }
 
   dialogRef: MatDialogRef<any> | undefined = undefined
   showMenu: boolean = false
@@ -45,8 +46,8 @@ export class DashboardComponent implements OnInit {
   }
 
   handleDisplayingProfile():void{
+    this.router.navigate(['dashboard/profile'])
     console.log('Displaying the user profile');
-
   }
   ngOnInit(): void {
 

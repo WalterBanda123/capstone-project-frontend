@@ -4,6 +4,7 @@ import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { AuthService } from 'src/app/providers/auth.service';
+import { UserDataService } from 'src/app/providers/user-data.service';
 
 @Component({
   selector: 'app-get-started',
@@ -12,7 +13,7 @@ import { AuthService } from 'src/app/providers/auth.service';
 })
 export class GetStartedComponent implements OnInit {
 
-  constructor(private authService: AuthService, private spinner: NgxSpinnerService, private router: Router) { }
+  constructor(private authService: AuthService, private spinner: NgxSpinnerService, private router: Router, private userDataService: UserDataService) { }
 
   isPasswordMatching: boolean = true
   errorMessage: string = ''
@@ -21,7 +22,7 @@ export class GetStartedComponent implements OnInit {
     this.authService.signUpWithGoogle().then((response) => {
       console.log(response);
       this.router.navigate(['registration'])
-    }).catch((error)=>{
+    }).catch((error) => {
       console.log(error);
     })
   }
@@ -38,16 +39,19 @@ export class GetStartedComponent implements OnInit {
 
       this.authService.registerUser(email, password).then((response) => {
         credentials.form.reset()
-        this.router.navigate(['dashboard'])
+        this.userDataService.setUserData(response.user.uid, response.user.email)
+        this.router.navigate(['registration'])
+        
       }).catch((error: AuthError) => {
         this.errorMessage = 'Email is already in use.'
       }).finally(() => {
-        this.spinner.hide()
+
         this.isPasswordMatching = true
       })
 
     }, 1500)
-    // this.router.navigate(['registration'])
+    this.spinner.hide()
+
   }
 
   ngOnInit(): void {

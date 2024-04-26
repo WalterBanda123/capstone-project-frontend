@@ -11,6 +11,7 @@ import { MatRippleModule } from "@angular/material/core";
 import { MatBadgeModule } from "@angular/material/badge";
 import { MatSnackBarModule } from "@angular/material/snack-bar";
 import { MatMenuModule } from "@angular/material/menu";
+import { MatCardModule } from "@angular/material/card";
 
 
 
@@ -83,6 +84,8 @@ import { SurveyPlansComponent } from './components/verification-pages/survey-pla
 import { DeedsComponent } from './components/verification-pages/deeds/deeds.component';
 import { TaxAssessmentsComponent } from './components/verification-pages/tax-assessments/tax-assessments.component';
 import { IdentificationsComponent } from './components/verification-pages/identifications/identifications.component';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { ChangePasswordComponent } from './pages/change-password/change-password.component';
 
 
 @NgModule({
@@ -152,6 +155,8 @@ import { IdentificationsComponent } from './components/verification-pages/identi
     DeedsComponent,
     TaxAssessmentsComponent,
     IdentificationsComponent,
+    ProfileComponent,
+    ChangePasswordComponent,
   ],
   imports: [
     BrowserModule,
@@ -167,7 +172,8 @@ import { IdentificationsComponent } from './components/verification-pages/identi
     MatRippleModule,
     MatBadgeModule,
     MatSnackBarModule,
-    MatMenuModule
+    MatMenuModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent],

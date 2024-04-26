@@ -38,7 +38,7 @@
           <p class="text-sm text-justify">
             Officially recording ownership rights
           </p>
-          
+
           <a
             [routerLinkActive]="'menu-panel-active'"
             routerLink="/dashboard/features/conflict-resolution"
@@ -94,10 +94,17 @@
             class="font-bold text-lg cursor-pointer hover:text-green-500"
             >Validation & Verification</a
           >
-          <p class="text-sm">
-            Validating and verifying the authenticity, legality, and accuracy of
-            property-related documents, information, or transactions.
-          </p>
+          <ul>
+            <li class="py-1">
+              <a
+                [routerLinkActive]="'menu-panel-active'"
+                routerLink="/dashboard/features/verification-validation/deeds"
+                (click)="closeDialog($event)"
+                class="cursor-pointer hover:text-green-500"
+                >Validate Documents <span aria-hidden="true">&rarr;</span></a
+              >
+            </li>
+          </ul>
         </section>
       </div>
     </div>
