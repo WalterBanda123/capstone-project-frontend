@@ -141,7 +141,9 @@ const routes: Routes = [
 
     ]
   },
-  { path: 'registration', component: RegistrationComponent, canActivate: [AuthGuard], }
+  { path: 'registration', component: RegistrationComponent,
+  // canActivate: [AuthGuard],
+  }
 ];
 
 @NgModule({

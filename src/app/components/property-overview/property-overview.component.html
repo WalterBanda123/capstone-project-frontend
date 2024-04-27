@@ -3,19 +3,19 @@
     <section class="col-span-1 flex flex-row justify-center">
       <div class="w-3/4 border-2 border-gray-200 text-center py-2">
         <p class="font-medium">Registered Properies</p>
-        <p class="text-lg font-semibold">10</p>
+        <p class="text-lg font-semibold">{{properties}}</p>
       </div>
     </section>
     <section class="col-span-1 flex flex-row justify-center">
       <div class="w-3/4 border-2 border-gray-200 text-center py-2">
         <p class="font-medium">Valuation of Properties/Assets</p>
-        <p class="text-lg font-semibold">$ 249, 0000 USD</p>
+        <p class="text-lg font-semibold">{{marketValue | currency  }}</p>
       </div>
     </section>
     <section class="col-span-1 flex flex-row justify-center">
       <div class="w-3/4 border-2 border-gray-200 text-center py-2">
         <p class="font-medium">Total Area/Size of Properties/Assets</p>
-        <p class="text-lg font-semibold">10 ,000 m²</p>
+        <p class="text-lg font-semibold">{{totalAreaOccupied | number}} m²</p>
       </div>
     </section>
   </div>

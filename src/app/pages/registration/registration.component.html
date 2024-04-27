@@ -130,13 +130,13 @@
                   </svg>
                   <div class="mt-4 flex text-sm leading-6 text-gray-600">
                     <label
-                      for="file-upload"
+                      for="file-upload-id"
                       class="relative cursor-pointer rounded-md bg-white font-semibold text-indigo-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-600 focus-within:ring-offset-2 hover:text-indigo-500"
                     >
                       <span>Upload a file</span>
                       <input
-                        id="file-upload"
-                        name="file-upload"
+                        id="file-upload-id"
+                        name="file-upload-id"
                         type="file"
                         class="sr-only"
                         ngModel
@@ -299,7 +299,7 @@
             </div>
             <div class="sm:col-span-3">
               <label
-                for="city"
+                for="nationalNumber"
                 class="block text-sm font-medium leading-6 text-gray-900"
                 >National ID Number</label
               >
@@ -308,6 +308,8 @@
                   type="tel"
                   name="nationalNumber"
                   id="nationalNumber"
+                  #nationalNumber="ngModel"
+                  ngModel
                   class="block w-full rounded-sm px-3 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
               </div>

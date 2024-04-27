@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Auth, User, onAuthStateChanged, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, signInWithEmailLink, ActionCodeSettings, signOut, createUserWithEmailAndPassword, sendPasswordResetEmail, confirmPasswordReset } from '@angular/fire/auth';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 
 @Injectable({
@@ -9,11 +10,12 @@ export class AuthService {
 
   authenticatedUser: User | null = null
 
-  constructor(private auth: Auth, private router: Router) {
+  constructor(private auth: Auth, private router: Router, private _snackbar: MatSnackBar) {
     onAuthStateChanged(this.auth, (user) => {
       if (user) {
         this.authenticatedUser = user
         localStorage.setItem("user", JSON.stringify(this.authenticatedUser))
+        console.log('auth user: ', this.authenticatedUser.uid);
       }
       else {
         localStorage.setItem('user', 'null')
@@ -31,7 +33,7 @@ export class AuthService {
     return signInWithEmailAndPassword(this.auth, email, password).then((response) => {
       this.router.navigate(['dashboard'])
       console.log(response);
-
+      this._snackbar.open('Successfully logged in', '', { duration: 5000, panelClass: ['custom-snackbar'], horizontalPosition: 'right', verticalPosition: 'top' })
     }).catch((error) => {
       console.log('Auth failed, Auth error: ', error);
     })
@@ -40,6 +42,7 @@ export class AuthService {
   async handleGoogleSignIn() {
     return await signInWithPopup(this.auth, new GoogleAuthProvider()).then((response) => {
       this.router.navigate(['dashboard'])
+      this._snackbar.open('Successfully logged in', '', { duration: 5000, panelClass: ['custom-snackbar'], horizontalPosition: 'right', verticalPosition: 'top' })
     }).catch((error) => {
       console.log('Google Auth Error: ', error);
     })
@@ -61,6 +64,7 @@ export class AuthService {
   async signOutUser() {
     return signOut(this.auth).then((response) => {
       this.router.navigate(['login'])
+      localStorage.removeItem('user')
     }).catch((error) => {
       console.log(error);
     })
@@ -74,7 +78,9 @@ export class AuthService {
     })
   }
 
-  async resetPassword(newPassword:string, oobCode:string){
+
+
+  async resetPassword(newPassword: string, oobCode: string) {
     return confirmPasswordReset(this.auth, oobCode, newPassword)
   }
 }

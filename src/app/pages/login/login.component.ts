@@ -9,17 +9,21 @@ import { AuthService } from 'src/app/providers/auth.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private authService: AuthService, ) { }
+  constructor(private authService: AuthService,) { }
+  errorMessage: string = ''
 
-
-  handleUserLogin(credentials: NgForm): void {
+  handleUserLogin(credentials: NgForm) {
     const { email, password } = credentials.value
-    this.authService.handleUserLogin(email, password).then((response) => {
+    this.authService.handleUserLogin(email, password).then((response:any) => {
+      if (!response) {
+        this.errorMessage = 'Auth failed. Wrong email or username'
+      }
       console.log('Login response', response);
     }).catch((error) => {
       console.log('Auth Error', error);
     })
   }
+
 
   handleGoogleAuth(): void {
     this.authService.handleGoogleSignIn()

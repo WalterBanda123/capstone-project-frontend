@@ -9,7 +9,7 @@ import { MatExpansionModule } from '@angular/material/expansion'
 import { MatTableModule } from '@angular/material/table'
 import { MatRippleModule } from "@angular/material/core";
 import { MatBadgeModule } from "@angular/material/badge";
-import { MatSnackBarModule } from "@angular/material/snack-bar";
+import { MAT_SNACK_BAR_DEFAULT_OPTIONS, MatSnackBarModule } from "@angular/material/snack-bar";
 import { MatMenuModule } from "@angular/material/menu";
 import { MatCardModule } from "@angular/material/card";
 import { HttpClientModule } from "@angular/common/http"
@@ -88,6 +88,7 @@ import { IdentificationsComponent } from './components/verification-pages/identi
 import { ProfileComponent } from './pages/profile/profile.component';
 import { ChangePasswordComponent } from './pages/change-password/change-password.component';
 import { ResetPasswordComponent } from './pages/reset-password/reset-password.component';
+import { SnackbarComponent } from './components/snackbar/snackbar.component';
 
 
 @NgModule({
@@ -160,6 +161,7 @@ import { ResetPasswordComponent } from './pages/reset-password/reset-password.co
     ProfileComponent,
     ChangePasswordComponent,
     ResetPasswordComponent,
+    SnackbarComponent,
   ],
   imports: [
     BrowserModule,
@@ -179,7 +181,9 @@ import { ResetPasswordComponent } from './pages/reset-password/reset-password.co
     MatCardModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    { provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: { duration: 5500 } }
+  ],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })

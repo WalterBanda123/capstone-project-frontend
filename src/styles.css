@@ -35,6 +35,9 @@
     border-radius: 0px;
 }
 
+.custom-snackbar{
+  @apply bg-green-100 text-green-700 font-medium
+}
 
 
 body{

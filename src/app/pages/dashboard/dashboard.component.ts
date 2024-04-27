@@ -11,7 +11,7 @@ import { AuthService } from 'src/app/providers/auth.service';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor(private authService: AuthService, private dialog: MatDialog, private router:Router) { }
+  constructor(private authService: AuthService, private dialog: MatDialog, private router: Router) { }
 
   dialogRef: MatDialogRef<any> | undefined = undefined
   showMenu: boolean = false
@@ -35,7 +35,7 @@ export class DashboardComponent implements OnInit {
         {
           hasBackdrop: false,
           position: { top: "63px", left: '', right: '', bottom: '' },
-          backdropClass:"backdrop"
+          backdropClass: "backdrop"
         })
 
       this.dialogRef.componentInstance.handleClose.subscribe((event: Event) => {
@@ -45,13 +45,39 @@ export class DashboardComponent implements OnInit {
     }
   }
 
-  handleDisplayingProfile():void{
+  photoURL: string | null | undefined = ''
+  user: any = {}
+
+  handleDisplayingProfile(): void {
     this.router.navigate(['dashboard/profile'])
     console.log('Displaying the user profile');
   }
   ngOnInit(): void {
+    this.user = JSON.parse(localStorage.getItem('user')!)
+    this.photoURL = this.user.photoURL
 
+    // ?? 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80'
 
   }
+
+  getInitials(name: string): string {
+    if (name) {
+      const names = name.split(' ');
+      return names.map(n => n[0]).join('').toUpperCase();
+    }
+    return 'ZW'
+  }
+
+  getColor(name: string): string {
+    // Here, you can implement a function to generate a color based on the user's name
+    // For simplicity, let's use a simple hash function
+    let hash = 0;
+    for (let i = 0; i < name.length; i++) {
+      hash = name.charCodeAt(i) + ((hash << 5) - hash);
+    }
+    const hue = Math.abs(hash % 360);
+    return `hsl(${hue}, 70%, 50%)`; // Use HSL for generating colors
+  }
+
 
 }

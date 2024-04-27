@@ -3,6 +3,7 @@ import { NgForm } from '@angular/forms';
 import { MatTableDataSource } from '@angular/material/table';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { PROPERTIES } from 'src/app/mock/Properties';
+import { AppDataService } from 'src/app/providers/app-data.service';
 
 @Component({
   selector: 'app-properties-overview',
@@ -11,7 +12,7 @@ import { PROPERTIES } from 'src/app/mock/Properties';
 })
 export class PropertiesOverviewComponent implements OnInit {
 
-  constructor(private spinner: NgxSpinnerService) { }
+  constructor(private spinner: NgxSpinnerService, private appDataService: AppDataService) { }
   handleSearch(form: NgForm): void {
     this.spinner.show()
     const { search } = form.value
@@ -25,9 +26,22 @@ export class PropertiesOverviewComponent implements OnInit {
   }
 
   properties: MatTableDataSource<any> = new MatTableDataSource<any>()
-  propertiesColumns: string[] = ['image', 'title', 'location', 'value', 'rooms', 'category', 'registeredOn']
+  propertiesColumns: string[] = ['image', 'title', 'location', 'value', 'rooms', 'category', 'registeredOn', 'status']
+
+  getAllProperties(): void {
+    this.appDataService.getAllProperties().subscribe({
+      next: (records) => {
+        const reversedList = records.slice().reverse()
+       
+        this.properties = new MatTableDataSource<any>(reversedList)
+      }, error: (error) => {
+        console.log(error);
+      }
+    })
+  }
 
   ngOnInit(): void {
-    this.properties = new MatTableDataSource<any>(PROPERTIES)
+    this.getAllProperties()
+    // this.properties = new MatTableDataSource<any>(PROPERTIES)
   }
 }

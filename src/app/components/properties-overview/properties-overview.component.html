@@ -5,7 +5,7 @@
         >Registered Property and Assets</span
       >
       <button
-        routerLink="/dashboard/features/transactions"
+        routerLink="/dashboard/features/register-property/section-one"
         class="font-semibold text-sm bg-gray-900 py-1 px-2 text-white transition-transform transform hover:scale-105"
       >
         Register New Land
@@ -16,7 +16,7 @@
     >
       <section class="w-1/2 flex flex-row items-center">
         <p class="text-base italic">
-          All <span class="font-medium">({{ properties.data.length  }})</span>
+          All <span class="font-medium">({{ properties.data.length }})</span>
         </p>
       </section>
       <section class="w-1/2 flex flex-row-reverse">
@@ -55,7 +55,7 @@
           <mat-cell *matCellDef="let element" class="text-sm">
             <img
               class="h-full w-full rounded-sm"
-              src="{{ element.image }}"
+              src="./../../../assets/home-placeholder.png"
               alt=""
             />
           </mat-cell>
@@ -68,8 +68,11 @@
             *matCellDef="let element"
             class="text-sm flex flex-col font-light"
           >
-            {{ element.title }}
-            <button routerLink="/dashboard/properties/property-view/{{element.id}}" class="inline-flex font-semibold justify-center text-blue-700 items-start">
+            {{ element.streetAddress }}
+            <button
+              routerLink="/dashboard/properties/property-view/{{ element._id }}"
+              class="inline-flex font-semibold justify-center text-blue-700 items-start"
+            >
               View<span class="material-symbols-outlined text-blue-700">
                 pin_invoke
               </span>
@@ -81,7 +84,7 @@
             >Location</mat-header-cell
           >
           <mat-cell *matCellDef="let element" class="text-sm font-medium">
-            {{ element.location }}
+            {{ element.city }}
           </mat-cell>
         </ng-container>
         <ng-container matColumnDef="value">
@@ -89,7 +92,7 @@
             >Market Value</mat-header-cell
           >
           <mat-cell *matCellDef="let element" class="text-sm">
-            {{ element.price }}
+            {{ element.marketValue }}
           </mat-cell>
         </ng-container>
         <ng-container matColumnDef="rooms">
@@ -97,15 +100,15 @@
             Rooms
           </mat-header-cell>
           <mat-cell *matCellDef="let element" class="text-sm"
-            >{{ element.beds }}
+            >{{ element.rooms }}
           </mat-cell>
         </ng-container>
         <ng-container matColumnDef="category">
           <mat-header-cell *matHeaderCellDef class="text-sm font-semibold"
-            >Category</mat-header-cell
+            >Property Type</mat-header-cell
           >
           <mat-cell *matCellDef="let element" class="text-sm">
-            {{ element.category }}
+            {{ element.buildingType }}
           </mat-cell>
         </ng-container>
         <ng-container matColumnDef="registeredOn">
@@ -113,7 +116,15 @@
             >Registered On</mat-header-cell
           >
           <mat-cell *matCellDef="let element" class="text-sm">
-            <time datetime="2027-03-27">{{ element.registeredOn }}</time>
+            <time datetime="2027-03-27">{{ element.createdAt | date }}</time>
+          </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="status">
+          <mat-header-cell *matHeaderCellDef class="text-sm font-semibold"
+            >Registration Status</mat-header-cell
+          >
+          <mat-cell *matCellDef="let element" class="text-sm">
+            {{ element.verified === true ? "Completed" : "Pending" }}
           </mat-cell>
         </ng-container>
 

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { AppDataService } from 'src/app/providers/app-data.service';
@@ -11,8 +12,8 @@ import { RegistrationService } from 'src/app/providers/registration.service';
 })
 export class ReviewSubmitComponent implements OnInit {
 
-  constructor(private registrationService: RegistrationService, private appDataService: AppDataService, private spinner: NgxSpinnerService, private router: Router) { }
-  message: { msg: string, status: boolean } = { msg: '', status: false }
+  constructor(private registrationService: RegistrationService, private appDataService: AppDataService, private spinner: NgxSpinnerService, private router: Router, private _snakebar: MatSnackBar) { }
+
 
   propertyInformation$: any = {}
   ngOnInit(): void {
@@ -28,9 +29,9 @@ export class ReviewSubmitComponent implements OnInit {
         if (result) {
 
           setTimeout(() => {
-            this.message.msg = 'Successfully added property'
-            this.message.status = true
             setTimeout(() => {
+              this._snakebar.open('Successfully added property. Please wait for it to be verified', '',
+                { panelClass: ['custom-snackbar'] })
               this.router.navigate(['dashboard/properties/properties-overview'])
             }, 200);
           }, 1201);
@@ -40,6 +41,7 @@ export class ReviewSubmitComponent implements OnInit {
         console.log(error);
       }
     })
+
     setTimeout(() => {
       this.spinner.hide()
     }, 1200);

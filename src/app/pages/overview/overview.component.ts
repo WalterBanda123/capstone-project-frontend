@@ -16,7 +16,7 @@ export class OverviewComponent implements OnInit {
 
   constructor(private spinner: NgxSpinnerService, private appDataService: AppDataService) { }
 
-  selectedOverview: 'recent' | 'property' | 'quick-action' = 'recent'
+  selectedOverview: 'property' | 'quick-action' = 'property'
 
   properties: any = []
   isSearched: boolean = false

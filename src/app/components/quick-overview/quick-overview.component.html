@@ -3,13 +3,13 @@
     <div
       class="w-full flex flex-row justify-start gap-x-5 border-[1px] border-gray-300 py-3.5 px-2"
     >
-      <span
+      <!-- <span
         class="p-0 cursor-pointer text-base text-center font-semibold"
         (click)="onClick('recent')"
         [class]="selectedOverview === 'recent' ? 'active' : ''"
       >
         Recent Activities
-      </span>
+      </span> -->
       <span
         class="p-0 cursor-pointer text-base text-center font-semibold"
         (click)="onClick('property')"
@@ -26,11 +26,11 @@
         Quick Action</span
       >
     </div>
-    <ng-container *ngIf="selectedOverview === 'recent'">
+    <!-- <ng-container *ngIf="selectedOverview === 'recent'">
       <div class="w-3/4">
         <app-recent-activities></app-recent-activities>
       </div>
-    </ng-container>
+    </ng-container> -->
     <ng-container *ngIf="selectedOverview === 'property'">
       <app-property-overview></app-property-overview>
     </ng-container>
