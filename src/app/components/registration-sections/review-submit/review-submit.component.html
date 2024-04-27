@@ -1,4 +1,17 @@
-<div class="pb-10">
+<div class="pb-10 relative">
+  <div
+   *ngIf="message.status"
+    class="absolute top-0 left-52 w-2/4 h-16 font-medium p-2 text-green-700 bg-green-100 inline-flex animate-fade-in"
+  >
+
+    <img
+      class="h-5 w-auto mr-2"
+      src="./../../../assets/green tick.png"
+      alt="Green Tick"
+    />
+    <!-- {{ message.msg }} walter -->
+    {{message.msg}}
+  </div>
   <div class="px-4 sm:px-0">
     <h3 class="text-base font-semibold leading-7 text-gray-900">
       Review & Submit
@@ -35,7 +48,7 @@
         </dd>
       </div>
       <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-        <dt class="text-sm  leading-6 text-gray-900">
+        <dt class="text-sm leading-6 text-gray-900">
           <p class="text-lg font-semibold">Ownerships</p>
           <p class="font-semibold">Property Ownership</p>
           <p class="font-semibold">Identification</p>
@@ -63,9 +76,7 @@
               </div>
             </div>
             <div class="ml-4 flex-shrink-0">
-              <a
-                href="#"
-                class="font-medium text-indigo-600 hover:text-indigo-500"
+              <a href="#" class="font-medium text-blue-600 hover:text-blue-500"
                 >Download</a
               >
             </div>
@@ -123,9 +134,7 @@
               </div>
             </div>
             <div class="ml-4 flex-shrink-0">
-              <a
-                href="#"
-                class="font-medium text-indigo-600 hover:text-indigo-500"
+              <a href="#" class="font-medium text-blue-600 hover:text-blue-500"
                 >Download</a
               >
             </div>
@@ -141,7 +150,9 @@
           <p class="font-semibold">Property Interior</p>
           <p class="font-semibold">Survey Plan</p>
         </dt>
-        <dd class="mt-1 p text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
+        <dd
+          class="mt-1 p text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0"
+        >
           <p class="">.</p>
           <div class="flex flex-row py-1">
             <div class="flex w-0 flex-1 items-center">
@@ -163,9 +174,7 @@
               </div>
             </div>
             <div class="ml-4 flex-shrink-0">
-              <a
-                href="#"
-                class="font-medium text-indigo-600 hover:text-indigo-500"
+              <a href="#" class="font-medium text-blue-600 hover:text-blue-500"
                 >Download</a
               >
             </div>
@@ -190,9 +199,7 @@
               </div>
             </div>
             <div class="ml-4 flex-shrink-0">
-              <a
-                href="#"
-                class="font-medium text-indigo-600 hover:text-indigo-500"
+              <a href="#" class="font-medium text-blue-600 hover:text-blue-500"
                 >Download</a
               >
             </div>
@@ -217,9 +224,7 @@
               </div>
             </div>
             <div class="ml-4 flex-shrink-0">
-              <a
-                href="#"
-                class="font-medium text-indigo-600 hover:text-indigo-500"
+              <a href="#" class="font-medium text-blue-600 hover:text-blue-500"
                 >Download</a
               >
             </div>
@@ -259,9 +264,7 @@
               </div>
             </div>
             <div class="ml-4 flex-shrink-0">
-              <a
-                href="#"
-                class="font-medium text-indigo-600 hover:text-indigo-500"
+              <a href="#" class="font-medium text-blue-600 hover:text-blue-500"
                 >Download</a
               >
             </div>
@@ -280,8 +283,9 @@
         Previous
       </button>
       <button
+        (click)="registerProperty()"
         type="button"
-        class="text-sm font-semibold leading-6 text-green-600 bg-green-100 px-6 py-1.5 rounded-sm"
+        class="text-sm font-semibold leading-6 text-white bg-blue-700 px-10 py-1"
       >
         Submit
       </button>

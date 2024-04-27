@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { AppDataService } from './app-data.service';
 
 @Injectable({
   providedIn: 'root'
@@ -59,11 +60,6 @@ export class RegistrationService {
       ...this.sectionFiveData,
       ...this.selectedSixData
     }
-  }
-
-  registerProperty(): void {
-    const formData = { ...this.getFormData() }
-    console.log('The form Data is as follows: ', formData);
   }
 
 }

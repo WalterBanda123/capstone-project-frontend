@@ -33,14 +33,15 @@ export class OverviewComponent implements OnInit {
     const { titleDeed } = form.value
     this.appDataService.getSearchedProperties(titleDeed).subscribe({
       next: (response) => {
-        console.log('Searched data: ', response);
+        console.log('Searched data: ', response , 'text searched:', titleDeed);
+        this.properties = response.properties
+        if (titleDeed) {
+          this.isSearched = true
+        }
       }, error: (error) => {
         console.log('Error: ', error);
       }
     })
-    if (titleDeed) {
-      this.isSearched = true
-    }
 
     setTimeout(() => {
       this.spinner.hide()

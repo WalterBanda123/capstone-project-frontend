@@ -49,7 +49,7 @@
           class="w-full flex flex-row justify-start gap-x-5 border-[1px] border-gray-300 py-3.5 px-2"
         >
           <span
-            >Results (<i><b>14</b></i
+            >Results (<i><b>{{properties.length}}</b></i
             >)</span
           >
           <!-- <span
@@ -83,14 +83,14 @@
       </div>
       <ng-container *ngIf="selectedSearchedDeedTab === 'title'">
         <app-title-deed
-          *ngFor="let titleDeed of titles"
-          [title]="titleDeed.title"
-          [address]="titleDeed.address"
-          [propertyType]="titleDeed.propertyType"
-          [owner]="titleDeed.owner"
-          [titleId]="titleDeed.titleId"
-          [contractId]="titleDeed.contractId"
-          [status]="titleDeed.status"
+          *ngFor="let titleDeed of properties"
+          [title]="titleDeed.streetAddress"
+          [propertyType]="titleDeed.propertyOwnershipType"
+          [city]="titleDeed.city"
+          [ownershipType]="titleDeed.propertyOwnershipType"
+          [registeredOn]="titleDeed.createdAt"
+          [buildingType]="titleDeed.buildingType"
+          [useDescription]="titleDeed.useDescription"
         ></app-title-deed>
 
         <div class="flex flex-row justify-between items-center w-full my-20">

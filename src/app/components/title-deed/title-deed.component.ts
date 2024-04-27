@@ -9,12 +9,12 @@ export class TitleDeedComponent implements OnInit {
 
   constructor() { }
   @Input() title: string | undefined;
-  @Input()address!: string;
+  @Input() useDescription!: string;
   @Input() propertyType!: string;
-  @Input() owner!: string;
-  @Input() titleId!: string;
-  @Input() contractId!: string;
-  @Input() status!: string;
+  @Input() city!: string;
+  @Input() ownershipType!: string;
+  @Input() registeredOn!: string;
+  @Input() buildingType!: string;
   ngOnInit(): void {
   }
 
