@@ -3,7 +3,7 @@
     <p class="text-base font-semibold leading-7 text-gray-900">
       Legal and Regulatory Information
     </p>
-    
+
     <form #forthForm="ngForm" (ngSubmit)="handleForthForm(forthForm)">
       <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
         <div class="sm:col-span-3">
@@ -68,7 +68,7 @@
               >
             </span>
             <label
-              for="file-upload"
+              for="file-upload-tax"
               class="relative cursor-pointer rounded-md bg-white font-semibold text-blue-600 focus-within:outline-none hover:text-blue-500"
             >
               <span>
@@ -79,8 +79,8 @@
               </span>
               <input
                 #fileInput
-                id="file-upload"
-                name="file-upload"
+                id="file-upload-tax"
+                name="file-upload-tax"
                 type="file"
                 class="sr-only"
                 ngModel

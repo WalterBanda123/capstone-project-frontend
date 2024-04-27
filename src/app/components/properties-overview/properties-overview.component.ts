@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { MatTableDataSource } from '@angular/material/table';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { PROPERTIES } from 'src/app/mock/Properties';
 
 @Component({
@@ -10,13 +11,21 @@ import { PROPERTIES } from 'src/app/mock/Properties';
 })
 export class PropertiesOverviewComponent implements OnInit {
 
-  constructor() { }
+  constructor(private spinner: NgxSpinnerService) { }
   handleSearch(form: NgForm): void {
-    console.log(form.value);
+    this.spinner.show()
+    const { search } = form.value
+    if (search) {
+      this.properties.filter = search.toString().toLowerCase().trim()
+    }
+
+    setTimeout(() => {
+      this.spinner.hide()
+    }, 1200);
   }
 
   properties: MatTableDataSource<any> = new MatTableDataSource<any>()
-  propertiesColumns: string[] = ['image', 'title', 'location', 'value', 'beds', 'category', 'registeredOn']
+  propertiesColumns: string[] = ['image', 'title', 'location', 'value', 'rooms', 'category', 'registeredOn']
 
   ngOnInit(): void {
     this.properties = new MatTableDataSource<any>(PROPERTIES)

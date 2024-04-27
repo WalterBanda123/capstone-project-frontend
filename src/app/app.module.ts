@@ -12,6 +12,7 @@ import { MatBadgeModule } from "@angular/material/badge";
 import { MatSnackBarModule } from "@angular/material/snack-bar";
 import { MatMenuModule } from "@angular/material/menu";
 import { MatCardModule } from "@angular/material/card";
+import { HttpClientModule } from "@angular/common/http"
 
 
 
@@ -175,7 +176,8 @@ import { ResetPasswordComponent } from './pages/reset-password/reset-password.co
     MatBadgeModule,
     MatSnackBarModule,
     MatMenuModule,
-    MatCardModule
+    MatCardModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent],

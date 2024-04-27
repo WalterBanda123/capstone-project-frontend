@@ -38,6 +38,8 @@ export class ContractsComponent implements OnInit {
 
   }
 
+
+
   handleSearch(form: NgForm): void {
     this.spinner.show()
     const { search } = form.value

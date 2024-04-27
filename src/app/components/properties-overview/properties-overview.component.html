@@ -16,7 +16,7 @@
     >
       <section class="w-1/2 flex flex-row items-center">
         <p class="text-base italic">
-          All <span class="font-medium">({{ properties.data.length }})</span>
+          All <span class="font-medium">({{ properties.data.length  }})</span>
         </p>
       </section>
       <section class="w-1/2 flex flex-row-reverse">
@@ -92,9 +92,9 @@
             {{ element.price }}
           </mat-cell>
         </ng-container>
-        <ng-container matColumnDef="beds">
+        <ng-container matColumnDef="rooms">
           <mat-header-cell *matHeaderCellDef class="text-sm font-semibold">
-            Beds
+            Rooms
           </mat-header-cell>
           <mat-cell *matCellDef="let element" class="text-sm"
             >{{ element.beds }}
