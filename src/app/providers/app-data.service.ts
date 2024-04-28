@@ -42,7 +42,13 @@ export class AppDataService {
   }
 
   calculateTotalPrice(items: any): number {
-    return items.reduce((total: number, item: any) => total + item.marketValue, 0);
+
+    return items.reduce((total: number, item: any) => {
+      if (typeof item.marketValue === 'number') {
+        return total + item.marketValue
+      }
+      return total
+    }, 0);
   }
   calculateTotalArea(items: any): number {
     return items.reduce((total: number, item: any) => total + item.landSize, 0);
@@ -76,8 +82,10 @@ export class AppDataService {
 
 
   createUserProfile(user: any): Observable<any> {
-    const uid = this.authService.authenticatedUser?.uid
+    const uid = JSON.parse(localStorage.getItem('user')!)
+    console.log('Walter: ', user);
     return this.http.post<any>(`${this.serverURL}/dbApi/create-user`, { ...user, uid, profileURL: this.authService.authenticatedUser?.photoURL })
+    return of({})
   }
 
   createTransferTransaction(transaction: any): Observable<any> {
@@ -99,7 +107,7 @@ export class AppDataService {
 
 
   createTransferRequest(request: any): Observable<any> {
-    TRANSFERS.push({ ...request, createdAt: new Date(), transaction: 'Transaction '+ TRANSFERS.length + 1, status: "Pending" })
+    TRANSFERS.push({ ...request, createdAt: new Date(), transaction: 'Transaction ' + TRANSFERS.length + 1, status: "Pending" })
     return of(TRANSFERS);
   }
 

@@ -90,6 +90,7 @@ import { ChangePasswordComponent } from './pages/change-password/change-password
 import { ResetPasswordComponent } from './pages/reset-password/reset-password.component';
 import { SnackbarComponent } from './components/snackbar/snackbar.component';
 import { ProcessPaymentComponent } from './components/process-payment/process-payment.component';
+import { getFirestore, provideFirestore } from "@angular/fire/firestore";
 
 
 @NgModule({
@@ -173,6 +174,7 @@ import { ProcessPaymentComponent } from './components/process-payment/process-pa
     FormsModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
+    provideFirestore(() => getFirestore()),
     MatDialogModule,
     MatExpansionModule,
     MatTableModule,

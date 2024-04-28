@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
-import { Auth, User, onAuthStateChanged, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, signInWithEmailLink, ActionCodeSettings, signOut, createUserWithEmailAndPassword, sendPasswordResetEmail, confirmPasswordReset } from '@angular/fire/auth';
+import { Auth, User, onAuthStateChanged, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, signOut, createUserWithEmailAndPassword, sendPasswordResetEmail, confirmPasswordReset, } from '@angular/fire/auth';
+
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
-import { AppDataService } from './app-data.service';
 import { environment } from 'src/environments/environment';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+
 
 @Injectable({
   providedIn: 'root'
@@ -18,14 +19,16 @@ export class AuthService {
   serverURL: string = environment.server_url
   authenticatedUser: User | null = null
 
-  constructor(private auth: Auth, private router: Router, private _snackbar: MatSnackBar, private http: HttpClient) {
+  constructor(private auth: Auth, private router: Router, private _snackbar: MatSnackBar, private http: HttpClient,) {
     onAuthStateChanged(this.auth, (user) => {
       if (user) {
         this.authenticatedUser = user
         const uid = user.uid
+        console.log(user);
         this.http.get<any>(`${this.serverURL}/dbApi/user/profile/${uid}`).subscribe({
           next: (record) => {
-            this.authenticatedUserProfile.next(record)
+            console.log('Record', record.user);
+            this.authenticatedUserProfile.next(record.user)
           }, error: (error) => {
             console.log(error);
           }
@@ -57,7 +60,7 @@ export class AuthService {
 
   async handleGoogleSignIn() {
     return await signInWithPopup(this.auth, new GoogleAuthProvider()).then((response) => {
-      this.router.navigate(['dashboard'])
+        this.router.navigate(['dashboard'])
       this._snackbar.open('Successfully logged in', '', { duration: 5000, panelClass: ['custom-snackbar'], horizontalPosition: 'right', verticalPosition: 'top' })
     }).catch((error) => {
       console.log('Google Auth Error: ', error);

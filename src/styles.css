@@ -35,7 +35,7 @@
 }
 
 .custom-snackbar {
-  @apply bg-green-100 text-green-700 font-medium;
+  @apply bg-green-300 text-green-700 font-medium;
 }
 
 .dialog-custom-width-height {

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthError } from '@angular/fire/auth';
 import { NgForm } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { AuthService } from 'src/app/providers/auth.service';
@@ -13,7 +14,7 @@ import { UserDataService } from 'src/app/providers/user-data.service';
 })
 export class GetStartedComponent implements OnInit {
 
-  constructor(private authService: AuthService, private spinner: NgxSpinnerService, private router: Router, private userDataService: UserDataService) { }
+  constructor(private authService: AuthService, private spinner: NgxSpinnerService, private router: Router, private userDataService: UserDataService, private _snackbar: MatSnackBar) { }
 
   isPasswordMatching: boolean = true
   errorMessage: string = ''
@@ -40,11 +41,10 @@ export class GetStartedComponent implements OnInit {
       credentials.form.reset()
       this.userDataService.setUserData(response.user.uid, response.user.email)
       this.router.navigate(['registration'])
-
+      this._snackbar.open('Successfully created account. Please create your profile before going forward', '', { duration: 5000, panelClass: ['custom-snackbar'], verticalPosition: 'top', horizontalPosition: 'end' })
     }).catch((error: AuthError) => {
       this.errorMessage = 'Email is already in use.'
     }).finally(() => {
-
       this.isPasswordMatching = true
     })
 

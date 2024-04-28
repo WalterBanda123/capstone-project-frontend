@@ -40,11 +40,11 @@
     ></app-quick-overview>
   </ng-container>
   <ng-container *ngIf="isSearched">
-    <div class="w-full flex flex-row justify-center  mt-20">
-      <div class="w-2/4">
+    <div class="w-full flex flex-row justify-center ">
+      <div class="w-2/4 pb-40">
 
 
-      <div class="min-w-full h-20">
+      <div class="min-w-full h-20 pb-36">
         <div
           class="w-full flex flex-row justify-start gap-x-5 border-[1px] border-gray-300 py-3.5 px-2"
         >
@@ -93,7 +93,7 @@
           [useDescription]="titleDeed.useDescription"
         ></app-title-deed>
 
-        <div class="flex flex-row justify-between items-center w-full my-20">
+        <!-- <div class="flex flex-row justify-between items-center w-full my-20">
           <p class="text-sm text-gray-700">
             Showing
             <span class="font-medium">1</span>
@@ -182,7 +182,7 @@
               </a>
             </nav>
           </div>
-        </div>
+        </div> -->
       </ng-container>
       <div class="w-3/4" *ngIf="selectedSearchedDeedTab === 'owner'">
         <app-owner-profile></app-owner-profile>
