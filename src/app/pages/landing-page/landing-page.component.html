@@ -1,134 +1,73 @@
-
 <div class="flex flex-col min-w-full min-h-screen">
-<div class="relative container  min-w-full min-h-screen bg-white mb-10">
-  <div
-    class="min-w-full h-16 border-b-[1.5px] border-slate-200 flex flex-row justify-between items-center container px-14 sticky top-0 backdrop-blur-md z-50 bg-gray-900 text-white"
-  >
-    <div class="flex flex-shrink-0 items-center font-bold text-lg">
-      <img
-        class="h-8 w-auto mr-2"
-        src="./../../../assets/coat-of-arms.png"
-        alt="Your Company"
-      />
-      Zimbabwe Land Registry
-    </div>
-    <div class="">
-      <div class="flex space-x-4">
-        <a
-          href="#"
-          class="text-white rounded-md px-3 py-2 font-medium text-base cursor-pointer transition-transform transform hover:scale-105"
-          aria-current="page"
-          >Overview
-        </a>
-        <a
-          (mouseenter)="showFeaturesMenu()"
-          class="menu-container text-white font-medium px-3 cursor-pointer inline-flex items-center gap-x-1 leading-6 relative transition-transform transform hover:scale-105"
-          ><span>Features</span>
-          <svg
-            class="h-5 w-5 mt-1"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-            aria-hidden="true"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
-              clip-rule="evenodd"
-            />
-          </svg>
-          <app-features *ngIf="showMenu"></app-features>
-        </a>
-        <a
-          href="#"
-          class="text-white hover:text-white/50 rounded-md px-3 py-2 text-base font-medium cursor-pointer transition-transform transform hover:scale-105"
-          >FAQs</a
-        >
-        <a
-          href="/get-started"
-          class="text-white hover:text-white/50 rounded-md px-3 py-2 text-base font-medium cursor-pointer transition-transform transform hover:scale-105"
-          >Get Started</a
-        >
-        <a
-          href="#"
-          class="rounded-xl bg-green-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-green-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-600"
-          >Connect Wallet</a
-        >
-        <a
-          href="/login"
-          class="text-white hover:text-white/50 rounded-md px-3 py-2 text-base font-medium"
-          >Log in <span aria-hidden="true">&rarr;</span></a
-        >
-      </div>
-    </div>
-  </div>
-  <div class="relative isolate px-6 pt-14 ">
+  <div class="relative container min-w-full min-h-screen bg-white mb-10">
     <div
-      class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl"
-      aria-hidden="true"
+      class="min-w-full h-16 border-b-[1.5px] border-slate-200 flex flex-row justify-between items-center container px-14 sticky top-0 backdrop-blur-3xl z-50 bg-white"
     >
-      <div
-        class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-slate-500 to-slate-800 opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
-        style="
-          clip-path: polygon(
-            74.1% 44.1%,
-            100% 61.6%,
-            97.5% 26.9%,
-            85.5% 0.1%,
-            80.7% 2%,
-            72.5% 32.5%,
-            60.2% 62.4%,
-            52.4% 68.1%,
-            47.5% 58.3%,
-            45.2% 34.5%,
-            27.5% 76.7%,
-            0.1% 64.9%,
-            17.9% 100%,
-            27.6% 76.8%,
-            76.1% 97.7%,
-            74.1% 44.1%
-          );
-        "
-      ></div>
-    </div>
-
-    <div class="mx-auto max-w-2xl py-32">
-      <div class="hidden sm:mb-8 sm:flex sm:justify-center">
-        <div
-          class="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20"
-        >
-          Check out the decentralised land registry policy.
-          <a href="#" class="font-semibold text-green-600"
-            ><span class="absolute inset-0" aria-hidden="true"></span>Read more
-            <span aria-hidden="true">&rarr;</span></a
-          >
-        </div>
+      <div class="flex flex-shrink-0 items-center font-bold text-lg">
+        <img
+          class="h-8 w-auto mr-2"
+          src="./../../../assets/coat-of-arms.png"
+          alt="Your Company"
+        />
+        Zimbabwe Land Registry
       </div>
-      <div class="text-center animate-fade-in">
-        <p class="text-4xl font-bold tracking-tight text-gray-900">
-          Decentralised Land Registry for Zimbabwe
-        </p>
-        <p class="mt-6 leading-8 text-gray-600">
-          Zimbabwe Land Registry is a Decentralised system that securely stores
-          land ownership records on the blockchain. It allows landowners,
-          buyers, and sellers to easily verify ownership and transfer rights.
-        </p>
-        <div class="mt-10 flex items-center justify-center gap-x-6">
+      <div class="">
+        <div class="flex space-x-4">
+          <a
+            href="#"
+            class="text-black rounded-md px-3 py-2 font-medium text-base cursor-pointer transition-transform transform hover:scale-105"
+            aria-current="page"
+            >Overview
+          </a>
+          <a
+            (mouseenter)="showFeaturesMenu()"
+            class="menu-container text-black font-medium px-3 cursor-pointer inline-flex items-center gap-x-1 leading-6 relative transition-transform transform hover:scale-105"
+            >
+            Features
+            <svg
+              class="h-5 w-5 mt-1"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                clip-rule="evenodd"
+              />
+            </svg>
+            <!-- <app-features *ngIf="showMenu"></app-features> -->
+          </a>
+          <a
+            href="#"
+            class="text-black hover:text-black/50 rounded-md px-3 py-2 text-base font-medium cursor-pointer transition-transform transform hover:scale-105"
+            >FAQs</a
+          >
           <a
             href="/get-started"
-            class="rounded-xl bg-green-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-green-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-600"
-            >Get started</a
+            class="text-black hover:text-black/50 rounded-md px-3 py-2 text-base font-medium cursor-pointer transition-transform transform hover:scale-105"
+            >Get Started</a
           >
-          <a href="#" class="text-sm font-semibold leading-6 text-gray-900"
-            >Learn more <span aria-hidden="true">→</span></a
+          <a
+            href="#"
+            class="rounded-xl bg-green-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-green-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-600"
+            >Connect Wallet</a
+          >
+          <a
+            href="/login"
+            class="text-black hover:text-black/50 rounded-md px-3 py-2 text-base font-medium"
+            >Log in <span aria-hidden="true">&rarr;</span></a
           >
         </div>
       </div>
+    </div>
+    <div class="relative isolate">
       <div
-        class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
+        class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl"
         aria-hidden="true"
       >
         <div
-          class="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-slate-500 to-slate-800 opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
+          class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-slate-500 to-slate-800 opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
           style="
             clip-path: polygon(
               74.1% 44.1%,
@@ -151,161 +90,232 @@
           "
         ></div>
       </div>
-    </div>
-  </div>
 
-  <div class="min-w-full container px-16 flex flex-row justify-center">
-    <p class="py-4 font-bold text-4xl">Why use the Zimbabwe Land Registry?</p>
-  </div>
-  <div class="min-w-full container px-6 flex flex-row justify-center my-10">
-    <div class="container w-3/4 px-10 flex flex-row justify-between gap-5">
-      <div
-        class="w-1/3 h-44 bg-white border-slate-200 border-2  p-4 flex flex-col component-transition"
-      >
-        <span class="material-symbols-outlined"> verified_user </span>
-        <h2 class="font-semibold py-2">Secure</h2>
-        <p class="text-slate-600">
-          Land records are stored on the blockchain making them tamper-proof and
-          resistant to fraud.
-        </p>
-      </div>
-      <div
-        class="w-1/3 h-44 bg-white border-slate-200 border-2  p-3 flex flex-col component-transition"
-      >
-        <span class="material-symbols-outlined"> public </span>
-        <h2 class=" font-semibold py-2">Transparent</h2>
-        <p class="text-slate-600">
-          Anyone can view land records on the public blockchain, providing
-          transparency and trust.
-        </p>
-      </div>
-      <div
-        class="w-1/3 h-44 bg-white border-slate-200 border-2  p-3 flex flex-col component-transition"
-      >
-        <span class="material-symbols-outlined"> schedule </span>
-        <h2 class=" font-semibold py-2">Effecient</h2>
-        <p class="text-slate-600">
-          Smart contracts automat the land transfer process, reducing the time
-          and cost of land transactions.
-        </p>
+      <div class="w-full font-area">
+        <div class="mx-auto max-w-2xl py-32">
+          <div class="hidden sm:mb-8 sm:flex sm:justify-center">
+            <div
+              class="relative rounded-full px-3 py-1 text-sm leading-6 text-black ring-1 ring-gray-900/10 hover:ring-gray-900/20"
+            >
+              Check out the decentralised land registry policy.
+              <a href="#" class="font-semibold text-green-600"
+                ><span class="absolute inset-0" aria-hidden="true"></span>Read
+                more <span aria-hidden="true">&rarr;</span></a
+              >
+            </div>
+          </div>
+          <div class="text-center animate-fade-in">
+            <p class="text-6xl font-bold tracking-tight text-[#000000]">
+              Decentralised Land Registry for Zimbabwe
+            </p>
+            <p class="mt-6 leading-8 text-base text-[#000000] bg-slate-50 backdrop-blur-xl shadow-xl" >
+              Zimbabwe Land Registry is a Decentralised system that securely
+              stores land ownership records on the blockchain. It allows
+              landowners, buyers, and sellers to easily verify ownership and
+              transfer rights.
+            </p>
+            <div class="mt-10 flex items-center justify-center gap-x-6">
+              <a
+                href="/get-started"
+                class="rounded-xl bg-green-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-green-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-600"
+                >Get started</a
+              >
+              <a href="#" class="text-sm font-semibold leading-6 text-gray-900"
+                >Learn more <span aria-hidden="true">→</span></a
+              >
+            </div>
+          </div>
+          <div
+            class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
+            aria-hidden="true"
+          >
+            <div
+              class="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-slate-500 to-slate-800 opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
+              style="
+                clip-path: polygon(
+                  74.1% 44.1%,
+                  100% 61.6%,
+                  97.5% 26.9%,
+                  85.5% 0.1%,
+                  80.7% 2%,
+                  72.5% 32.5%,
+                  60.2% 62.4%,
+                  52.4% 68.1%,
+                  47.5% 58.3%,
+                  45.2% 34.5%,
+                  27.5% 76.7%,
+                  0.1% 64.9%,
+                  17.9% 100%,
+                  27.6% 76.8%,
+                  76.1% 97.7%,
+                  74.1% 44.1%
+                );
+              "
+            ></div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="min-w-full px-16 flex flex-row justify-center">
-    <p class="py-4 font-bold text-4xl">How it works</p>
-  </div>
-  <div class="min-w-full container px-6 flex flex-row justify-center my-10">
-    <div
-      class="w-3/4 container px-10 grid grid-flow-row grid-cols-4 mb-10 gap-4"
-    >
-      <div
-        class="h-60 bg-white border-slate-200 border-2  flex flex-col p-3 component-transition"
-      >
-        <span class="material-symbols-outlined"> description </span>
-        <h2 class=" font-semibold py-2">Seller creates a land record</h2>
-        <p class="text-slate-600">
-          The seller creates a new land record on the blockchain specifying the
-          buyer's address and land's details.
-        </p>
-      </div>
-      <div
-        class="h-60 bg-white border-slate-200 border-2  flex flex-col p-3 component-transition"
-      >
-        <span class="material-symbols-outlined"> arrow_forward </span>
-        <h2 class=" font-semibold py-2">Seller signs a transactions</h2>
-        <p class="text-slate-600">
-          Sellers signs to transfer the land to buyer, using their private key.
-        </p>
-      </div>
-      <div
-        class="h-60 bg-white border-slate-200 border-2  flex flex-col p-3 component-transition"
-      >
-        <span class="material-symbols-outlined"> corporate_fare </span>
-        <h2 class="text-lg font-semibold py-2">Seller sends transactions</h2>
-        <p class="text-slate-600">
-          Seller sends the signed transactions to the blockchain network
-        </p>
-      </div>
-      <div
-        class="h-60 bg-white border-slate-200 border-2  flex flex-col p-2 component-transition"
-      >
-        <span class="material-symbols-outlined"> contract_edit </span>
-        <h2 class=" font-semibold py-2">Buyer signs transaction</h2>
-        <p class="text-slate-600">
-          The buyer signs the transaction to confirm they want to purchase the
-          land
-        </p>
-      </div>
-      <div
-        class="h-60 bg-white border-slate-200 border-2  flex flex-col p-3 component-transition"
-      >
-        <span class="material-symbols-outlined"> accessibility_new</span>
-        <h2 class=" font-semibold py-2">Buyer send transaction</h2>
-        <p class="text-slate-600">
-          The buyer sends the transaction to the blockchain Network
-        </p>
-      </div>
-      <div
-        class="h-60 bg-white border-slate-200 border-2  flex flex-col p-2 component-transition"
-      >
-        <span class="material-symbols-outlined"> verified </span>
-        <h2 class=" font-semibold py-2">Transaction is Verified</h2>
-        <p class="text-slate-600">
-          The blockchain network verifies tbe transaction and record the new
-          land ownership.
-        </p>
-      </div>
-      <div
-        class="h-60 bg-white border-slate-200 border-2  flex flex-col p-2 component-transition"
-      >
-        <span class="material-symbols-outlined"> check_circle </span>
-        <h2 class=" font-semibold py-2">Transaction is completed</h2>
-        <p class="text-slate-600">
-          The transaction is complete, and the new land record is added to the
-          public blockchain.
-        </p>
+    <div class="min-w-full container px-16 flex flex-row justify-center mt-10">
+      <p class="py-4 font-bold text-4xl">Why use the Zimbabwe Land Registry?</p>
+    </div>
+    <div class="min-w-full container px-6 flex flex-row justify-center my-10">
+      <div class="container w-3/4 px-10 flex flex-row justify-between gap-5">
+        <div
+          class="w-1/3 h-44 rounded-md bg-white border-slate-200 border-2 p-4 flex flex-col component-transition"
+        >
+          <span class="material-symbols-outlined"> verified_user </span>
+          <h2 class="font-semibold py-2">Secure</h2>
+          <p class="text-slate-600">
+            Land records are stored on the blockchain making them tamper-proof
+            and resistant to fraud.
+          </p>
+        </div>
+        <div
+          class="w-1/3 h-44 rounded-md bg-white border-slate-200 border-2 p-3 flex flex-col component-transition"
+        >
+          <span class="material-symbols-outlined"> public </span>
+          <h2 class="font-semibold py-2">Transparent</h2>
+          <p class="text-slate-600">
+            Anyone can view land records on the public blockchain, providing
+            transparency and trust.
+          </p>
+        </div>
+        <div
+          class="w-1/3 h-44 rounded-md bg-white border-slate-200 border-2 p-3 flex flex-col component-transition"
+        >
+          <span class="material-symbols-outlined"> schedule </span>
+          <h2 class="font-semibold py-2">Effecient</h2>
+          <p class="text-slate-600">
+            Smart contracts automat the land transfer process, reducing the time
+            and cost of land transactions.
+          </p>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="min-w-full px-16 flex flex-row justify-center">
-    <p class="py-4 font-bold text-4xl">Frequently asked questions</p>
-  </div>
-  <div class="min-w-full container px-6 flex flex-row justify-center my-10">
-    <div class="w-3/4 container px-10">
-      <div class="w-full border-slate-200 border-2 rounded-2xl px-2 py-1 my-2">
-        <h2 class=" font-semibold py-2">How do I connect my wallet?</h2>
-        <p class="text-slate-600">
-          You can connect your wallet by clicking the connect button at the top
-          right of the page. We support Metamask, WalletConnect, and other
-          popular Ethereum wallets.
-        </p>
-      </div>
-      <div class="min-w-full border-slate-200 border-2 rounded-2xl px-2 py-1 my-2">
-        <h2 class="font-semibold py-2">What's a smart contract?</h2>
-      </div>
-      <div class="min-w-full border-slate-200 border-2 rounded-2xl px-2 py-1 my-2">
-        <h2 class="text-lg font-semibold py-2">
-          What happens if I loose my private key?
-        </h2>
-      </div>
-    </div>
-  </div>
 
-  <div class="w-full px-16 flex flex-row justify-center">
-    <p class="py-4 font-bold text-4xl">Ready to get started?</p>
-  </div>
-  <div class="min-w-full container px-6 flex flex-row justify-center my-10">
-    <div class="w-3/4 container px-10 flex flex-row justify-center">
-      <button
-        type="button"
-        class="flex w-3/12 justify-center bg-green-500 rounded-md px-3 py-1.5 text-base font-semibold leading-6 text-white shadow-sm hover:bg-green-600"
+    <div class="min-w-full px-16 flex flex-row justify-center">
+      <p class="py-4 font-bold text-4xl">How it works</p>
+    </div>
+    <div class="min-w-full container px-6 flex flex-row justify-center my-10">
+      <div
+        class="w-3/4  container px-10 grid grid-flow-row grid-cols-4 mb-10 gap-4"
       >
-        Create an account
-      </button>
+        <div
+          class="h-60 rounded-md bg-white border-slate-200 border-2 flex flex-col p-3 component-transition"
+        >
+          <span class="material-symbols-outlined"> description </span>
+          <h2 class="font-semibold py-2">Seller creates a land record</h2>
+          <p class="text-slate-600">
+            The seller creates a new land record on the blockchain specifying
+            the buyer's address and land's details.
+          </p>
+        </div>
+        <div
+          class="h-60 rounded-md bg-white border-slate-200 border-2 flex flex-col p-3 component-transition"
+        >
+          <span class="material-symbols-outlined"> arrow_forward </span>
+          <h2 class="font-semibold py-2">Seller signs a transactions</h2>
+          <p class="text-slate-600">
+            Sellers signs to transfer the land to buyer, using their private
+            key.
+          </p>
+        </div>
+        <div
+          class="h-60 rounded-md bg-white border-slate-200 border-2 flex flex-col p-3 component-transition"
+        >
+          <span class="material-symbols-outlined"> corporate_fare </span>
+          <h2 class="text-lg font-semibold py-2">Seller sends transactions</h2>
+          <p class="text-slate-600">
+            Seller sends the signed transactions to the blockchain network
+          </p>
+        </div>
+        <div
+          class="h-60 rounded-md bg-white border-slate-200 border-2 flex flex-col p-2 component-transition"
+        >
+          <span class="material-symbols-outlined"> contract_edit </span>
+          <h2 class="font-semibold py-2">Buyer signs transaction</h2>
+          <p class="text-slate-600">
+            The buyer signs the transaction to confirm they want to purchase the
+            land
+          </p>
+        </div>
+        <div
+          class="h-60 rounded-md bg-white border-slate-200 border-2 flex flex-col p-3 component-transition"
+        >
+          <span class="material-symbols-outlined"> accessibility_new</span>
+          <h2 class="font-semibold py-2">Buyer send transaction</h2>
+          <p class="text-slate-600">
+            The buyer sends the transaction to the blockchain Network
+          </p>
+        </div>
+        <div
+          class="h-60 rounded-md bg-white border-slate-200 border-2 flex flex-col p-2 component-transition"
+        >
+          <span class="material-symbols-outlined"> verified </span>
+          <h2 class="font-semibold py-2">Transaction is Verified</h2>
+          <p class="text-slate-600">
+            The blockchain network verifies tbe transaction and record the new
+            land ownership.
+          </p>
+        </div>
+        <div
+          class="h-60 rounded-md bg-white border-slate-200 border-2 flex flex-col p-2 component-transition"
+        >
+          <span class="material-symbols-outlined"> check_circle </span>
+          <h2 class="font-semibold py-2">Transaction is completed</h2>
+          <p class="text-slate-600">
+            The transaction is complete, and the new land record is added to the
+            public blockchain.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="min-w-full px-16 flex flex-row justify-center">
+      <p class="py-4 font-bold text-4xl">Frequently asked questions</p>
+    </div>
+    <div class="min-w-full container px-6 flex flex-row justify-center my-10">
+      <div class="w-3/4 container px-10">
+        <div
+          class="w-full border-slate-200 border-2 rounded-2xl px-2 py-1 my-2"
+        >
+          <h2 class="font-semibold py-2">How do I connect my wallet?</h2>
+          <p class="text-slate-600">
+            You can connect your wallet by clicking the connect button at the
+            top right of the page. We support Metamask, WalletConnect, and other
+            popular Ethereum wallets.
+          </p>
+        </div>
+        <!-- <div
+          class="min-w-full border-slate-200 border-2 rounded-2xl px-2 py-1 my-2"
+        >
+          <h2 class="font-semibold py-2">What's a smart contract?</h2>
+        </div>
+        <div
+          class="min-w-full border-slate-200 border-2 rounded-2xl px-2 py-1 my-2"
+        >
+          <h2 class="text-lg font-semibold py-2">
+            What happens if I loose my private key?
+          </h2>
+        </div> -->
+      </div>
+    </div>
+
+    <div class="w-full px-16 flex flex-row justify-center">
+      <p class="py-4 font-bold text-4xl">Ready to get started?</p>
+    </div>
+    <div class="min-w-full container px-6 flex flex-row justify-center my-10">
+      <div class="w-3/4 container px-10 flex flex-row justify-center">
+        <button
+          type="button"
+          class="flex w-3/12 justify-center bg-gray-900 px-3 py-1.5 text-base font-semibold leading-6 text-white shadow-sm hover:bg-gray-600"
+        >
+          Create an account
+        </button>
+      </div>
     </div>
   </div>
-</div>
 </div>
 <footer class="bg-gray-900 text-white">
   <div class="container mx-auto px-10 w-3/4">

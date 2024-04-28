@@ -20,8 +20,12 @@
         </p>
       </section>
       <section class="w-1/2 flex flex-row-reverse">
-        <div class="w-3/4">
-          <form #searchForm="ngForm" (submit)="handleSearch(searchForm)">
+        <div class="w-full flex fle-row items-center">
+          <form
+            #searchForm="ngForm"
+            (submit)="handleSearch(searchForm)"
+            class="w-3/4 mr-2"
+          >
             <div class="flex flex-row justify-center">
               <input
                 ngModel
@@ -30,15 +34,22 @@
                 placeholder="Search for properties, land ..."
                 name="search"
                 id="search"
-                class="block w-full border-0 py-2.5 text-gray-900 shadow-sm ring-1 ring-gray-300 px-2"
+                class="block w-full border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-gray-300 px-2"
               />
-              <button class="bg-black px-2 py-1" type="submit">
-                <span class="material-symbols-outlined text-white">
+              <button class="ring-1 ring-gray-300 px-2 py-1" type="submit">
+                <span class="material-symbols-outlined text-gray-800">
                   search
                 </span>
               </button>
             </div>
           </form>
+          <span
+            class="w-10 h-10 bg-gray-200 flex flex-row justify-center items-center rounded-full transition-transform transform hover:scale-105 cursor-pointer mt-1"
+          >
+            <span class="material-symbols-outlined text-gray-900">
+              refresh
+            </span>
+          </span>
         </div>
       </section>
     </div>
@@ -80,7 +91,7 @@
           </mat-cell>
         </ng-container>
         <ng-container matColumnDef="location">
-          <mat-header-cell *matHeaderCellDef class="text-sm font-medium"
+          <mat-header-cell *matHeaderCellDef class="text-sm font-semibold"
             >Location</mat-header-cell
           >
           <mat-cell *matCellDef="let element" class="text-sm font-medium">

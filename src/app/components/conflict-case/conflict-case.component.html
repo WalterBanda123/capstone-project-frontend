@@ -1,6 +1,5 @@
 <div
-  mat-dialog-title
-  class="font-medium text-base italic flex flex-row justify-between"
+  class="font-medium text-base italic flex flex-row justify-between bg-gray-900 text-white px-10 py-5"
 >
   <div class="flex flex-row items-center gap-x-3">
     <span class="material-symbols-outlined"> text_snippet </span> Conflict Case
@@ -13,16 +12,9 @@
         print
       </span>
     </button>
-    <button
-      mat-button
-      mat-dialog-close
-      class="font-semibold text-sm py-2 px-2 text-gray-900 transition-transform transform hover:scale-105"
-    >
-      Close
-    </button>
   </div>
 </div>
-<mat-dialog-content class="mat-typography">
+<div class="mat-typography px-10">
   <div class="flex flex-col mt-4">
     <p class="font-semibold text-base italic">Parties Involved</p>
     <div class="flex flex-col">
@@ -148,7 +140,7 @@
       >
 
       <p class="font-semibold text-base">Recent Communication Logs:</p>
-      
+
       <span>
         <i class="font-light py-2 my-1">1. February 1, 2024 - Complainant </i>:
         This Contract Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -178,5 +170,14 @@
         justo in velit bibendum, vitae tempor nisi sagittis.
       </span>
     </div>
+    <div class="my-6 flex items-center justify-end gap-x-12">
+      <button
+        mat-dialog-close="true"
+        type="button"
+        class="text-sm font-semibold leading-6 text-white bg-gray-800 px-12 py-1 rounded-sm"
+      >
+        Close
+      </button>
+    </div>
   </div>
-</mat-dialog-content>
+</div>

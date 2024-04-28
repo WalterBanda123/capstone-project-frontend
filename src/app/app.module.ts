@@ -89,6 +89,7 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { ChangePasswordComponent } from './pages/change-password/change-password.component';
 import { ResetPasswordComponent } from './pages/reset-password/reset-password.component';
 import { SnackbarComponent } from './components/snackbar/snackbar.component';
+import { ProcessPaymentComponent } from './components/process-payment/process-payment.component';
 
 
 @NgModule({
@@ -162,6 +163,7 @@ import { SnackbarComponent } from './components/snackbar/snackbar.component';
     ChangePasswordComponent,
     ResetPasswordComponent,
     SnackbarComponent,
+    ProcessPaymentComponent,
   ],
   imports: [
     BrowserModule,

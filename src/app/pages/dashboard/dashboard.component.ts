@@ -2,6 +2,7 @@ import { Component, HostListener, OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { MenuPanelComponent } from 'src/app/components/menu-panel/menu-panel.component';
+import { AppDataService } from 'src/app/providers/app-data.service';
 import { AuthService } from 'src/app/providers/auth.service';
 
 @Component({
@@ -11,7 +12,7 @@ import { AuthService } from 'src/app/providers/auth.service';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor(private authService: AuthService, private dialog: MatDialog, private router: Router) { }
+  constructor(private authService: AuthService, private dialog: MatDialog, private router: Router, private appDataService: AppDataService) { }
 
   dialogRef: MatDialogRef<any> | undefined = undefined
   showMenu: boolean = false
@@ -53,10 +54,12 @@ export class DashboardComponent implements OnInit {
     console.log('Displaying the user profile');
   }
   ngOnInit(): void {
-    this.user = JSON.parse(localStorage.getItem('user')!)
-    this.photoURL = this.user.photoURL
 
-    // ?? 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80'
+
+    this.authService.userProfile$.subscribe(profile => {
+      this.photoURL = profile?.photoURL ?? 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80'
+      this.user = profile
+    })
 
   }
 

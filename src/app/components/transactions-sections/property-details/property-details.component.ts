@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AppDataService } from 'src/app/providers/app-data.service';
 import { TransactionsService } from 'src/app/providers/transactions.service';
 
 @Component({
@@ -10,7 +11,8 @@ import { TransactionsService } from 'src/app/providers/transactions.service';
 })
 export class PropertyDetailsComponent implements OnInit {
 
-  constructor(private router: Router, private transactionService: TransactionsService) { }
+  constructor(private router: Router, private transactionService: TransactionsService, private appDataService:AppDataService) { }
+  availableProperties:any = []
 
   fieldSets$: any = {}
   handleFormOne(form: NgForm): void {
@@ -21,6 +23,11 @@ export class PropertyDetailsComponent implements OnInit {
   }
   ngOnInit(): void {
     this.fieldSets$ = this.transactionService.sectionOneData
+    this.appDataService.getAllProperties().subscribe({next:(properties)=>{
+      this.availableProperties = properties
+    }, error:(error)=>{
+      console.log(error);
+    }})
   }
 
 }

@@ -15,33 +15,47 @@
   @apply border-b-4 border-green-600 cursor-pointer;
 }
 
-.activesection{
-  @apply text-gray-900 cursor-pointer italic font-semibold
+.activesection {
+  @apply text-gray-900 cursor-pointer italic font-semibold;
 }
 
-.menu-panel-active{
-  @apply text-green-600
+.menu-panel-active {
+  @apply text-green-600;
 }
 
-.search-deed-tabs{
+.search-deed-tabs {
   @apply border-b-4 border-black;
 }
 
-
 .mat-dialog-container {
-    box-shadow: none;
-    background: #fff;
-    color: rgba(0, 0, 0, .87);
-    border-radius: 0px;
+  box-shadow: none;
+  background: #fff;
+  color: rgba(0, 0, 0, 0.87);
+  border-radius: 0px;
 }
 
-.custom-snackbar{
-  @apply bg-green-100 text-green-700 font-medium
+.custom-snackbar {
+  @apply bg-green-100 text-green-700 font-medium;
 }
 
+.dialog-custom-width-height {
+  @apply p-0;
+}
 
-body{
-  color: rgba(0, 0, 0, .87);
+mat-dialog-container.mat-dialog-container {
+  padding: 0px;
+}
+
+.font-area {
+  background-image: url("c:\Users\walte\Downloads\digital-marketing-agency-ntwrk-g39p1kDjvSY-unsplash.jpg");
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  mix-blend-mode: difference;
+}
+
+body {
+  color: rgba(0, 0, 0, 0.87);
 }
 /* .custom-scrollbar::-webkit-scrollbar {
   background: transparent;
@@ -52,13 +66,16 @@ body{
   background-color:black;
 } */
 
-
 /* Hide scrollbar for specific elements */
 .section-element::-webkit-scrollbar {
-    display: none; /* Chrome, Safari, Opera */
+  display: none; /* Chrome, Safari, Opera */
 }
 
-
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}

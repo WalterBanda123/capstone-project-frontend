@@ -1,8 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable, of } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { AuthService } from './auth.service';
+import { TRANSFERS } from '../mock/Transfers';
 
 
 @Injectable({
@@ -14,7 +15,9 @@ export class AppDataService {
     this.updatePropertiesCount()
     this.updatePropertiesMarketValue()
     this.updateTotalArea()
+
   }
+
 
   private totalPropertiesCount = new BehaviorSubject<number>(0)
   numberOfProperties$ = this.totalPropertiesCount.asObservable()
@@ -77,5 +80,27 @@ export class AppDataService {
     return this.http.post<any>(`${this.serverURL}/dbApi/create-user`, { ...user, uid, profileURL: this.authService.authenticatedUser?.photoURL })
   }
 
+  createTransferTransaction(transaction: any): Observable<any> {
+    const transactionObject = { ...transaction }
+    this.authService.userProfile$.subscribe(profile => {
+      // if (profile) {
+      //   transactionObject.createdBy = profile._id
+      //   transactionObject.finalised = false;
+      //   transactionObject.transID = 'helper _function to generate random ids'
+      // }
+      transactionObject.createdBy = profile?._id ?? 'id not available right now'
+      transactionObject.finalised = false;
+      transactionObject.transID = 'helper _function to generate random ids'
+    })
+
+    // return this.http.post<any>(`${this.serverURL}/`, transactionObject)
+    return of(transactionObject)
+  }
+
+
+  createTransferRequest(request: any): Observable<any> {
+    TRANSFERS.push({ ...request, createdAt: new Date(), transaction: 'Transaction '+ TRANSFERS.length + 1, status: "Pending" })
+    return of(TRANSFERS);
+  }
 
 }
