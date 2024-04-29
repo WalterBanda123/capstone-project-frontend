@@ -24,7 +24,7 @@ export class PropertyDetailsComponent implements OnInit {
   ngOnInit(): void {
     this.fieldSets$ = this.transactionService.sectionOneData
     this.appDataService.getAllProperties().subscribe({next:(properties)=>{
-      this.availableProperties = properties
+      this.availableProperties = properties.properties
     }, error:(error)=>{
       console.log(error);
     }})

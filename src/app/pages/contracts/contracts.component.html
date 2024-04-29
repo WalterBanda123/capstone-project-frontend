@@ -204,18 +204,18 @@
         <!-- Position Column -->
         <ng-container matColumnDef="date">
           <mat-header-cell *matHeaderCellDef class="text-sm font-semibold"
-            >Created At</mat-header-cell
+            >Transaction ID</mat-header-cell
           >
-          <mat-cell *matCellDef="let element" class="text-sm">
-            {{ element.date | date }}
+          <mat-cell *matCellDef="let element" class="text-sm whitespace-nowrap">
+            {{ element.transactionID | slice : 0 : 10 }}...
           </mat-cell>
         </ng-container>
         <ng-container matColumnDef="transactionType">
           <mat-header-cell *matHeaderCellDef class="text-sm font-semibold">
-            Transaction Type
+            Transfer Type
           </mat-header-cell>
           <mat-cell *matCellDef="let element" class="text-sm">
-            {{ element.transaction }}
+            {{ element.transferType }}
           </mat-cell>
         </ng-container>
         <ng-container matColumnDef="status">
@@ -228,10 +228,10 @@
         </ng-container>
         <ng-container matColumnDef="party">
           <mat-header-cell *matHeaderCellDef class="text-sm font-semibold"
-            >Party</mat-header-cell
+            >Buyer Details</mat-header-cell
           >
           <mat-cell *matCellDef="let element" class="text-sm">
-            {{ element.party }}
+            {{ element.buyerID | slice : 0 : 10 }}...
           </mat-cell>
         </ng-container>
         <ng-container matColumnDef="property">
@@ -242,14 +242,7 @@
             {{ element.property }}
           </mat-cell>
         </ng-container>
-        <ng-container matColumnDef="payment-period">
-          <mat-header-cell *matHeaderCellDef class="text-sm font-semibold"
-            >Payment Period</mat-header-cell
-          >
-          <mat-cell *matCellDef="let element" class="text-sm">
-            {{ element.startDate | date }} - {{ element.endDate | date }}
-          </mat-cell>
-        </ng-container>
+
         <ng-container matColumnDef="agreed-price">
           <mat-header-cell *matHeaderCellDef class="text-sm font-semibold"
             >Agreed Price</mat-header-cell
@@ -271,9 +264,6 @@
                 pin_invoke
               </span>
             </button>
-            <button (click)="handleTransactionDeletion(element)">
-              <span class="material-symbols-outlined"> delete </span>
-            </button>
           </mat-cell>
         </ng-container>
         <ng-container matColumnDef="edit">
@@ -281,7 +271,9 @@
             Edit
           </mat-header-cell>
           <mat-cell *matCellDef="let element" class="text-sm">
-            <button (click)="editTransaction(element)">Edit</button>
+            <button (click)="editTransaction(element)">
+              <span class="material-symbols-outlined"> edit </span>
+            </button>
           </mat-cell>
         </ng-container>
 
@@ -349,7 +341,7 @@
             >Submited On</mat-header-cell
           >
           <mat-cell *matCellDef="let element" class="text-sm">
-            {{ element.createdAt  | date }}
+            {{ element.createdAt | date }}
           </mat-cell>
         </ng-container>
         <ng-container matColumnDef="status">
@@ -372,9 +364,6 @@
               <span class="material-symbols-outlined text-blue-700">
                 pin_invoke
               </span>
-            </button>
-            <button (click)="handleTransactionDeletion(element)">
-              <span class="material-symbols-outlined"> delete </span>
             </button>
           </mat-cell>
         </ng-container>

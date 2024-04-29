@@ -37,6 +37,9 @@
 .custom-snackbar {
   @apply bg-green-300 text-green-700 font-medium;
 }
+.snackbar {
+  @apply  text-green-700 font-medium;
+}
 
 .dialog-custom-width-height {
   @apply p-0;
@@ -44,6 +47,10 @@
 
 mat-dialog-container.mat-dialog-container {
   padding: 0px;
+}
+
+mat-cell , mat-header-cell{
+  @apply whitespace-normal px-3 py-2
 }
 
 .font-area {

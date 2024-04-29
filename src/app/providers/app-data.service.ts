@@ -103,19 +103,37 @@ export class AppDataService {
 
   createTransferTransaction(transaction: any): Observable<any> {
     const transactionObject = { ...transaction }
-    this.authService.userProfile$.subscribe(profile => {
-      // if (profile) {
-      //   transactionObject.createdBy = profile._id
-      //   transactionObject.finalised = false;
-      //   transactionObject.transID = 'helper _function to generate random ids'
-      // }
-      transactionObject.createdBy = profile?._id ?? 'id not available right now'
-      transactionObject.finalised = false;
-      transactionObject.transID = 'helper _function to generate random ids'
-    })
+    return this.authService.userProfile$.pipe(
+      switchMap(
+        profile => {
+          if (profile) {
+            transactionObject.createdBy = profile._id
+            transactionObject.finalised = false;
+            transactionObject.transactionID = profile._id.slice(5) + new Date().getSeconds()
+            transactionObject.status = 'Pending'
+            transactionObject.amountPayed = 0;
 
+            return this.http.post<any>(`${this.serverURL}/dbApi/transactions`, transactionObject)
+          }
+          else {
+            return of(null)
+          }
+        })
+    )
     // return this.http.post<any>(`${this.serverURL}/`, transactionObject)
-    return of(transactionObject)
+  }
+
+  getTransactions(): Observable<any> {
+    return this.authService.userProfile$.pipe(
+      switchMap(profile => {
+        if (profile) {
+          return this.http.get<any>(`${this.serverURL}/dbApi/transactions?email=${profile.email}&id=${profile._id}`)
+        }
+        else {
+          return of(null)
+        }
+      })
+    )
   }
 
 
@@ -128,6 +146,7 @@ export class AppDataService {
     console.log(request);
     return this.http.post<any>(`${this.serverURL}/`, request)
   }
+
 
   // getAllTitleRequest()
 

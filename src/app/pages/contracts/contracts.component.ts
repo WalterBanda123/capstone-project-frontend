@@ -13,6 +13,7 @@ import { TransactionViewComponent } from 'src/app/components/transaction-view/tr
 import { CONTRACTS } from 'src/app/mock/Contracts';
 import { TRANSACTIONS } from 'src/app/mock/Transactions';
 import { TRANSFERS } from 'src/app/mock/Transfers';
+import { AppDataService } from 'src/app/providers/app-data.service';
 import { AuthService } from 'src/app/providers/auth.service';
 
 @Component({
@@ -22,7 +23,7 @@ import { AuthService } from 'src/app/providers/auth.service';
 })
 export class ContractsComponent implements OnInit {
 
-  constructor(private spinner: NgxSpinnerService, private dialog: MatDialog, private _toast: MatSnackBar, private authService: AuthService, private router: Router) { }
+  constructor(private spinner: NgxSpinnerService, private dialog: MatDialog, private _toast: MatSnackBar, private authService: AuthService, private router: Router, private appDataService: AppDataService) { }
 
   dataSource: MatTableDataSource<any> = new MatTableDataSource<any>([])
   transactionData: MatTableDataSource<any> = new MatTableDataSource<any>([])
@@ -30,7 +31,7 @@ export class ContractsComponent implements OnInit {
 
   displayedColumns: string[] = ['contract', 'property', 'deed', 'owner', 'status', 'action']
 
-  transactionColumns: string[] = ['date', 'transactionType', 'status', 'party', 'property', 'payment-period', 'agreed-price', 'action', 'edit']
+  transactionColumns: string[] = ['date', 'transactionType', 'status', 'party', 'property', 'agreed-price', 'action', 'edit']
 
   transferRequestColums: string[] = ['transaction', 'transfer-type', 'property', 'recepient', 'createdAt', 'status', 'actions']
 
@@ -96,34 +97,29 @@ export class ContractsComponent implements OnInit {
         )
       }
     })
-    const dialogRef = this.dialog.open(ProcessPaymentComponent,
-      {
-        data: transaction,
-        height: '100%',
-        width: '60%',
-      }
-    )
-  }
-
-
-  handleTransactionDeletion(element: any): void {
-    // const dialogRef = this.dialog.open(ConfirmDelitionComponent, { hasBackdrop: false })
-    // dialogRef.afterClosed().subscribe({
-    //   next: (response: any) => {
-    //     console.log('Response', response);
-    //     if (response === 'Deleted') {
-    //       this._toast.openFromComponent(ToastMessageComponent, { duration: 5000 })
-    //     }
-    //   }, error: (error: any) => {
-    //     console.log(error)
+    // const dialogRef = this.dialog.open(ProcessPaymentComponent,
+    //   {
+    //     data: transaction,
+    //     height: '100%',
+    //     width: '60%',
     //   }
-    // })
-    console.log(element);
+    // )
   }
+
 
   ngOnInit(): void {
+
+    this.appDataService.getTransactions().subscribe({
+      next: (result) => {
+        if (result) {
+          this.transactionData = new MatTableDataSource<any>(result.transactions);
+          console.log(result.transactions[0]);
+        }
+      }, error: (error) => {
+        console.log(error);
+      }
+    })
     this.dataSource = new MatTableDataSource<any>(CONTRACTS)
-    this.transactionData = new MatTableDataSource<any>(TRANSACTIONS);
     this.transferRequests = new MatTableDataSource<any>(TRANSFERS)
   }
 
