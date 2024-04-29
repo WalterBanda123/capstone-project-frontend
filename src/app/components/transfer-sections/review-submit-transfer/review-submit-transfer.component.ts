@@ -18,7 +18,7 @@ export class ReviewSubmitTransferComponent implements OnInit {
   handleTransferRequest(): void {
     this.spinner.show()
     this.appDataService.createTransferRequest(this.transactionInformation$).subscribe(response => {
-      this._snackbar.open('Successfully Submitted a transfer request. ', '', { duration: 5000, horizontalPosition: 'center', verticalPosition: "top", panelClass: ['custom-snackbar'] })
+      this._snackbar.open('Successfully Submitted a transfer request. ', '', { duration: 5000, horizontalPosition: 'end', verticalPosition: "top", panelClass: ['snackbar'] })
       this.router.navigate(['/dashboard/contracts'])
       console.log(response);
     })

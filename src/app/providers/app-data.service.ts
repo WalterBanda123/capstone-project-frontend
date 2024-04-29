@@ -56,23 +56,23 @@ export class AppDataService {
   }
 
   updatePropertiesMarketValue(): void {
-    // this.getAllProperties().subscribe({
-    //   next: (records) => {
-    //     const count = this.calculateTotalPrice(records)
-    //     this.totalPropertyValue.next(count)
-    //   }
-    // })
-    this.totalPropertyValue.next(2)
+    this.getAllProperties().subscribe({
+      next: (records) => {
+        const count = this.calculateTotalPrice(records.properties)
+        this.totalPropertyValue.next(count)
+      }
+    })
+    // this.totalPropertyValue.next(2)
   }
 
   updateTotalArea(): void {
-    // this.getAllProperties().subscribe({
-    //   next: (records) => {
-    //     const count = this.calculateTotalArea(records)
-    //     this.totalArea.next(count)
-    //   }
-    // })
-    this.totalArea.next(7)
+    this.getAllProperties().subscribe({
+      next: (records) => {
+        const count = this.calculateTotalArea(records.properties)
+        this.totalArea.next(count)
+      }
+    })
+    // this.totalArea.next(7)
 
   }
 
