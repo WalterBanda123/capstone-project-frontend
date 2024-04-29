@@ -3,7 +3,6 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, of, switchMap } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { AuthService } from './auth.service';
-import { TRANSFERS } from '../mock/Transfers';
 
 
 @Injectable({
@@ -112,7 +111,6 @@ export class AppDataService {
             transactionObject.transactionID = profile._id.slice(5) + new Date().getSeconds()
             transactionObject.status = 'Pending'
             transactionObject.amountPayed = 0;
-
             return this.http.post<any>(`${this.serverURL}/dbApi/transactions`, transactionObject)
           }
           else {
@@ -136,10 +134,36 @@ export class AppDataService {
     )
   }
 
-
   createTransferRequest(request: any): Observable<any> {
-    TRANSFERS.push({ ...request, createdAt: new Date(), transaction: 'Transaction ' + TRANSFERS.length + 1, status: "Pending" })
-    return of(TRANSFERS);
+    return this.authService.userProfile$.pipe(
+      switchMap(profile => {
+        if (profile) {
+          const transferRequest = { ...request, createdAt: new Date(), status: 'Pending', modifiedAt: new Date(), previousOwner: profile._id, }
+          console.log(transferRequest);
+          return this.http.post<any>(`${this.serverURL}/dbApi/transfers`, transferRequest)
+        }
+        else {
+          return of(null)
+        }
+      })
+    )
+
+  }
+
+
+  getTransferRequest(): Observable<any> {
+    return this.authService.userProfile$.pipe(
+      switchMap(
+        profile => {
+          if (profile) {
+            return this.http.get<any>(`${this.serverURL}/dbApi//transfers/previous-owner/${profile._id}`)
+          }
+          else {
+            return of(null)
+          }
+        }
+      )
+    )
   }
 
   createDeedsRequest(request: any): Observable<any> {

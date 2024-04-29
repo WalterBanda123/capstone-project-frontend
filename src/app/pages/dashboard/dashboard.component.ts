@@ -29,7 +29,6 @@ export class DashboardComponent implements OnInit {
     })
   }
 
-
   openDialog(): void {
     if (this.dialogRef?.getState() === undefined) {
       this.dialogRef = this.dialog.open(MenuPanelComponent,
@@ -53,6 +52,7 @@ export class DashboardComponent implements OnInit {
     this.router.navigate(['dashboard/profile'])
     console.log('Displaying the user profile');
   }
+
   ngOnInit(): void {
 
     this.authService.userProfile$.subscribe(profile => {

@@ -33,7 +33,7 @@ export class ContractsComponent implements OnInit {
 
   transactionColumns: string[] = ['date', 'transactionType', 'status', 'party', 'property', 'agreed-price', 'action', 'edit']
 
-  transferRequestColums: string[] = ['transaction', 'transfer-type', 'property', 'recepient', 'createdAt', 'status', 'actions']
+  transferRequestColums: string[] = ['transaction', 'transfer-type', 'recepient', 'createdAt', 'status', 'actions']
 
   selectedTab: 'contracts' | 'transactions' | 'transfer-requests' = 'contracts'
 
@@ -119,8 +119,21 @@ export class ContractsComponent implements OnInit {
         console.log(error);
       }
     })
+
+    this.appDataService.getTransferRequest().subscribe({
+      next: (result) => {
+        if (result) {
+          console.log(result);
+          if (result) {
+            this.transferRequests = new MatTableDataSource<any>(result.transfers)
+          }
+        }
+      }, error: (error) => {
+        console.log(error);
+      }
+    })
     this.dataSource = new MatTableDataSource<any>(CONTRACTS)
-    this.transferRequests = new MatTableDataSource<any>(TRANSFERS)
+
   }
 
 }

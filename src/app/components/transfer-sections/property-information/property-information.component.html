@@ -7,7 +7,7 @@
       <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6 mb-20">
         <div class="sm:col-span-3">
           <label
-            for="transaction"
+            for="transactionID"
             class="block text-sm font-medium leading-6 text-gray-900"
             >Select Transaction
             <span class="text-xs font-normal italic"
@@ -16,16 +16,19 @@
           >
           <div class="mt-2">
             <select
-              id="transaction"
-              name="transaction"
+              id="transactionID"
+              name="transactionID"
               ngModel
               #transaction="ngModel"
               [(ngModel)]="fieldSets$.transaction"
               class="block w-full rounded-sm border-0 py-2 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
             >
-              <option>Transaction 1</option>
-              <option>Transaction 2</option>
-              <option>Transaction 3</option>
+              <option
+                *ngFor="let tran of transactions"
+                value="{{ tran._id }}"
+              >
+                {{ tran.transactionID }}
+              </option>
             </select>
           </div>
         </div>
@@ -90,10 +93,8 @@
               id="legalDescription"
               name="legalDescription"
               rows="3"
-
               [(ngModel)]="fieldSets$.legalDescription"
               ngModel
-
               #legalDescription="ngModel"
               class="block w-full rounded-sm px-3 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
             ></textarea>
@@ -106,7 +107,7 @@
         <div class="col-span-5">
           <div class="mt-6 flex items-center justify-end gap-x-6">
             <button
-            routerLink="/dashboard/overview"
+              routerLink="/dashboard/overview"
               type="button"
               class="text-sm font-semibold leading-6 text-yellow-600"
             >
