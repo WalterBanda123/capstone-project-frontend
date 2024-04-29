@@ -55,9 +55,7 @@ export class DashboardComponent implements OnInit {
   }
   ngOnInit(): void {
 
-
     this.authService.userProfile$.subscribe(profile => {
-      this.photoURL = profile?.photoURL ?? 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80'
       this.user = profile
     })
 
@@ -66,20 +64,23 @@ export class DashboardComponent implements OnInit {
   getInitials(name: string): string {
     if (name) {
       const names = name.split(' ');
-      return names.map(n => n[0]).join('').toUpperCase();
+      return names.map(n => n[0] + n[1]).join('').toUpperCase();
     }
-    return 'ZW'
+    return ''
   }
 
   getColor(name: string): string {
     // Here, you can implement a function to generate a color based on the user's name
     // For simplicity, let's use a simple hash function
-    let hash = 0;
-    for (let i = 0; i < name.length; i++) {
-      hash = name.charCodeAt(i) + ((hash << 5) - hash);
+    if (name) {
+      let hash = 0;
+      for (let i = 0; i < name.length; i++) {
+        hash = name.charCodeAt(i) + ((hash << 5) - hash);
+      }
+      const hue = Math.abs(hash % 360);
+      return `hsl(${hue}, 70%, 50%)`; // Use HSL for generating colors
     }
-    const hue = Math.abs(hash % 360);
-    return `hsl(${hue}, 70%, 50%)`; // Use HSL for generating colors
+    return ''
   }
 
 

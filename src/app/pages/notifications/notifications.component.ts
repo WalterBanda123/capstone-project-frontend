@@ -9,7 +9,9 @@ export class NotificationsComponent implements OnInit {
 
   constructor() { }
 
+  deedRequestColumns: string[] = ['checkbox', 'request', 'property', 'owner', 'createdAt', 'status']
   ngOnInit(): void {
+
   }
 
 }

@@ -31,9 +31,11 @@ export class PropertiesOverviewComponent implements OnInit {
   getAllProperties(): void {
     this.appDataService.getAllProperties().subscribe({
       next: (records) => {
-        const reversedList = records.slice().reverse()
-       
-        this.properties = new MatTableDataSource<any>(reversedList)
+        if (records) {
+          console.log('Records',records);
+          const reversedList = records.properties.slice().reverse()
+          this.properties = new MatTableDataSource<any>(reversedList)
+        }
       }, error: (error) => {
         console.log(error);
       }
@@ -41,7 +43,9 @@ export class PropertiesOverviewComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getAllProperties()
+    setTimeout(() => {
+      this.getAllProperties()
+    }, 1000);
     // this.properties = new MatTableDataSource<any>(PROPERTIES)
   }
 }

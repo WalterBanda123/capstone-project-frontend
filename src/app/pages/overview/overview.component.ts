@@ -21,6 +21,23 @@ export class OverviewComponent implements OnInit {
   properties: any = []
   isSearched: boolean = false
 
+  handleTitleDeedRequest(property: any): void {
+    const request = {
+      propertyID: property._id,
+      priority: 'Normal',
+      status: 'Pending',
+      propertyOwner: property.owner
+    }
+    this.appDataService.createDeedsRequest(request).subscribe({
+      next: (value) => {
+        console.log(value);
+      },
+      error: (error) => {
+        console.log(error);
+      }
+    })
+  }
+
   handleSelectedOverview(tab: any): void {
     this.spinner.show()
     setTimeout(() => {
@@ -33,7 +50,7 @@ export class OverviewComponent implements OnInit {
     const { titleDeed } = form.value
     this.appDataService.getSearchedProperties(titleDeed).subscribe({
       next: (response) => {
-        console.log('Searched data: ', response , 'text searched:', titleDeed);
+        console.log('Searched data: ', response, 'text searched:', titleDeed);
         this.properties = response.properties
         if (titleDeed) {
           this.isSearched = true
@@ -60,44 +77,5 @@ export class OverviewComponent implements OnInit {
   ngOnInit(): void {
 
   }
-  // titles: any = [
-  //   {
-  //     "title": "Prime Residential Property in Harare CBD",
-  //     "address": "123 Main Street, Harare, Zimbabwe",
-  //     "propertyType": "Residential",
-  //     "owner": "John Doe",
-  //     "titleId": "TD123456789",
-  //     "contractId": "CN987654321",
-  //     "status": "Verified"
-  //   },
-  //   {
-  //     "title": "Commercial Land in Bulawayo Industrial Zone",
-  //     "address": "456 Industrial Road, Bulawayo, Zimbabwe",
-  //     "propertyType": "Commercial",
-  //     "owner": "Jane Smith",
-  //     "titleId": "TD987654321",
-  //     "contractId": "CN123456789",
-  //     "status": "Not Verified"
-  //   },
-  //   {
-  //     "title": "Rural Farm with Livestock in Mashonaland",
-  //     "address": "789 Farm Road, Mashonaland, Zimbabwe",
-  //     "propertyType": "Agricultural",
-  //     "owner": "David Johnson",
-  //     "titleId": "TD456789123",
-  //     "contractId": "CN456123789",
-  //     "status": "Verified"
-  //   },
-  //   {
-  //     "title": "Vacant Land for Development in Victoria Falls",
-  //     "address": "101 River View Avenue, Victoria Falls, Zimbabwe",
-  //     "propertyType": "Vacant Land",
-  //     "owner": "Emily Brown",
-  //     "titleId": "TD789456123",
-  //     "contractId": "CN789456123",
-  //     "status": "Not Verified"
-  //   }
-  // ]
-
 
 }

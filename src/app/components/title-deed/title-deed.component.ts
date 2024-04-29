@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+
 
 @Component({
   selector: 'app-title-deed',
@@ -15,6 +16,12 @@ export class TitleDeedComponent implements OnInit {
   @Input() ownershipType!: string;
   @Input() registeredOn!: string;
   @Input() buildingType!: string;
+  @Output() requestTitle: EventEmitter<any> = new EventEmitter<any>()
+
+  handleTitleDeedRequest(event: Event) {
+    this.requestTitle.emit(event)
+  }
+  
   ngOnInit(): void {
   }
 

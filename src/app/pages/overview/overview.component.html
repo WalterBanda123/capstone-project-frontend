@@ -91,6 +91,7 @@
           [registeredOn]="titleDeed.createdAt"
           [buildingType]="titleDeed.buildingType"
           [useDescription]="titleDeed.useDescription"
+          (requestTitle)="handleTitleDeedRequest(titleDeed)"
         ></app-title-deed>
 
         <!-- <div class="flex flex-row justify-between items-center w-full my-20">

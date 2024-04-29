@@ -4,6 +4,7 @@ import { NgForm } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AppDataService } from 'src/app/providers/app-data.service';
+import { AuthService } from 'src/app/providers/auth.service';
 import { UserDataService } from 'src/app/providers/user-data.service';
 
 @Component({
@@ -13,7 +14,13 @@ import { UserDataService } from 'src/app/providers/user-data.service';
 })
 export class RegistrationComponent implements OnInit {
 
-  constructor(private location: Location, private activeRoute: ActivatedRoute, private router: Router, private userDataService: UserDataService, private appDataService: AppDataService, private _snackbar: MatSnackBar) { }
+  constructor(private location: Location,
+    private activeRoute: ActivatedRoute,
+    private router: Router,
+    private userDataService: UserDataService,
+    private appDataService: AppDataService,
+    private _snackbar: MatSnackBar,
+    private authService: AuthService) { }
 
   userEmail: string = ''
 
@@ -22,12 +29,11 @@ export class RegistrationComponent implements OnInit {
   }
   handleRegistration(form: NgForm): void {
     const data = form.value
-    console.log(data);
-
     this.appDataService.createUserProfile(data).subscribe({
       next: (value: any) => {
         this._snackbar.open('Successfully created user profile', '', { panelClass: ['custom-snackbar'], horizontalPosition: 'right', verticalPosition: 'top' })
-        this.router.navigate(['dashboard'])
+        this.router.navigate(['dashboard']);
+        this.authService.getUserProfile(value)
       }, error: (error) => {
         console.log(error);
       }

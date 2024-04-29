@@ -21,6 +21,8 @@ export class LoginComponent implements OnInit {
         this.errorMessage = 'Auth failed. Wrong email or username'
         return;
       }
+
+      // this.authService.getUserProfile()
       console.log('Login response', response);
     }).catch((error) => {
       console.log('Auth Error', error);

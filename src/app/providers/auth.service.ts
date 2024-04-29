@@ -23,15 +23,9 @@ export class AuthService {
     onAuthStateChanged(this.auth, (user) => {
       if (user) {
         this.authenticatedUser = user
-        const uid = user.uid
-        console.log(user);
-        this.http.get<any>(`${this.serverURL}/dbApi/user/profile/${uid}`).subscribe({
-          next: (record) => {
-            console.log('Record', record.user);
-            this.authenticatedUserProfile.next(record.user)
-          }, error: (error) => {
-            console.log(error);
-          }
+        this.getUserProfile(user.uid).subscribe(profile => {
+          localStorage.setItem('profile', JSON.stringify(profile))
+          this.authenticatedUserProfile.next(profile)
         })
         localStorage.setItem("user", JSON.stringify(this.authenticatedUser))
       }
@@ -39,6 +33,10 @@ export class AuthService {
         localStorage.setItem('user', 'null')
       }
     })
+  }
+
+  userProfile(profile: any) {
+    this.authenticatedUserProfile.next(profile)
   }
 
   get isUserLoggedIn() {
@@ -50,8 +48,11 @@ export class AuthService {
   async handleUserLogin(email: string, password: string) {
     return signInWithEmailAndPassword(this.auth, email, password).then((response) => {
       this.router.navigate(['dashboard'])
-      console.log(response);
-
+      if (response) {
+        this.getUserProfile(response.user.uid).subscribe(profile => {
+          this.authenticatedUserProfile.next(profile)
+        })
+      }
       this._snackbar.open('Successfully logged in', '', { duration: 5000, panelClass: ['custom-snackbar'], horizontalPosition: 'right', verticalPosition: 'top' })
     }).catch((error) => {
       console.log('Auth failed, Auth error: ', error);
@@ -60,7 +61,7 @@ export class AuthService {
 
   async handleGoogleSignIn() {
     return await signInWithPopup(this.auth, new GoogleAuthProvider()).then((response) => {
-        this.router.navigate(['dashboard'])
+      this.router.navigate(['dashboard'])
       this._snackbar.open('Successfully logged in', '', { duration: 5000, panelClass: ['custom-snackbar'], horizontalPosition: 'right', verticalPosition: 'top' })
     }).catch((error) => {
       console.log('Google Auth Error: ', error);
@@ -103,8 +104,7 @@ export class AuthService {
     return confirmPasswordReset(this.auth, oobCode, newPassword)
   }
 
-  getUserProfile(): Observable<any> {
-    const uid = this.authenticatedUser?.uid
+  getUserProfile(uid: string): Observable<any> {
     return this.http.get<any>(`${this.serverURL}/dbApi/user/profile/${uid}`)
   }
 }
